@@ -1,5 +1,5 @@
-import { Header, Category } from "@/components/common";
-import { CategoryProps, ProductProps } from "@/lib/types";
+import { Header, Category, CarouselOfert } from "@/components/common";
+import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
 import Image from "next/image";
 import LogoCatshop from '@/public/LogoCatshop.png'
 import { LinkMenu } from "@/components/navBar";
@@ -13,6 +13,7 @@ import {
 
 import { Mail, Phone, Facebook, Instagram, Twitter } from 'lucide-react';
 import { CardProducts } from "@/components/common/CardProducts";
+
 
 const dataCategory: CategoryProps[] = [
    {
@@ -127,17 +128,35 @@ const dataProductsOffers: ProductProps[] = [
       }
    },
 ]
+const DataCarousel: CardOfferProps[] = [
+   {
+      id: 154,
+      img: '/imgOffers/catoffers1.png',
+      alt: 'Accesorios para gatos',
+      textBtn: 'buy',
+   },
+   {
+      id: 451,
+      img: '/imgOffers/catoffers2.png',
+      alt: 'Productos para gatos',
+      textBtn: 'buy',
+   }
+]
+
 
 export default function Home() {
    return (
       <div className="bg-bgSecondary">
-         <Header />
-         <main className="w-[90%] m-auto py-10 space-y-6">
+         <Header>
+            <CarouselOfert card={DataCarousel} className="md:h-[27rem]"/>
+         </Header>
+
+         <main className="w-[90%] m-auto py-10  space-y-6">
             <Category category={dataCategory} />
 
-            <section className="pb-20">
-               <h2 className="text-center font-bold text-xl">Mejores ofertas</h2>
-               
+            <section className="pb-20 md:pb-60 space-y-4">
+               <h2 className="text-center font-bold text-xl md:text-3xl">Mejores ofertas</h2>
+
                <Carousel
                   opts={{
                      align: "start",
@@ -147,14 +166,14 @@ export default function Home() {
                   <CarouselContent className="flex">
                      {dataProductsOffers.map((product) => (
 
-                        <CarouselItem key={product.id} className="basis-1/2 md:basis-1/3">
+                        <CarouselItem key={product.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
 
                            <CardProducts {...product} />
 
                         </CarouselItem>
                      ))}
                   </CarouselContent>
-                  <CarouselPrevious />
+                  {/* <CarouselPrevious /> */}
                   {/* <CarouselNext /> */}
                </Carousel>
             </section>

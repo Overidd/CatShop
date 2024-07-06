@@ -3,15 +3,15 @@
 import { ProductProps } from "@/lib/types"
 import Image from "next/image"
 
+// className=" w-full h-[37%] md:h-[50%] lg:h-[60%] rounded-md" />
 
 export const CardProducts = ({ description, img: { alt, src, width, height }, textBtn }: ProductProps) => {
    return (
-      <div className={`p-4 space-y-4 text-center bg-bgCard rounded-lg h-[22rem]`}>
-         <Image src={src} alt={alt} width={40} height={40}
-            className=" w-full h-[40%] rounded-md" />
-            
-         <p className="opacity-80">{description}</p>
-         <button className="bg-bgLateralcolumn text-white py-2 px-4 rounded-md w-full">{textBtn}</button>  {/* Link to product page */}
+      <div className={`p-4 md:p-6 text-center bg-bgCard rounded-xl h-[22rem] xl:h-[26rem] flex flex-col justify-between`}>
+         <img src={src} alt={alt} className="rounded-xl h-[50%] md:h-[60%]" />
+
+         <p className="opacity-80 ">{description}</p>
+         <button className="bg-bgLateralcolumn text-white py-4 rounded-xl w-full">{textBtn}</button> 
       </div>
    )
 }

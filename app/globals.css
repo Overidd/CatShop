@@ -36,5 +36,9 @@
    /* .btn-secondary {
      @apply
    } */
+   .grid-cols-custom-category {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
 }
+
 
