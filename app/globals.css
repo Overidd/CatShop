@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   .contentSwitch {
+      position: relative;
+      width: 4rem;
+      height: 2rem;
+      cursor: pointer;
+      border-radius: 16px;
+      padding: 0.2rem 0.3rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      img {
+         position: absolute;
+         z-index: 10;
+         top: 0;
+         bottom: 0;
+         margin: auto;
+         margin-right: 0.40rem;
+         margin-left: 0.34rem;
+      }
+   }
+
+   .switch {
+      border-radius: 50%;
+      transition: transform 0.2s;
+   }
+
+   .onSwitch {
+      transform: translateX(100%);
+   }
+
+   /* .btn-secondary {
+     @apply
+   } */
+}
+
