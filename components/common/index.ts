@@ -1,4 +1,5 @@
 export * from './Header';
-export * from './Carousel';
+export * from './CarouselCustom';
 export * from './CardOffer';
 export * from './Category';
+export * from './Footer';

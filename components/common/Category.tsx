@@ -8,7 +8,7 @@ interface Props {
 
 export const Category = ({ category }: Props) => {
    return (
-      <section className="grid grid-cols-2 md:grid-cols-custom-category gap-4 uppercase max-w-7xl m-auto">
+      <section className="grid grid-cols-2 md:grid-cols-custom-category gap-4 uppercase">
          {
             category.map(({ id, text, img: { width, height, src, alt } }) => (
 

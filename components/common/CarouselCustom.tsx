@@ -5,27 +5,27 @@ import {
    Carousel,
    CarouselContent,
    CarouselItem,
-   CarouselNext,
-   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { CardOffer } from "./CardOffer"
-import { CardOfferProps } from "@/lib/types";
+import { CardOfferProps, ProductProps } from "@/lib/types";
 
 
 interface Props {
    className?: string,
-   card: Array<CardOfferProps>;  // Alternativa válida a `CardProps[]`
+   Element: React.ElementType,
+   data: Array<ProductProps | CardOfferProps>;
 }
 
-export function CarouselOfert({ card, className }: Props) {
+export function CarouselCustom({ data, Element, className }: Props) {
    return (
-      <Carousel className={cn("w-full rounded-2xl overflow-hidden", className)}>
+      <Carousel opts={{
+         align: "start",
+      }} className={cn("w-full rounded-2xl overflow-hidden")}>
          <CarouselContent>
 
             {
-               card.map(item => (
+               data.map(item => (
                   <CarouselItem key={item.id} className={className}>
-                     <CardOffer {...item} />
+                     <Element {...item} />
                   </CarouselItem>
                ))
             }
