@@ -26,7 +26,7 @@ export const Header = ({ children, className }: Props) => {
             {/* Carousel */}
             {children}
 
-            <h1 className="text-lg font-semibold md:w-[40rem] m-auto md:text-2xl">
+            <h1 className="text-lg font-semibold md:w-[50rem] m-auto md:text-2xl">
                {textHeader.title}
             </h1>
             <p className="opacity-70 text-sm md:w-[50rem] m-auto md:text-xl">

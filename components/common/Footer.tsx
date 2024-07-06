@@ -7,15 +7,15 @@ export const Footer = () => {
    return (
       <footer className="">
 
-         <div className="w-full bottom-[99%] md:bottom-[80%]">
+         <div className="w-full bottom-[99%] md:bottom-[80%] -mb-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 146 1440 100">
                <path fill="#e7770f" fillOpacity="1" d="M0,160L80,154.7C160,149,320,139,480,154.7C640,171,800,213,960,218.7C1120,224,1280,192,1360,176L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
             </svg>
          </div>
-         <div className='bg-bgPrimary pb-4'>
-            <div className=" relative z-20 w-[90%] m-auto flex gap-10 flex-col items-baseline flex-wrap md:flex-row md:text-xl">
+         <div className='bg-bgPrimary pb-5'>
+            <div className="relative z-20 w-[90%] m-auto flex gap-x-14 gap-y-5 flex-col items-baseline flex-wrap md:flex-row md:text-xl">
 
-               <figure className="basis-[100%]">
+               <figure className="basis-[100%] -mb-6">
                   <img src={'/LogoCatshop.png'} alt="Logo" width={180} className="md:w-[18rem]" />
                </figure>
 
