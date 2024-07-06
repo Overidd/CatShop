@@ -3,6 +3,7 @@ import { Header, Category, CarouselCustom, CardOffer, Footer } from "@/component
 import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
 
 import { CardProducts } from "@/components/common/CardProducts";
+import { CarouselSlick } from "@/components/slider/CarouselSlick";
 
 const dataCategory: CategoryProps[] = [
    {
@@ -137,7 +138,13 @@ export default function Home() {
    return (
       <div className="bg-bgSecondary">
          <Header>
-            <CarouselCustom data={DataCarousel} Element={CardOffer} className="md:h-[27rem]" />
+            {/* <CarouselCustom data={DataCarousel} Element={CardOffer} className="md:h-[27rem]" /> */}
+
+            <CarouselSlick >
+               {DataCarousel.map((item) => (
+                  <CardOffer key={item.id} cardOfferProps={item} className="md:h-[27rem] rounded-xl overflow-hidden" />
+               ))}
+            </CarouselSlick>
          </Header>
 
          <main className="w-[90%] m-auto py-5 space-y-6 md:max-w-7xl">
@@ -149,8 +156,7 @@ export default function Home() {
                <CarouselCustom data={dataProductsOffers} Element={CardProducts} className="basis-1/2 md:basis-1/3 lg:basis-1/4" />
             </section>
          </main>
-
-        <Footer/>
+         <Footer />
       </div>
    );
 }

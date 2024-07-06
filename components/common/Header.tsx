@@ -1,6 +1,4 @@
-import { CardOfferProps } from "@/lib/types"
 import { Menu } from "../navBar"
-import { CarouselOfert } from "./CarouselCustom"
 import React from "react"
 
 const textHeader = {
