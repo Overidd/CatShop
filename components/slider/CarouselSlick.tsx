@@ -7,10 +7,10 @@ import 'slick-carousel/slick/slick-theme.css';
 interface Props {
    children: React.ReactNode,
    className?: string,
+   speed: number,
 }
 
-
-export const CarouselSlick = ({ children, className }: Props) => {
+export const CarouselSlick = ({ children, className, speed }: Props) => {
 
    const settings = {
       dots: true,
@@ -18,12 +18,12 @@ export const CarouselSlick = ({ children, className }: Props) => {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      speed: 500,
+      speed,
    };
 
    return (
       <div className='rounded-xl overflow-hidden'>
-         <Slider  {...settings} className='' >
+         <Slider {...settings} className={className}>
             {children}
          </Slider>
       </div>

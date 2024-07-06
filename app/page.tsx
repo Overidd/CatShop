@@ -136,26 +136,28 @@ const DataCarousel: CardOfferProps[] = [
 export default function Home() {
 
    return (
-      <div className="bg-bgSecondary">
-         <Header>
+      <div className="bg-bgSecondary space-y-10 overflow-hidden">
+         <Header className="space-y-10 pb-3">
             {/* <CarouselCustom data={DataCarousel} Element={CardOffer} className="md:h-[27rem]" /> */}
-
-            <CarouselSlick >
-               {DataCarousel.map((item) => (
-                  <CardOffer key={item.id} cardOfferProps={item} className="md:h-[27rem] rounded-xl overflow-hidden" />
-               ))}
+            <CarouselSlick speed={500} className="-mb-2">
+               {
+                  DataCarousel.map((item) => (
+                     <CardOffer key={item.id} cardOfferProps={item} className="h-[16rem] md:h-[20rem] 2xl:h-[25rem] outline-none" />
+                  ))
+               }
             </CarouselSlick>
          </Header>
 
-         <main className="w-[90%] m-auto py-5 space-y-6 md:max-w-7xl">
+         <main className="space-y-10 w-[90%] m-auto max-w-7xl">
             <Category category={dataCategory} />
 
-            <section className="pb-20 md:pb-60 space-y-4">
+            <section className="space-y-10">
                <h2 className="text-center font-bold text-xl md:text-3xl">Mejores ofertas</h2>
 
                <CarouselCustom data={dataProductsOffers} Element={CardProducts} className="basis-1/2 md:basis-1/3 lg:basis-1/4" />
             </section>
          </main>
+
          <Footer />
       </div>
    );

@@ -10,15 +10,19 @@ const textHeader = {
  productos de gatos para amantes gatunos (La
  Familia Miaulovers).`,
 }
+interface Props {
+   className?: string,
+   children: React.ReactNode,
+}
 
 
-export const Header = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
+export const Header = ({ children, className }: Props) => {
    return (
-      <header className='bg-bgPrimary text-center overflow-hidden pb-10'>
+      <header className={`bg-bgPrimary text-center overflow-hidden ${className}`}>
 
          <Menu />
 
-         <div className="space-y-5 w-[90%] mx-auto mt-10">
+         <div className={`w-[90%] mx-auto md:max-w-7xl ${className}`}>
             {/* Carousel */}
             {children}
 
