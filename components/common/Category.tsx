@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 import { CategoryProps } from "@/lib/types";
 
 interface Props {

@@ -1,3 +1,4 @@
+import { ScrollButton } from "../button"
 import { Menu } from "../navBar"
 import React from "react"
 
@@ -33,6 +34,7 @@ export const Header = ({ children, className }: Props) => {
             <p className="opacity-70 text-sm md:w-[50rem] m-auto md:text-xl">
                {textHeader.text}
             </p>
+            <ScrollButton targetId="scrol-main" />
          </div>
       </header>
    )

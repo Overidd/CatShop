@@ -23,7 +23,7 @@ function CarouselCustom({ children, className }: Props) {
    return (
       <Carousel opts={{
          align: "start",
-      }} className={cn("w-full rounded-2xl")}>
+      }} className={cn("w-full")}>
          <CarouselContent className={className}>
 
             {/* {
