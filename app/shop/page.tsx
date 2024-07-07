@@ -1,7 +1,7 @@
 
 const Shop = () => {
    return (
-      <div>
+      <div className="w-[90%] max-w-7xl mx-auto">
          Shop
       </div>
    )

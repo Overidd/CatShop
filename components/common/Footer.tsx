@@ -5,7 +5,7 @@ import { LinkMenu } from '../navBar';
 
 export const Footer = () => {
    return (
-      <footer className="">
+      <footer className="mt-auto">
 
          <div className="w-full bottom-[99%] md:bottom-[80%] -mb-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 146 1440 100">

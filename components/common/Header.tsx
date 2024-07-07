@@ -22,7 +22,7 @@ export const Header = ({ children, className }: Props) => {
       <header className={`bg-bgPrimary text-center overflow-hidden ${className}`}>
 
          <Menu />
-
+         
          <div className={`w-[90%] mx-auto md:max-w-7xl ${className}`}>
             {/* Carousel */}
             {children}

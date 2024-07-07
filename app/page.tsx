@@ -1,12 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-'use client'
-import { Header, Footer } from "@/components/common";
-import {CardCategory, CardOffer} from "@/components/cards";
-import { CarouselCustom, CarouselItem } from '@/components/slider'
-import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
-import { CardProducts } from "@/components/cards/CardProducts";
-import { CarouselSlick } from "@/components/slider/CarouselSlick";
+import { Header } from "@/components/common";
+import { CardCategory, CardOffer, CardProducts } from "@/components/cards";
+import { CarouselCustom, CarouselItem, CarouselSlick } from '@/components/slider'
 
+import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
+import { Menu } from "@/components/navBar";
 const dataCategory: CategoryProps[] = [
    {
       id: 12,
@@ -144,9 +142,9 @@ const DataCarousel: CardOfferProps[] = [
 export default function Home() {
 
    return (
-      <div className="bg-bgSecondary space-y-10 overflow-hidden">
+      <div className="space-y-10 overflow-hidden">
          <Header className="space-y-10 pb-3">
-            <CarouselSlick speed={300} className="">
+            <CarouselSlick speed={300} className="-mb-2">
                {
                   DataCarousel.map((item) => (
                      <CardOffer key={item.id} cardOfferProps={item} className="h-[16rem] md:h-[20rem] 2xl:h-[25rem] outline-none" />
@@ -170,12 +168,8 @@ export default function Home() {
                      ))
                   }
                </CarouselCustom>
-               {/* {
-                  } */}
             </section>
          </main>
-
-         <Footer />
       </div>
    );
 }
