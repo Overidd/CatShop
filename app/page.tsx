@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Header, Category, CarouselCustom, CardOffer, Footer } from "@/components/common";
+import { Header, Category, CarouselCustom, CarouselItem, CardOffer, Footer } from "@/components/common";
 import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
 
 import { CardProducts } from "@/components/common/CardProducts";
@@ -71,7 +71,7 @@ const dataCategory: CategoryProps[] = [
 const dataProductsOffers: ProductProps[] = [
    {
       id: 2000,
-      description: ` Diversión garantizada para tu gato con nuestra pelotita juguete`,
+      description: `Diversión garantizada para tu gato con nuestra pelotita juguete`,
       price: 150,
       textBtn: 'Buy',
       img: {
@@ -138,8 +138,7 @@ export default function Home() {
    return (
       <div className="bg-bgSecondary space-y-10 overflow-hidden">
          <Header className="space-y-10 pb-3">
-            {/* <CarouselCustom data={DataCarousel} Element={CardOffer} className="md:h-[27rem]" /> */}
-            <CarouselSlick speed={500} className="-mb-2">
+            <CarouselSlick speed={300} className="-mb-2">
                {
                   DataCarousel.map((item) => (
                      <CardOffer key={item.id} cardOfferProps={item} className="h-[16rem] md:h-[20rem] 2xl:h-[25rem] outline-none" />
@@ -154,11 +153,25 @@ export default function Home() {
             <section className="space-y-10">
                <h2 className="text-center font-bold text-xl md:text-3xl">Mejores ofertas</h2>
 
-               <CarouselCustom data={dataProductsOffers} Element={CardProducts} className="basis-1/2 md:basis-1/3 lg:basis-1/4" />
+               <CarouselCustom>
+                  {
+                     dataProductsOffers.map((item) => (
+                        <CarouselItem key={item.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                           <CardProducts productProps={item} className="h-[22rem] md:h-[27rem] p-2 md:p-6" />
+                        </CarouselItem>
+                     ))
+                  }
+               </CarouselCustom>
+               {/* {
+                  } */}
             </section>
          </main>
 
          <Footer />
       </div>
    );
+}
+{/* <CarouselCustom data={DataCarousel} Element={CardOffer} className="md:h-[27rem]" /> */ }
+{/* 
+   <CarouselCustom data={dataProductsOffers} Element={CardProducts} className="basis-1/2 md:basis-1/3 lg:basis-1/4" /> */
 }

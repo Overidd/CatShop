@@ -2,7 +2,7 @@ import { Menu } from "../navBar"
 import React from "react"
 
 const textHeader = {
-   title: 'Tienda de Gatos en Lima accesorios para gatos',
+   title: 'Tienda de Gatos en Lima accesorios',
    text: ` ¡Consigue todos los productos y accesorios para
  gatos en un solo lugar! En nuestra nueva tienda
  de gatos en Lima, podrás engreírlo y atenderlo
@@ -28,6 +28,7 @@ export const Header = ({ children, className }: Props) => {
 
             <h1 className="text-lg font-semibold md:w-[50rem] m-auto md:text-2xl">
                {textHeader.title}
+               <span className="text-blue-500 font-extrabold uppercase"> para gatos</span>
             </h1>
             <p className="opacity-70 text-sm md:w-[50rem] m-auto md:text-xl">
                {textHeader.text}
