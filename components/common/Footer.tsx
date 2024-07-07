@@ -13,7 +13,7 @@ export const Footer = () => {
             </svg>
          </div>
          <div className='bg-bgPrimary pb-5'>
-            <div className="relative z-20 w-[90%] m-auto flex gap-x-14 gap-y-5 flex-col items-baseline flex-wrap md:flex-row md:text-xl">
+            <div className="w-[90%] m-auto flex gap-x-14 gap-y-5 flex-col items-baseline flex-wrap md:flex-row md:text-xl">
 
                <figure className="basis-[100%] -mb-6">
                   <img src={'/LogoCatshop.png'} alt="Logo" width={180} className="md:w-[18rem]" />

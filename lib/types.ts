@@ -7,8 +7,9 @@ type ImgProps = {
 }
 export type CategoryProps = {
    id: number;
-   text: string;
    img: ImgProps;
+   category: string;
+   date: string;
 }
 export type CardOfferProps = {
    id: number
@@ -16,6 +17,10 @@ export type CardOfferProps = {
    price: number,
    discount?: number,
    description?: string;
+   category: string;
+   availability: boolean,
+   brand: string;
+   date: string;
    img: ImgProps;
 }
 
@@ -25,5 +30,24 @@ export type ProductProps = {
    price: number;
    discount?: number,
    description: string;
+   category: string;
+   availability: boolean,
+   brand: string;
+   date: string;
    img: ImgProps;
 }
+
+export type DetailsProductAccessories = {
+
+}
+// category: 'Juguetes',
+// material: 'Plástico no tóxico',
+// weight: '50g',
+// dimensions: '5cm x 5cm x 5cm',
+// color: 'Multicolor',
+// ageRecommended: 'Todos',
+// benefits: 'Estimulación mental y ejercicio físico',
+// careInstructions: 'Lavar con agua y jabón neutro',
+// brand: 'PetToys Inc.',
+// warranty: '6 meses',
+// availability: 'Disponible',

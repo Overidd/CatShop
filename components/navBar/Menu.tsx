@@ -9,6 +9,7 @@ import LogoCatshop from '@/public/LogoCatshop.png'
 import { LinkMenu } from "./LinkMenu"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { cn } from "@/lib/utils"
 
 interface Props {
    className?: string,
@@ -37,7 +38,8 @@ export const Menu = ({ path }: MenuProps) => {
 
    console.log(pathname)
    return (
-      <nav className={`bg-bgMenu mt-4 flex p-4 gap-4 relative z-10 w-[90%] m-auto items-center rounded-2xl select-none ${hiddenMenu ? '' : 'hidden'}`}>
+      <nav className={cn('bg-bgMenu flex p-4 gap-4 relative z-10 w-[90%] m-auto mt-4 items-center rounded-2xl select-none',`${hiddenMenu? '' : 'hidden'}`)}>
+
          <Link href={'/'}>
             <Image src={LogoCatshop} alt="Logo" width={80} className="cursor-pointer" />
          </Link>

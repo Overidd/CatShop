@@ -4,11 +4,11 @@ import { CardCategory, CardOffer, CardProducts } from "@/components/cards";
 import { CarouselCustom, CarouselItem, CarouselSlick } from '@/components/slider'
 
 import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
-import { Menu } from "@/components/navBar";
 const dataCategory: CategoryProps[] = [
    {
       id: 12,
-      text: 'Alimentos',
+      category: 'Alimentos',
+      date: '2023-01-01',
       img: {
          src: '',
          alt: 'Alimentos',
@@ -19,7 +19,8 @@ const dataCategory: CategoryProps[] = [
 
    {
       id: 13,
-      text: 'Juguetes',
+      category: 'Juguetes',
+      date: '2023-01-01',
       img: {
          src: '',
          alt: 'Juguetes',
@@ -29,7 +30,8 @@ const dataCategory: CategoryProps[] = [
    },
    {
       id: 14,
-      text: 'Accesorios',
+      category: 'Accesorios',
+      date: '2023-01-01',
       img: {
          src: '',
          alt: 'Accesorios',
@@ -39,7 +41,8 @@ const dataCategory: CategoryProps[] = [
    },
    {
       id: 15,
-      text: 'Ropa',
+      category: 'Ropa',
+      date: '2023-01-01',
       img: {
          src: '',
          alt: 'Ropa',
@@ -49,7 +52,8 @@ const dataCategory: CategoryProps[] = [
    },
    {
       id: 16,
-      text: 'Higiene',
+      category: 'Higiene',
+      date: '2023-01-01',
       img: {
          src: '',
          alt: 'Higiene',
@@ -59,7 +63,8 @@ const dataCategory: CategoryProps[] = [
    },
    {
       id: 17,
-      text: 'Salud',
+      category: 'Salud',
+      date: '2023-01-01',
       img: {
          src: '',
          alt: 'Salud',
@@ -74,6 +79,10 @@ const dataProductsOffers: ProductProps[] = [
       price: 150,
       name: 'Product',
       description: `Diversión garantizada para tu gato con nuestra pelotita juguete`,
+      brand: 'marca',
+      availability: true,
+      category: 'Juguetes',
+      date: '2023-01-01',
       img: {
          src: '/imgProducts/products1.webp',
          alt: 'Product',
@@ -86,6 +95,10 @@ const dataProductsOffers: ProductProps[] = [
       price: 150,
       name: 'Product',
       description: ` Juguete Para Gato Dispensador De Croceta  Juego Resorte`,
+      brand: 'marca',
+      availability: true,
+      category: 'Juguetes',
+      date: '2023-01-01',
       img: {
          src: '/imgProducts/products2.png',
          alt: 'Product',
@@ -98,6 +111,10 @@ const dataProductsOffers: ProductProps[] = [
       price: 150,
       name: 'Product',
       description: 'Product 3',
+      brand: 'marca',
+      availability: true,
+      category: 'Juguetes',
+      date: '2023-01-01',
       img: {
          src: '/imgProducts/products3.jpg',
          alt: 'Product',
@@ -110,6 +127,10 @@ const dataProductsOffers: ProductProps[] = [
       price: 150,
       name: 'Product',
       description: 'Product 4',
+      brand: 'marca',
+      availability: true,
+      category: 'Juguetes',
+      date: '2023-01-01',
       img: {
          src: '/imgProducts/products4.jpg',
          alt: 'Product',
@@ -123,6 +144,10 @@ const DataCarousel: CardOfferProps[] = [
       id: 154,
       price: 150,
       name: 'Product',
+      category: 'Juguetes',
+      brand: 'marca',
+      availability: true,
+      date: '2023-01-01',
       img: {
          src: '/imgOffers/catoffers1.png',
          alt: 'Accesorios para gatos',
@@ -132,6 +157,10 @@ const DataCarousel: CardOfferProps[] = [
       id: 451,
       price: 150,
       name: 'Product',
+      category: 'Juguetes',
+      brand: 'marca',
+      availability: true,
+      date: '2023-01-01',
       img: {
          src: '/imgOffers/catoffers2.png',
          alt: 'Productos para gatos',
@@ -142,7 +171,7 @@ const DataCarousel: CardOfferProps[] = [
 export default function Home() {
 
    return (
-      <div className="space-y-10 overflow-hidden">
+      <>
          <Header className="space-y-10 pb-3">
             <CarouselSlick speed={300} className="-mb-2">
                {
@@ -163,14 +192,14 @@ export default function Home() {
                   {
                      dataProductsOffers.map((item) => (
                         <CarouselItem key={item.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                           <CardProducts productProps={item} className="h-[22rem] md:h-[27rem] p-2 md:p-6" />
+                           <CardProducts productProps={item} className="h-[22rem] md:h-[27rem]" />
                         </CarouselItem>
                      ))
                   }
                </CarouselCustom>
             </section>
          </main>
-      </div>
+      </>
    );
 }
 {/* <CarouselCustom data={DataCarousel} Element={CardOffer} className="md:h-[27rem]" /> */ }

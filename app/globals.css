@@ -38,7 +38,9 @@
    } */
    .grid-cols-custom-category {
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    }
+   }
+
+   .grid-cols-custom-products {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+   }
 }
-
-
