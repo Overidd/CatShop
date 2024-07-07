@@ -7,7 +7,7 @@ interface Props {
    productProps: ProductProps,
 }
 
-export const CardProducts = ({ productProps: { description, textBtn, img: { alt, src, width, height } }, className }: Props) => {
+export const CardProducts = ({ productProps: { description, img: { alt, src, width, height } }, className }: Props) => {
    return (
       <div className={`text-center bg-bgCard rounded-xl flex flex-col gap-2 justify-between ${className}`}>
 
@@ -17,7 +17,7 @@ export const CardProducts = ({ productProps: { description, textBtn, img: { alt,
 
          <p className="opacity-80 ">{description}</p>
          <button className="bg-bgLateralcolumn text-white py-2 md:py-4 rounded-xl w-full">
-            {textBtn}
+            Buy
          </button>
       </div>
    )

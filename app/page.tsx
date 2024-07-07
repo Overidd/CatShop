@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { Header, Category, CardOffer, Footer } from "@/components/common";
-import {CarouselCustom, CarouselItem} from '@/components/slider'
+import { Header, Footer } from "@/components/common";
+import {CardCategory, CardOffer} from "@/components/cards";
+import { CarouselCustom, CarouselItem } from '@/components/slider'
 import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
-import { CardProducts } from "@/components/common/CardProducts";
+import { CardProducts } from "@/components/cards/CardProducts";
 import { CarouselSlick } from "@/components/slider/CarouselSlick";
 
 const dataCategory: CategoryProps[] = [
@@ -72,9 +73,9 @@ const dataCategory: CategoryProps[] = [
 const dataProductsOffers: ProductProps[] = [
    {
       id: 2000,
-      description: `Diversión garantizada para tu gato con nuestra pelotita juguete`,
       price: 150,
-      textBtn: 'Buy',
+      name: 'Product',
+      description: `Diversión garantizada para tu gato con nuestra pelotita juguete`,
       img: {
          src: '/imgProducts/products1.webp',
          alt: 'Product',
@@ -84,9 +85,9 @@ const dataProductsOffers: ProductProps[] = [
    },
    {
       id: 2001,
-      description: ` Juguete Para Gato Dispensador De Croceta  Juego Resorte`,
       price: 150,
-      textBtn: 'Buy',
+      name: 'Product',
+      description: ` Juguete Para Gato Dispensador De Croceta  Juego Resorte`,
       img: {
          src: '/imgProducts/products2.png',
          alt: 'Product',
@@ -96,9 +97,9 @@ const dataProductsOffers: ProductProps[] = [
    },
    {
       id: 2002,
-      description: 'Product 3',
       price: 150,
-      textBtn: 'Buy',
+      name: 'Product',
+      description: 'Product 3',
       img: {
          src: '/imgProducts/products3.jpg',
          alt: 'Product',
@@ -108,9 +109,9 @@ const dataProductsOffers: ProductProps[] = [
    },
    {
       id: 2003,
-      description: 'Product 4',
       price: 150,
-      textBtn: 'Buy',
+      name: 'Product',
+      description: 'Product 4',
       img: {
          src: '/imgProducts/products4.jpg',
          alt: 'Product',
@@ -122,19 +123,25 @@ const dataProductsOffers: ProductProps[] = [
 const DataCarousel: CardOfferProps[] = [
    {
       id: 154,
-      img: '/imgOffers/catoffers1.png',
-      alt: 'Accesorios para gatos',
-      textBtn: 'buy',
+      price: 150,
+      name: 'Product',
+      img: {
+         src: '/imgOffers/catoffers1.png',
+         alt: 'Accesorios para gatos',
+      }
    },
    {
       id: 451,
-      img: '/imgOffers/catoffers2.png',
-      alt: 'Productos para gatos',
-      textBtn: 'buy',
+      price: 150,
+      name: 'Product',
+      img: {
+         src: '/imgOffers/catoffers2.png',
+         alt: 'Productos para gatos',
+      }
    }
 ]
 
-export default function Home () {
+export default function Home() {
 
    return (
       <div className="bg-bgSecondary space-y-10 overflow-hidden">
@@ -149,7 +156,7 @@ export default function Home () {
          </Header>
 
          <main className="space-y-10 w-[90%] m-auto max-w-7xl" id="scrol-main" >
-            <Category category={dataCategory} />
+            <CardCategory category={dataCategory} />
 
             <section className="space-y-10">
                <h2 className="text-center font-bold text-xl md:text-3xl">Mejores ofertas</h2>

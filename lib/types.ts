@@ -1,25 +1,29 @@
-export type CardOfferProps = {
-   id: number
-   img: string;
-   alt: string;
-   textBtn: string;
-}
+
 type ImgProps = {
    src: string;
+   alt: string;
    width?: number;
    height?: number;
-   alt: string;
 }
 export type CategoryProps = {
    id: number;
    text: string;
    img: ImgProps;
 }
+export type CardOfferProps = {
+   id: number
+   name: string;
+   price: number,
+   discount?: number,
+   description?: string;
+   img: ImgProps;
+}
 
 export type ProductProps = {
    id: number;
-   description: string;
+   name: string;
    price: number;
-   textBtn: string;
+   discount?: number,
+   description: string;
    img: ImgProps;
 }
