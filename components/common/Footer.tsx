@@ -20,7 +20,7 @@ export const Footer = () => {
                </figure>
 
                <ul className="space-y-2">
-                  <h4 className="text-3xl font-medium" >Contactos</h4>
+                  <h4 className="text-2xl md:text-3xl font-medium" >Contactos</h4>
                   <li className="space-x-2 text-lg">
                      <span className="inline-block align-middle bg-white rounded-[50%] p-2">
                         <Mail className="text-bgPrimary" />
@@ -40,7 +40,7 @@ export const Footer = () => {
                </ul>
 
                <ul className="space-y-2">
-                  <h4 className="text-3xl font-medium">Menu</h4>
+                  <h4 className="text-2xl md:text-3xl font-medium">Menu</h4>
                   <LinkMenu />
                </ul>
 

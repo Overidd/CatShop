@@ -31,6 +31,7 @@
 
    .onSwitch {
       transform: translateX(100%);
+      /* width: 10dvh; */
    }
 
    /* .btn-secondary {
@@ -40,7 +41,29 @@
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
    }
 
+   /* .grid-cols-custom-products {
+      grid-template-columns: repeat(auto-fit, minmax(8rem, 14.7rem));
+   } */
    .grid-cols-custom-products {
-      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 14.7rem));
+   }
+   /* stylos que se aplican en componente Filter.ts para el filter animation */
+   .animationFilterMovil{
+      transition: min-width 0.35s, min-height 0.25s;
+   }
+   .animationFilterDeskt{
+      transition: min-width 0.15s;
+   }
+
+   /* stylos que se aplican en componente cardProducts.tsx para la opacidad con hover y icono */
+   .iconSearch{
+      opacity: 0;
+   }
+   .productImg:hover > img{
+      transition: opacity 0.5s;
+      opacity: 0.8;
+   }
+   .productImg:hover > .iconSearch{
+      opacity: 100;
    }
 }

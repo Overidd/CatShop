@@ -1,369 +1,194 @@
-'use client'
 import { CardProducts } from "@/components/cards"
+import { ContentProducts } from "@/components/common/ContentProducts"
+import { Filter } from "@/components/common/Filter"
 import { ProductProps } from "@/lib/types"
-import { ListFilter } from 'lucide-react'
-import { useState } from "react"
 
-const dataProductsOffers: ProductProps[] = [
+const dataProducts: ProductProps[] = [
    {
-      id: 2000,
-      price: 150,
-      name: 'Product',
-      description: `Diversión garantizada para tu gato con nuestra pelotita juguete `,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products1.webp',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2000,
+      "price": 172,
+      "name": "Suéter cálido para gato",
+      "description": "Mantén a tu gato abrigado y cómodo con este suéter cálido de lana.",
+      "brand": "catsoup",
+      "availability": true,
+      "category": "ropa",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/sueterCalidoGato.jpg",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2001,
-      price: 150,
-      name: 'Product',
-      description: ` Juguete Para Gato Dispensador De Croceta  Juego Resorte`,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products2.png',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2001,
+      "price": 56,
+      "name": "Champú anti-pulgas",
+      "description": "Elimina pulgas y garrapatas con este efectivo champú para gatos.",
+      "brand": "delmeow",
+      "availability": true,
+      "category": "higiene",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/champuAntipulgas.webp",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2002,
-      price: 150,
-      name: 'Product',
-      description: 'Product 3',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products3.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2002,
+      "price": 95,
+      "name": "Croquetas premium para gatos",
+      "description": "Nutrición completa y balanceada para gatos de todas las edades.",
+      "brand": "whiskers",
+      "availability": true,
+      "category": "alimento",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/croquetaspremiumCat.jpg",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2003,
-      price: 150,
-      name: 'Product',
-      description: 'Product 4',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products4.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2003,
+      "price": 112,
+      "name": "Collar con cascabel",
+      "description": "Elegante collar con cascabel para gatos, ajustable y seguro.",
+      "brand": "gaty",
+      "availability": true,
+      "category": "accesorio",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/collarCascabel.webp",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2004,
-      price: 150,
-      name: 'Product',
-      description: `Diversión garantizada para tu gato con nuestra pelotita juguete`,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products1.webp',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2004,
+      "price": 123,
+      "name": "Pelota interactiva para gatos",
+      "description": "Diviértete viendo a tu gato jugar con esta pelota interactiva.",
+      "brand": "catsoup",
+      "availability": true,
+      "category": "juguete",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/pelotaInteractiva.webp",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2005,
-      price: 150,
-      name: 'Product',
-      description: ` Juguete Para Gato Dispensador De Croceta  Juego Resorte`,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products2.png',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2005,
+      "price": 43,
+      "name": "Abrigo impermeable para gatos",
+      "description": "Protege a tu gato de la lluvia con este abrigo impermeable.",
+      "brand": "delmeow",
+      "availability": true,
+      "category": "ropa",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/abrigoImpermeable.jpg",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2006,
-      price: 150,
-      name: 'Product',
-      description: 'Product 3',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products3.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2006,
+      "price": 87,
+      "name": "Cepillo desenredante para gatos",
+      "description": "Mantén el pelaje de tu gato suave y libre de nudos con este cepillo.",
+      "brand": "whiskers",
+      "availability": true,
+      "category": "higiene",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/cepilloSesenredante.png",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2007,
-      price: 150,
-      name: 'Product',
-      description: 'Product 4',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products4.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2007,
+      "price": 155,
+      "name": "Vitaminas para gatos",
+      "description": "Suplemento multivitamínico para la salud y vitalidad de tu gato.",
+      "brand": "gaty",
+      "availability": true,
+      "category": "salud",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/vitaminas.jpg",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2008,
-      price: 150,
-      name: 'Product',
-      description: 'Product 3',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products3.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2008,
+      "price": 45,
+      "name": "Alimento húmedo para gatos",
+      "description": "Delicioso alimento húmedo en gelatina para gatos exigentes.",
+      "brand": "catsoup",
+      "availability": true,
+      "category": "alimento",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/alimentoHumedo.webp",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2009,
-      price: 150,
-      name: 'Product',
-      description: 'Product 4',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products4.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2009,
+      "price": 98,
+      "name": "Rascador de cartón para gatos",
+      "description": "Rascador ecológico de cartón para el entretenimiento de tu gato.",
+      "brand": "delmeow",
+      "availability": true,
+      "category": "accesorio",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/rascadorCarton.jpeg",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
    },
    {
-      id: 2010,
-      price: 150,
-      name: 'Product',
-      description: 'Product 3',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products3.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
+      "id": 2010,
+      "price": 67,
+      "name": "Ratón de juguete para gatos",
+      "description": "Ratón de juguete con sonido para estimular el instinto cazador de tu gato.",
+      "brand": "whiskers",
+      "availability": true,
+      "category": "juguete",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/ratonJuguete.jpg",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
       }
-   },
-   {
-      id: 2011,
-      price: 150,
-      name: 'Product',
-      description: 'Product 4',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products4.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2012,
-      price: 150,
-      name: 'Product',
-      description: `Diversión garantizada para tu gato con nuestra pelotita juguete`,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products1.webp',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2013,
-      price: 150,
-      name: 'Product',
-      description: ` Juguete Para Gato Dispensador De Croceta  Juego Resorte`,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products2.png',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2014,
-      price: 150,
-      name: 'Product',
-      description: 'Product 3',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products3.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2015,
-      price: 150,
-      name: 'Product',
-      description: 'Product 4',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products4.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2016,
-      price: 150,
-      name: 'Product',
-      description: 'Product 3',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products3.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2017,
-      price: 150,
-      name: 'Product',
-      description: 'Product 4',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products4.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2018,
-      price: 150,
-      name: 'Product',
-      description: 'Product 3',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products3.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2019,
-      price: 150,
-      name: 'Product',
-      description: 'Product 4',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products4.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2020,
-      price: 150,
-      name: 'Product',
-      description: `Diversión garantizada para tu gato con nuestra pelotita juguete`,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products1.webp',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-
+   }
 ]
+
+
 export default function Shop() {
-   const [openFilter, setOpenFilter] = useState(true)
 
    return (
-      <main className="w-[90%] max-w-7xl mx-auto flex gap-4">
-
-         <section className={`bg-bgLateralcolumn rounded-md`}>
-            <div className={` transition-all ${openFilter ? 'w-[20rem]' : 'w-[5rem]'}`}>
-               <button className="p-2" onClick={() => setOpenFilter(!openFilter)}>
-                  <ListFilter strokeWidth={'3'} size={'2rem'} />
-               </button>
-            </div>
-         </section>
-
-         <section className="flex-1 grid grid-cols-2 gap-4 md:grid-cols-custom-products">
-            {
-               dataProductsOffers.map(product => (
-                  <CardProducts key={product.id} productProps={product} className="p-2 md:p-6" />
-               ))
-            }
-         </section>
+      <main className="w-[90%] max-w-7xl mx-auto flex flex-wrap gap-4 relative">
+         <Filter />
+         <ContentProducts dataProducts={dataProducts} />
       </main>
    )
 }
