@@ -20,13 +20,25 @@ const LinkNav = ({ href, children }: Props) => {
    );
 };
 
-export const LinkMenu = () => {
+type LinkNav = {
+   closeMenu: () => void;
+}
+
+export const LinkMenu = ({ closeMenu }:LinkNav) => {
    return (
       <>
-         <li className="list-none"><LinkNav href={'/'} >Home</LinkNav></li>
-         <li className="list-none"><LinkNav href={'/blog'}>Blog</LinkNav></li>
-         <li className="list-none"><LinkNav href={'/shop'}>Shop</LinkNav></li>
-         <li className="list-none"><LinkNav href={'/login'}>Login</LinkNav></li>
+         <li className="list-none" onClick={closeMenu}>
+            <LinkNav href={'/'} >Home</LinkNav>
+         </li>
+         <li className="list-none" onClick={closeMenu}>
+            <LinkNav href={'/blog'}>Blog</LinkNav>
+         </li>
+         <li className="list-none" onClick={closeMenu}>
+            <LinkNav href={'/shop'}>Shop</LinkNav>
+         </li>
+         <li className="list-none" onClick={closeMenu}>
+            <LinkNav href={'/login'}>Login</LinkNav>
+         </li>
       </>
    )
 }
