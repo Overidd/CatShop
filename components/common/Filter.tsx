@@ -152,7 +152,7 @@ export const Filter = () => {
                <ListFilter strokeWidth={'3'} size={'2rem'} />
             </button>
             <div className={`flex flex-col gap-2 p-4  ${openFilter ? 'flex' : 'hidden md:flex'}`}>
-               <fieldset className='md:space-y-4'>
+               <fieldset className='md:space-y-6'>
 
                   <form onSubmit={onParamPushSearch} className='bg-white rounded-md overflow-hidden hidden md:block'>
                      <input
