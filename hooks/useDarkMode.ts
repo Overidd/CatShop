@@ -1,18 +1,18 @@
 'use client'
 import { useEffect, useState } from "react";
 
-const body = typeof window !== "undefined" ? document.body : null;
+const html = typeof window !== "undefined" ? document.documentElement : null;
 const initialDarkMode = typeof window !== "undefined" && localStorage.getItem('darkMode') === 'true';
 
 export const useDarkMode = () => {
    const [darkMode, setDarkMode] = useState(initialDarkMode);
 
    useEffect(() => {
-      if (body) {
+      if (html) {
          if (darkMode) {
-            body.classList.add('dark');
+            html.classList.add('dark');
          } else {
-            body.classList.remove('dark');
+            html.classList.remove('dark');
          }
          localStorage.setItem('darkMode', darkMode.toString());
       }

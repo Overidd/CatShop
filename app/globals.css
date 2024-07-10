@@ -97,4 +97,8 @@
    /* .scrollCartShop{
       scrollbar-width: thin;
    } */
+    .stickyStyle{
+      position: fixed;
+      top: 0;
+    }
 }
