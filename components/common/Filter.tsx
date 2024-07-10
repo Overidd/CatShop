@@ -1,10 +1,9 @@
 'use client';
-import { ListFilter } from 'lucide-react';
+import { ListFilter, Search } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useFilter } from '@/hooks/useFilter';
 import RangeSlider from '../slider/SliderRange';
-import { useState } from 'react';
-import { Search } from 'lucide-react'
+import { useEffect, useState } from 'react';
 
 type FilterType = {
    id: string;
@@ -118,12 +117,12 @@ export const Filter = () => {
       }
       updateUrlParams(currentParams);
    };
-
    const onOpenInputSearch = () => {
       document.querySelector('.inputSearch')?.classList.toggle('active');
    }
    return (
       <>
+
          <div className='basis-full m-1 md:hidden'>
             <form onSubmit={onParamPushSearch} className='w-fit ml-auto rounded-lg overflow-hidden relative'>
                <input
@@ -144,34 +143,24 @@ export const Filter = () => {
                </button>
             </form>
          </div>
-         {/* ${openFilter ? 'min-w-[55dvw] min-h-[25%] md:min-w-[21%]' : 'min-w-[5%] md:min-w-[21%] min-h-[0%]'} */}
-         <section
-            className={`md:p-2 bg-bgLateralcolumn rounded-xl animationFilterMovil absolute top-[0.2rem] z-10 md:static w-full md:max-w-[16rem] md:h-fit ${openFilter? 'max-w-[55dvw] max-h-[25%]' :'max-w-[15%] max-h-[2%]'} `}>
+         <section className={`h-fit md:p-2 bg-bgLateralcolumn rounded-xl animationFilterMovil md:animationFilterDeskt absolute z-10 md:static ${openFilter ? 'min-w-[50dvw] md:min-w-[15%] min-h-[25%]' : 'min-w-[5%] min-h-[0%]'}`}>
 
-            <button className="p-2 bg-bgLateralcolumn rounded-xl" onClick={() => setOpenFilter(!openFilter)}>
+            <button className="p-2" onClick={() => setOpenFilter(!openFilter)}>
                <ListFilter strokeWidth={'3'} size={'2rem'} />
             </button>
             <div className={`flex flex-col gap-2 p-4  ${openFilter ? 'flex' : 'hidden md:flex'}`}>
-               <fieldset className='md:space-y-6'>
-
-                  <form onSubmit={onParamPushSearch} className='bg-white rounded-md overflow-hidden hidden md:block'>
+               <fieldset className='md:space-y-5'>
+                  <form onSubmit={onParamPushSearch}>
                      <input
                         type="search"
                         placeholder="Buscar producto"
+                        className='rounded-md p-1 text-black outline-none w-fit hidden md:block'
                         name='search'
                         defaultValue={filter.search || ''}
                         autoComplete='off'
-                        maxLength={22}
-                        className='p-2 text-black outline-none align-middle w-[83%]'
                      />
-                     <button
-                        type='submit'
-                        className='align-middle inline-block p-1'
-                     >
-                        <Search className='' color='#48b' />
-                     </button>
+                     <input type="submit" hidden />
                   </form>
-
 
                   <RangeSlider
                      minPrice={Number(filter.priceRange.min ?? priceMin)}
@@ -186,7 +175,7 @@ export const Filter = () => {
                   <legend className="md:text-xl font-semibold">Categorías</legend>
                   {
                      category.map(({ id, value, label }) => (
-                        <label key={id} htmlFor={id} className='block cursor-pointer'>
+                        <label key={id} htmlFor={id} className='block'>
                            <input
                               type="checkbox"
                               id={id}
@@ -204,7 +193,7 @@ export const Filter = () => {
                <fieldset>
                   <legend className='md:text-xl font-semibold'>Marcas</legend>
                   {marca.map(({ id, value, label }) => (
-                     <label key={id} htmlFor={id} className='block cursor-pointer'>
+                     <label key={id} htmlFor={id} className='block'>
                         <input
                            type="checkbox"
                            id={id}

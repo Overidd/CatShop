@@ -35,6 +35,7 @@ export type ProductProps = {
    brand: string;
    date: string;
    img: ImgProps;
+   quantity?: number
 }
 
 export type DetailsProductAccessories = {

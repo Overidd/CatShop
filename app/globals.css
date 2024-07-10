@@ -51,7 +51,7 @@
 
    /* stylos que se aplican en componente Filter.ts para el filter animation */
    .animationFilterMovil{
-      transition: max-width 0.02s, max-height 0.1s;
+      transition: min-width 0.1s, min-height 0.2s;
    }
      
    .inputSearch{

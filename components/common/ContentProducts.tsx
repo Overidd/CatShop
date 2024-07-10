@@ -2,6 +2,7 @@
 import { ProductProps } from "@/lib/types"
 import { CardProducts } from "../cards";
 import { useFilter } from "@/hooks/useFilter";
+import { useStoreCart } from "../context/useStoreCart";
 
 interface Props {
    dataProducts: ProductProps[];
@@ -10,14 +11,20 @@ interface Props {
 export const ContentProducts = ({ dataProducts }: Props) => {
    const { filterProducts } = useFilter()
    const datafilter = filterProducts(dataProducts)
+   const { state } = useStoreCart()
 
-   console.log('DataFilter', datafilter)
+   const checkProductCart = (product: ProductProps) => {
+      return state.some(item => item.id === product.id)
+   }
+   console.log('DataFilter',)
    return (
       <section className="flex-1 grid grid-cols-2 gap-4 md:grid-cols-custom-products">
          {
-            datafilter.map(product => (
-               <CardProducts key={product.id} productProps={product} className="p-2 md:p-6" />
-            ))
+            datafilter.map(item => {
+               const isProductCart = checkProductCart(item)
+               return < CardProducts key={item.id} productProps={item} className="p-2 md:p-6" isProductCart={isProductCart} />
+            }
+            )
          }
       </section>
    )
