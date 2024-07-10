@@ -19,30 +19,35 @@ export const CartShop = () => {
    }
 
    return (
-      <section className={`bg-bgLateralcolumn fixed p-5 top-0 bottom-0 right-0 w-[80dvw] md:w-[20rem] z-30 transition-[transform] flex flex-col gap-2 ${openCard ? 'translate-x-0' : 'translate-x-[120%]'}`}>
-         <X className="cursor-pointer"
-            size={30}
-            strokeWidth={3}
-            onClick={openToggleCard}
-         />
-         <div className="py-4 space-y-2 overflow-y-auto overflow-hidden scroll-auto">
-            {
-               state.map(product => {
-                  priceCounter += product.price * (product.quantity || 1)
-                  return (
-                     <CardCartShop key={product.id} productProps={product} />
-                  )
-               })
-            }
-         </div>
-         <div className="mt-auto text-center space-y-4">
-            <small className=" text-2xl">S/ {priceCounter}</small>
-            <Button className="mt-auto"
-               bgColor="bg-bgBtnSecondary"
-               textColor="text-white"
+      <>
+         <section className={`bg-bgLateralcolumn fixed p-5 top-0 bottom-0 right-0 w-[80dvw] md:w-[20rem] z-30 transition-[transform] duration-300 flex flex-col gap-2 ${openCard ? 'translate-x-0' : 'translate-x-[120%]'}`}>
+            <X className="cursor-pointer"
+               size={30}
+               strokeWidth={3}
+               onClick={openToggleCard}
             />
-         </div>
-      </section>
+            <div className="py-4 space-y-2 overflow-y-auto overflow-hidden scroll-auto">
+               {
+                  state.map(product => {
+                     priceCounter += product.price * (product.quantity || 1)
+                     return (
+                        <CardCartShop key={product.id} productProps={product} />
+                     )
+                  })
+               }
+            </div>
+            <div className="mt-auto text-center space-y-4">
+               <small className=" text-2xl">S/ {priceCounter}</small>
+               <Button className="mt-auto"
+                  bgColor="bg-bgBtnSecondary"
+                  textColor="text-white"
+               />
+            </div>
+         </section>
+         {
+            openCard && <div className="fixed top-0 bottom-0 left-0 right-0 bg-[#0003] z-20" onClick={openToggleCard}></div>
+         }
+      </>
    )
 }
 

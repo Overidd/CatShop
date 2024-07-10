@@ -46,34 +46,54 @@
    } */
    .grid-cols-custom-products {
       grid-template-columns: repeat(auto-fit, minmax(5rem, 14.1rem));
+      grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
    }
-
 
    /* stylos que se aplican en componente Filter.ts para el filter animation */
-   .animationFilterMovil{
-      transition: min-width 0.1s, min-height 0.2s;
+   .animationFilter {
+      transition: min-width 0.06s, min-height 0.10s;
    }
-     
-   .inputSearch{
+
+   .inputSearch {
       width: 0dvw;
       transition: width 0.2s;
    }
+
    .inputSearch.active {
       width: 55dvw;
       padding: 0.66rem;
-  }
+   }
+   .checkboxStyle{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: #fff;
+      margin-top: 3px;
+      border-radius: 7px;
+   }
+   .checkboxStyle:checked{
+      
+      background-image: url('../public/check.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+   }
+
    /* stylos que se aplican en componente cardProducts.tsx para la opacidad con hover y icono */
-   .iconSearch{
+   .iconSearch {
       opacity: 0;
    }
-   .productImg:hover > img{
+
+   .productImg:hover>img {
       transition: opacity 0.5s;
       opacity: 0.8;
    }
-   .productImg:hover > .iconSearch{
+
+   .productImg:hover>.iconSearch {
       opacity: 100;
    }
-   
+
    /* .scrollCartShop{
       scrollbar-width: thin;
    } */

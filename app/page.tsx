@@ -191,8 +191,8 @@ export default function Home() {
                <CarouselCustom>
                   {
                      dataProductsOffers.map((item) => (
-                        <CarouselItem key={item.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                           <CardProducts productProps={item} className="h-[17rem] md:h-[27rem]" />
+                        <CarouselItem className="basis-1/2 md:basis-1/3 lg:basis-1/4" key={item.id}>
+                           <CardProducts className="h-[17rem] md:h-[27rem]" productProps={item} />
                         </CarouselItem>
                      ))
                   }

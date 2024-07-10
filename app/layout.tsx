@@ -24,10 +24,10 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="en" className="overflow-x-hidden">
       <body className={cn(roboto.className, 'text-textPrimary bg-bgSecondary overflow-x-hidden')}>
         <div className="min-h-dvh flex flex-col gap-10 w-dvw">
-
           <ModeDark>
             <ProductsProvider>
               <Menu hideMenu={['/']} />
+
               {children}
               <CartShop />
             </ProductsProvider>

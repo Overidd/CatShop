@@ -2,8 +2,8 @@
 import { ListFilter, Search } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useFilter } from '@/hooks/useFilter';
+import { useState } from 'react';
 import RangeSlider from '../slider/SliderRange';
-import { useEffect, useState } from 'react';
 
 type FilterType = {
    id: string;
@@ -122,28 +122,25 @@ export const Filter = () => {
    }
    return (
       <>
-
          <div className='basis-full m-1 md:hidden'>
             <form onSubmit={onParamPushSearch} className='w-fit ml-auto rounded-lg overflow-hidden relative'>
-               <input
+               <input className='py-[0.66rem] text-black outline-none align-middle inputSearch'
                   type="search"
                   placeholder="Buscar producto"
                   name='search'
                   defaultValue={filter.search || ''}
                   autoComplete='off'
                   maxLength={22}
-                  className='py-[0.66rem] text-black outline-none align-middle inputSearch'
                />
-               <button
+               <button className='p-[0.66rem] align-middle inline-block bg-white ml-auto cursor-pointer'
                   type='submit'
-                  className='p-[0.66rem] align-middle inline-block bg-white ml-auto cursor-pointer'
                   onClick={onOpenInputSearch}
                >
                   <Search className='' color='#48b' />
                </button>
             </form>
          </div>
-         <section className={`h-fit md:p-2 bg-bgLateralcolumn rounded-xl animationFilterMovil md:animationFilterDeskt absolute z-10 md:static ${openFilter ? 'min-w-[50dvw] md:min-w-[15%] min-h-[25%]' : 'min-w-[5%] min-h-[0%]'}`}>
+         <section className={`h-fit md:p-2 bg-bgLateralcolumn rounded-xl animationFilter md:animationFilterDeskt absolute z-10 md:static shadow-md shadow-[#0005] ${openFilter ? 'min-w-[50dvw] md:min-w-[15%] min-h-[20%]' : 'min-w-[5%] min-h-[0%]'}`}>
 
             <button className="p-2" onClick={() => setOpenFilter(!openFilter)}>
                <ListFilter strokeWidth={'3'} size={'2rem'} />
@@ -151,10 +148,9 @@ export const Filter = () => {
             <div className={`flex flex-col gap-2 p-4  ${openFilter ? 'flex' : 'hidden md:flex'}`}>
                <fieldset className='md:space-y-5'>
                   <form onSubmit={onParamPushSearch}>
-                     <input
+                     <input className='rounded-md p-1 text-black outline-none w-fit hidden md:block'
                         type="search"
                         placeholder="Buscar producto"
-                        className='rounded-md p-1 text-black outline-none w-fit hidden md:block'
                         name='search'
                         defaultValue={filter.search || ''}
                         autoComplete='off'
@@ -162,12 +158,11 @@ export const Filter = () => {
                      <input type="submit" hidden />
                   </form>
 
-                  <RangeSlider
+                  <RangeSlider className='w-[100%]'
                      minPrice={Number(filter.priceRange.min ?? priceMin)}
                      maxPrice={Number(filter.priceRange.max ?? priceMax)}
                      minRange={rangeMin}
                      maxRange={rangeMax}
-                     className='w-[100%]'
                      onParamPushRange={onParamPushRange}
                   />
                </fieldset>
@@ -176,16 +171,15 @@ export const Filter = () => {
                   {
                      category.map(({ id, value, label }) => (
                         <label key={id} htmlFor={id} className='block'>
-                           <input
+                           <input className='align-middle checkboxStyle'
                               type="checkbox"
                               id={id}
                               name="category"
                               value={value}
-                              className='align-middle'
                               onChange={onParamPushCheck}
                               checked={filter.category.includes(value)}
                            />
-                           <span className="ml-2 align-middle">{label}</span>
+                           <span className="ml-2 align-middle opacity-80">{label}</span>
                         </label>
                      ))
                   }
@@ -194,16 +188,15 @@ export const Filter = () => {
                   <legend className='md:text-xl font-semibold'>Marcas</legend>
                   {marca.map(({ id, value, label }) => (
                      <label key={id} htmlFor={id} className='block'>
-                        <input
+                        <input className='align-middle checkboxStyle'
                            type="checkbox"
                            id={id}
                            name="brand"
                            value={value}
-                           className='align-middle'
                            onChange={onParamPushCheck}
                            checked={filter.brand.includes(value)}
                         />
-                        <span className="ml-2">{label}</span>
+                        <span className="ml-2 align-middle opacity-80">{label}</span>
                      </label>
                   ))}
                </fieldset>
