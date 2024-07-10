@@ -22,7 +22,7 @@ export const ContentProducts = ({ dataProducts }: Props) => {
          {
             datafilter.map(item => {
                const isProductCart = checkProductCart(item)
-               return < CardProducts key={item.id} productProps={item} className="p-2 md:p-6" isProductCart={isProductCart} />
+               return <CardProducts className="p-2 md:p-6" key={item.id} productProps={item} isProductCart={isProductCart}/>
             }
             )
          }

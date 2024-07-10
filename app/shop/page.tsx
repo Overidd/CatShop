@@ -1,8 +1,5 @@
-import { CartShop } from "@/components/common/CartShop"
 import { ContentProducts } from "@/components/common/ContentProducts"
 import { Filter } from "@/components/common/Filter"
-import { ProductsProvider } from "@/components/context/ProductsProvider"
-import { Menu } from "@/components/navBar"
 import { ProductProps } from "@/lib/types"
 
 const dataProducts: ProductProps[] = [

@@ -22,15 +22,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
-      <body className={cn(roboto.className, 'text-textPrimary bg-bgSecondary min-h-dvh flex flex-col gap-10 w-dvw overflow-x-hidden')}>
-        <ModeDark>
-          <ProductsProvider>
-            <Menu hideMenu={['/']} />
-            {children}
-            <CartShop />
-          </ProductsProvider>
-          <Footer />
-        </ModeDark>
+      <body className={cn(roboto.className, 'text-textPrimary bg-bgSecondary overflow-x-hidden')}>
+        <div className="min-h-dvh flex flex-col gap-10 w-dvw">
+
+          <ModeDark>
+            <ProductsProvider>
+              <Menu hideMenu={['/']} />
+              {children}
+              <CartShop />
+            </ProductsProvider>
+            <Footer />
+          </ModeDark>
+        </div>
       </body>
     </html >
   );

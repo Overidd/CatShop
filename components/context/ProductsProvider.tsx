@@ -13,6 +13,7 @@ type ProductContextType = {
    clearCart: () => void;
    openToggleCard: () => void;
    openCard: boolean;
+   subtractQuantity: (productId: number) => void;
 };
 
 export const ProductContext = createContext<ProductContextType | undefined>(undefined)
@@ -50,7 +51,14 @@ export const ProductsProvider: React.FC<Prop> = ({ children }) => {
          type: ACTION_TYPE.CLEAR_CART
       })
    }
-   
+
+   const subtractQuantity = (productId: number) => {
+      // Disminuye la cantidad de un producto en el carrito
+      dispatch({
+         type: ACTION_TYPE.DECREMENT_QUANTITY,
+         payload: productId,
+      });
+   }
    const openToggleCard = () => {
       setOpenCard((opencard) => !opencard)
    }
@@ -63,6 +71,7 @@ export const ProductsProvider: React.FC<Prop> = ({ children }) => {
          clearCart,
          openToggleCard,
          openCard,
+         subtractQuantity,
       }}>
          {children}
       </ProductContext.Provider>
