@@ -179,7 +179,24 @@ const dataProducts: ProductProps[] = [
          "width": 300,
          "height": 300
       }
-   }
+   },
+   {
+      "id": 2000,
+      "price": 172,
+      "name": "Suéter cálido para gato",
+      "description": "Mantén a tu gato abrigado y cómodo con este suéter cálido de lana.",
+      "brand": "catsoup",
+      "availability": true,
+      "category": "ropa",
+      "date": "2023-01-01",
+      "img": {
+         "src": "/imgProducts/sueterCalidoGato.jpg",
+         "alt": "Product",
+         "width": 300,
+         "height": 300
+      }
+   },
+   
 ]
 
 

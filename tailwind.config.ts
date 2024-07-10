@@ -53,6 +53,29 @@ const config = {
         bgInput: '#ef8221', // Color de Fondo de los imputs
 
         bgQuestion: '#de5d00', // Color de Fondo de preguntas y respuestas
+
+        //Dark mode colors//
+
+        textPrimaryDark: '#fff', // Color de Texto principal
+
+        bgMenuDark: '#4487ba', // Color de Fondo del menú
+
+        bgPrimaryDark: '#e7770f', // Color de Fondo primario
+        bgSecondaryDark: '#ffa742', // Color de Fondo secundario
+
+        bgLateralcolumnDark: '#de5d00',    // Color de Fondo terciario
+
+        borderPrimaryDark: '#de5d00', // Color de Borde primario
+
+        bgCardDark: '#e7770f', // Color de Fondo de tarjetas
+        bgCategoryDark: '#ed8120', // Color de Fondo de categorías
+
+        bgBtnPrimaryDark: '#7dd957', // Color de Fondo del botón primario
+        bgBtnSecondaryDark: '#4487ba', // Color de Fondo del botón secundario
+
+        bgInputDark: '#ef8221', // Color de Fondo de los imputs
+
+        bgQuestionDark: '#de5d00', // Color de Fondo de preguntas y respuestas
       }
     },
   },
