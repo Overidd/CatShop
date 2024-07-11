@@ -4,6 +4,7 @@ import LogoCatshop from '@/public/LogoCatshop.png'
 import Image from "next/image"
 import Link from 'next/link'
 import { CartPayMethod } from "@/components/carts/CartPayMethod"
+import { CartPayDireccion } from "@/components/carts/CartPayDireccion"
 
 const page = () => {
    return (
@@ -26,7 +27,8 @@ const page = () => {
 
          <main>
             {/* <CartPay /> */}
-            <CartPayMethod/>
+            {/* <CartPayMethod/> */}
+            <CartPayDireccion/>
          </main>
 
       </div>

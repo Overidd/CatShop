@@ -1,30 +1,50 @@
+'use client'
+import { Button } from "../button/Button"
+import { InputRadio } from "../common/Inputs"
+import { useStoreCart } from "../context/useStoreCart"
 
 
 export const CartPayMethod = () => {
-   return (
-      <div className="">
-         <section>
-            <h1>Payment  method</h1>
-            <form action="" className="space-y-2">
-               <label htmlFor="card" className="space-x-2 block">
-                  <input type="radio" name="method" id="card" className="checkboxStyle align-middle"/>
-                  <span className="align-middle">Tarjeta de (creadio o debito) </span>
-               </label>
-               <label htmlFor="yape" className="space-x-2 block">
-                  <input type="radio" name="method" id="yape" className="checkboxStyle align-middle"/>
-                  <span className="align-middle">Yape</span>
-               </label>
-               <label htmlFor="plin" className="space-x-2 block">
-                  <input type="radio" name="method" id="plin" className="checkboxStyle align-middle"/>
-                  <span className="align-middle">Plin</span>
-               </label>
-               <label htmlFor="cash" className="space-x-2 block">
-                  <input type="radio" name="method" id="cash" className="checkboxStyle align-middle"/>
-                  <span className="align-middle">En efectivo (Delivery)</span>
-               </label>
-            </form>
-         </section>
+   const { state } = useStoreCart()
+   const priceTotal = state.reduce((total, item) => total + (item.price * (item.quantity || 1)), 0);
 
-      </div>
+   return (
+      <section className="bg-bgPrimary p-5 rounded-xl space-y-8 w-fit m-auto text-base md:text-lg ">
+         <h1 className=" text-xl md:text-2xl font-medium text-center">Elige el método de pago</h1>
+
+         <form action="" className="space-y-4">
+            <InputRadio
+               className="block"
+               id="card"
+               name="method"
+               text="Tarjeta de (creadio o debito)"
+            />
+            <InputRadio
+               className="block"
+               id="Yape"
+               name="method"
+               text="Yape"
+            />
+            <InputRadio
+               className="block"
+               id="plin"
+               name="method"
+               text="Plin"
+            />
+            <InputRadio
+               className="block"
+               id="cash"
+               name="method"
+               text="En efectivo (Delivery)"
+            />
+         </form>
+
+         <div className="text-center space-y-2">
+            <h2 className="text-xl md:text-2xl">Detalles</h2>
+            <p>Total: S/ {priceTotal}</p>
+         </div>
+         <Button bgColor="bg-bgBtnSecondary" text="Continuar con el pago" />
+         <p className="text-center">✅Safe Payment Powered By SecureIMP™</p>
+      </section>
    )
 }
