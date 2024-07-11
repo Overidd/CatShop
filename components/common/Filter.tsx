@@ -170,8 +170,8 @@ export const Filter = () => {
                   <legend className="md:text-xl font-semibold">Categorías</legend>
                   {
                      category.map(({ id, value, label }) => (
-                        <label key={id} htmlFor={id} className='block'>
-                           <input className='align-middle checkboxStyle'
+                        <label key={id} htmlFor={id} className='block cursor-pointer'>
+                           <input className='align-middle checkboxStyle cursor-pointer'
                               type="checkbox"
                               id={id}
                               name="category"
@@ -187,8 +187,8 @@ export const Filter = () => {
                <fieldset>
                   <legend className='md:text-xl font-semibold'>Marcas</legend>
                   {marca.map(({ id, value, label }) => (
-                     <label key={id} htmlFor={id} className='block'>
-                        <input className='align-middle checkboxStyle'
+                     <label key={id} htmlFor={id} className='block cursor-pointer'>
+                        <input className='align-middle checkboxStyle cursor-pointer'
                            type="checkbox"
                            id={id}
                            name="brand"

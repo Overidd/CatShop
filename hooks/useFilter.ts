@@ -33,7 +33,7 @@ export const useFilter = () => {
          const search = filter.search === null ||
             product.name.toLowerCase().startsWith(filter.search.toLowerCase())
 
-         const price = product.price >= parseInt(filter.priceRange.min?? '0') && product.price <= parseInt(filter.priceRange.max?? '200');
+         const price = product.price >= parseInt(filter.priceRange.min ?? '0') && product.price <= parseInt(filter.priceRange.max ?? '200');
 
          const category = filter.category.length === 0 || filter.category.includes(product.category.toLowerCase())
 

@@ -1,5 +1,7 @@
 'use client'
 import { useEffect, useState } from "react"
+import Link from "next/link"
+
 import { useStoreCart } from "../context/useStoreCart"
 import { X, CircleX } from 'lucide-react'
 import { ProductProps } from "@/lib/types"
@@ -18,9 +20,13 @@ export const CartShop = () => {
       return null;
    }
 
+   // const toPageCart = () => {
+   //    navigator.push('/cart')
+   // }
+
    return (
       <>
-         <section className={`bg-bgLateralcolumn fixed p-5 top-0 bottom-0 right-0 w-[80dvw] md:w-[20rem] z-30 transition-[transform] duration-300 flex flex-col gap-2 ${openCard ? 'translate-x-0' : 'translate-x-[120%]'}`}>
+         <section className={`bg-bgLateralcolumn fixed p-5 top-0 bottom-0 right-0 w-[80dvw] md:w-[20rem] z-30 transition-[transform] duration-300 flex flex-col gap-4 ${openCard ? 'translate-x-0' : 'translate-x-[120%]'}`}>
             <X className="cursor-pointer"
                size={30}
                strokeWidth={3}
@@ -36,13 +42,13 @@ export const CartShop = () => {
                   })
                }
             </div>
-            <div className="mt-auto text-center space-y-4">
-               <small className=" text-2xl">S/ {priceCounter}</small>
+            <small className="mt-auto text-2xl text-center">S/ {priceCounter}</small>
+            <Link href={'/cart'}>
                <Button className="mt-auto"
                   bgColor="bg-bgBtnSecondary"
                   textColor="text-white"
                />
-            </div>
+            </Link>
          </section>
          {
             openCard && <div className="fixed top-0 bottom-0 left-0 right-0 bg-[#0003] z-20" onClick={openToggleCard}></div>
@@ -56,7 +62,7 @@ interface Props {
    productProps: ProductProps;
 }
 const CardCartShop = ({ productProps }: Props) => {
-   const { removeCart, subtractQuantity, addTocart } = useStoreCart()
+   const { removeCart } = useStoreCart()
    const { img: { src, alt, height, width }, name, description, id, quantity } = productProps;
 
    return (
@@ -69,12 +75,6 @@ const CardCartShop = ({ productProps }: Props) => {
                width={width}
                height={height}
             />
-
-            <div className="absolute space-x-4 inset-0 m-auto h-fit w-fit font-bold text-2xl text-black">
-               <button className="rounded-[50%] bg-white w-8" onClick={() => subtractQuantity(id)}>-</button>
-               <button className="rounded-[50%] bg-white w-8" onClick={() => addTocart(productProps)}>+</button>
-               <span className="block rounded-[50%] bg-white w-8 text-center">{quantity}</span>
-            </div>
          </figure>
 
          <span className="text-sm md:text-base">{name}</span>

@@ -9,7 +9,7 @@ interface Props {
 
 export const CardCategory = ({ category }: Props) => {
    return (
-      <section className="grid grid-cols-2 md:grid-cols-custom-category gap-4 uppercase">
+      <section className="grid grid-cols-2 md:grid-cols-custom-category gap-10 uppercase">
          {
             category.map(({ id, category, img: { width, height, src, alt } }) => (
 
