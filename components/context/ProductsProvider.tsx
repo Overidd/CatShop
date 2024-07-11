@@ -19,7 +19,7 @@ type ProductContextType = {
 export const ProductContext = createContext<ProductContextType | undefined>(undefined)
 
 const init = () => {
-   const storedCart = typeof window !== 'undefined' ? localStorage.getItem('card') : null;
+   const storedCart = typeof window !== 'undefined' && localStorage.getItem('card');
    return storedCart ? JSON.parse(storedCart) : [];
 };
 

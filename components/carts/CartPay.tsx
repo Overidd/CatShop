@@ -5,7 +5,6 @@ import { useStoreCart } from "../context/useStoreCart"
 import { X, Plus, Minus } from "lucide-react"
 import { Button } from "../button/Button"
 
-
 export const CartPay = () => {
    const { state } = useStoreCart()
    let priceCounter = 0;
@@ -29,24 +28,24 @@ export const CartPay = () => {
             }
          </section >
 
-         <section className="bg-bgPrimary rounded-xl flex-1 p-8 gap-8 flex flex-col h-fit">
-            <h2 className="text-center text-2xl font-medium">Resumen de compra</h2>
+         <section className="bg-bgPrimary rounded-xl flex-1 p-8 gap-8 flex flex-col h-fit font-medium md:text-lg">
+            <h2 className="text-center text-xl md:text-2xl">Resumen de compra</h2>
             <p className="">
-               <span className="font-medium text-xl ">SubTotal</span>
-               <span className="float-right font-medium text-xl">S/ {priceCounter}</span>
+               <span>SubTotal</span>
+               <span className="float-right ">S/ {priceCounter}</span>
             </p>
 
-            <p className="">
-               <span className="font-medium text-xl">Descuento</span>
-               <span className="float-right font-medium text-xl">S/ 0.00</span>
+            <p>
+               <span>Descuento</span>
+               <span className="float-right ">S/ 0.00</span>
             </p>
-            <p className="">
-               <span className="font-medium text-xl">Total</span>
-               <span className="float-right font-medium text-xl">S/ {priceCounter}</span>
+            <p>
+               <span>Total</span>
+               <span className="float-right ">S/ {priceCounter}</span>
             </p>
             <div className="mt-auto space-y-4">
-               <Button text="Iniciar pago" className="text-xl" />
-               <Button text="Volver a la tienda" bgColor="bg-bgLateralcolumn" className="text-xl" />
+               <Button text="Iniciar pago" />
+               <Button text="Volver a la tienda" bgColor="bg-bgLateralcolumn" />
             </div>
          </section>
       </div>
@@ -65,8 +64,8 @@ const CartProducts = ({ productProps }: Props) => {
          <figure className="md:w-[70%] w-full">
             <img src={src} alt={alt} className="w-full h-full object-cover object-center rounded-xl md:rounded-none" />
          </figure>
-         <p className="self-center text-lg text-balance 2xl:text-[1.4rem]">{name}</p>
-         <small className="self-center font-medium text-xl md:col-auto">S/ {price}</small>
+         <p className="self-center text-lg text-balance">{name}</p>
+         <small className="self-center font-medium text-lg md:col-auto">S/ {price}</small>
 
          <div className="self-center space-x-2 md:col-auto row-span-1 ">
             <button className="bg-bgLateralcolumn rounded-[50%] py-[0.6rem] px-[0.6rem]"
@@ -74,7 +73,7 @@ const CartProducts = ({ productProps }: Props) => {
             >
                <Minus size={16} />
             </button>
-            <small className="text-xl">{quantity}</small>
+            <small className="text-lg">{quantity}</small>
             <button className="bg-bgLateralcolumn rounded-[50%] py-[0.6rem] px-[0.6rem]"
                onClick={() => addTocart(productProps)}
             >
@@ -82,7 +81,7 @@ const CartProducts = ({ productProps }: Props) => {
             </button>
          </div>
 
-         <small className="hidden md:block self-center font-medium text-xl">S/ {(quantity || 1) * price}</small>
+         <small className="hidden md:block self-center font-medium text-lg">S/ {(quantity || 1) * price}</small>
          <button className="cursor-pointer absolute top-2 right-2 md:static"
             onClick={() => removeCart(id)}
          >

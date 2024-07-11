@@ -49,11 +49,12 @@
       grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
    } */
    .grid-cols-custom1720px {
-      grid-template-columns: repeat(auto-fit, minmax(5rem, 14.2rem));
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 14rem));
       grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
    }
+
    .grid-cols-custom1920px {
-      grid-template-columns: repeat(auto-fit, minmax(5rem, 16.7rem));
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 16.5rem));
       grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
    }
 
@@ -79,7 +80,7 @@
       width: 1.6rem;
       height: 1.6rem;
       background-color: #fff;
-      margin-top: 3px;
+      /* margin-top: 3px; */
       border-radius: 6px;
    }
 
@@ -116,8 +117,41 @@
       grid-template-columns: 20% 30% repeat(4, 1fr);
       grid-template-rows: 8rem;
    }
+
    .gridColsCartHeader {
       grid-template-columns: 20% 30% repeat(4, 1fr);
    }
 
+
+   .menuStyles {
+      animation: menu both;
+      animation-timeline: view();
+      animation-range-end: cover 100%;
+      animation-range-start: cover 30%;
+   }
+
+   .listMenuStyles {
+      animation: listMenu 0.5s both;
+   }
+
+   @keyframes listMenu {
+      0% {}
+   }
+
+   @keyframes menu {
+      0% {}
+
+      5% {
+         /* border: 0; */
+         /* width: 100%; */
+         /* border-radius: 0 0 1rem 1rem; */
+      }
+
+      100% {
+         /* border-radius: 0; */
+         /* border: 0; */
+         /* width: 100%; */
+         /* border-radius: 0 0 1rem 1rem; */
+      }
+   }
 }

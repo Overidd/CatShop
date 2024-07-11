@@ -140,7 +140,7 @@ export const Filter = () => {
                </button>
             </form>
          </div>
-         <section className={`h-fit md:p-2 bg-bgLateralcolumn rounded-xl animationFilter md:animationFilterDeskt absolute z-10 md:static shadow-md shadow-[#0005] ${openFilter ? 'min-w-[50dvw] 2xl:min-w-[18%] min-h-[20%]' : 'min-w-[5%] 2xl:min-w-[18%] min-h-[0%]'}`}>
+         <section className={`h-fit md:p-2 bg-bgLateralcolumn rounded-xl animationFilter md:animationFilterDeskt absolute z-10 md:static shadow-md ${openFilter ? 'min-w-[50dvw] 2xl:min-w-[18%] min-h-[20%]' : 'min-w-[5%] 2xl:min-w-[18%] min-h-[0%]'}`}>
 
             <button className="p-2" onClick={() => setOpenFilter(!openFilter)}>
                <ListFilter strokeWidth={'3'} size={'2rem'} />
@@ -148,7 +148,7 @@ export const Filter = () => {
             <div className={`flex flex-col gap-2 p-4  ${openFilter ? 'flex' : 'hidden md:flex'}`}>
                <fieldset className='md:space-y-5'>
                   <form onSubmit={onParamPushSearch}>
-                     <input className='rounded-md p-1 text-black outline-none w-fit hidden md:block'
+                     <input className='rounded-md p-[0.7rem] text-black outline-none w-full hidden md:block'
                         type="search"
                         placeholder="Buscar producto"
                         name='search'
@@ -167,7 +167,7 @@ export const Filter = () => {
                   />
                </fieldset>
                <fieldset className='space-y-1'>
-                  <legend className="md:text-2xl font-semibold">Categorías</legend>
+                  <legend className="md:text-xl font-semibold">Categorías</legend>
                   {
                      category.map(({ id, value, label }) => (
                         <label key={id} htmlFor={id} className='block cursor-pointer'>
@@ -179,13 +179,13 @@ export const Filter = () => {
                               onChange={onParamPushCheck}
                               checked={filter.category.includes(value)}
                            />
-                           <span className="ml-2 align-middle opacity-80 md:text-xl">{label}</span>
+                           <span className="ml-2 align-middle opacity-80 md:text-lg">{label}</span>
                         </label>
                      ))
                   }
                </fieldset>
                <fieldset className='space-y-1'>
-                  <legend className='md:text-2xl font-semibold'>Marcas</legend>
+                  <legend className='md:text-sxl font-semibold'>Marcas</legend>
                   {marca.map(({ id, value, label }) => (
                      <label key={id} htmlFor={id} className='block cursor-pointer'>
                         <input className='align-middle checkboxStyle cursor-pointer'
@@ -196,7 +196,7 @@ export const Filter = () => {
                            onChange={onParamPushCheck}
                            checked={filter.brand.includes(value)}
                         />
-                        <span className="ml-2 align-middle opacity-80 md:text-xl">{label}</span>
+                        <span className="ml-2 align-middle opacity-80 md:text-lg">{label}</span>
                      </label>
                   ))}
                </fieldset>

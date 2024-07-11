@@ -64,7 +64,7 @@ interface Props {
 const CardCartShop = ({ productProps }: Props) => {
    const { removeCart } = useStoreCart()
    const { img: { src, alt, height, width }, name, description, id, quantity } = productProps;
-
+   
    return (
 
       <div className="flex gap-2 items-center text-cente">
@@ -76,7 +76,6 @@ const CardCartShop = ({ productProps }: Props) => {
                height={height}
             />
          </figure>
-
          <span className="text-sm md:text-base">{name}</span>
          <button className="" onClick={() => removeCart(id)}>
             <CircleX size={35} strokeWidth={2} />

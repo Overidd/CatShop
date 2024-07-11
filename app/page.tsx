@@ -5,11 +5,11 @@ import { CarouselCustom, CarouselItem, CarouselSlick } from '@/components/slider
 
 import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
 import { Menu } from "@/components/navBar";
-import { dataProducts } from "./shop/data/dataProducts";
+import { dataProducts } from "../data/dataProducts";
 const dataCategory: CategoryProps[] = [
    {
       id: 12,
-      category: 'Alimentos',
+      category: 'alimento',
       date: '2023-01-01',
       img: {
          src: '/imgcategory/categoryAlimento.png',
@@ -21,7 +21,7 @@ const dataCategory: CategoryProps[] = [
 
    {
       id: 13,
-      category: 'Juguetes',
+      category: 'juguete',
       date: '2023-01-01',
       img: {
          src: '/imgcategory/categoryJuguete.png',
@@ -32,7 +32,7 @@ const dataCategory: CategoryProps[] = [
    },
    {
       id: 14,
-      category: 'Accesorios',
+      category: 'accesorio',
       date: '2023-01-01',
       img: {
          src: '/imgcategory/categoryAccesorios.png',
@@ -43,7 +43,7 @@ const dataCategory: CategoryProps[] = [
    },
    {
       id: 15,
-      category: 'Ropa',
+      category: 'ropa',
       date: '2023-01-01',
       img: {
          src: '/imgcategory/categoryRopa.png',
@@ -54,7 +54,7 @@ const dataCategory: CategoryProps[] = [
    },
    {
       id: 16,
-      category: 'Higiene',
+      category: 'higiene',
       date: '2023-01-01',
       img: {
          src: '/imgcategory/categoryHigiene.png',
@@ -65,7 +65,7 @@ const dataCategory: CategoryProps[] = [
    },
    {
       id: 17,
-      category: 'Salud',
+      category: 'salud',
       date: '2023-01-01',
       img: {
          src: '/imgcategory/categorySalud.png',
@@ -107,12 +107,12 @@ const DataCarousel: CardOfferProps[] = [
 ]
 
 export default function Home() {
-   
+
    return (
-      <div className="bg-bgPrimary space-y-8">
+      <div className="bg-bgPrimary space-y-10">
          <Menu />
 
-         <div className="min-h-dvh flex flex-col gap-10 w-dvw bg-bgSecondary">
+         <div className="bg-bgSecondary space-y-10">
             <Header className="space-y-10 pb-3">
                <CarouselSlick speed={300} className="-mb-2">
                   {
@@ -127,7 +127,7 @@ export default function Home() {
                <CardCategory category={dataCategory} />
 
                <section className="space-y-10">
-                  <h2 className="text-center font-bold text-xl md:text-3xl">MEJORES OFERTAS</h2>
+                  <h2 className="text-center font-bold text-xl md:text-3xl uppercase">MEJORES OFERTAS</h2>
 
                   <CarouselCustom>
                      {

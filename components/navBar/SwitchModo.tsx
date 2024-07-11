@@ -1,7 +1,6 @@
 'use client'
 import { useDarkMode } from '@/hooks/useDarkMode'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 
 const iconModel = {
    sun: '/Sun_fill.svg',
@@ -16,13 +15,6 @@ interface Props {
 
 export const SwitchModo = ({ className }: Props) => {
    const { toggleDarkMode, darkMode } = useDarkMode()
-   const [mounted, setMounted] = useState(false);
-
-   useEffect(() => {
-      setMounted(true);
-   }, []);
-
-   if (!mounted) return null; // Render nothing on the server
    return (
       <div
          className={`contentSwitch bg-bgSecondary select-none ${className}`} onClick={toggleDarkMode}>

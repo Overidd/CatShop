@@ -21,7 +21,7 @@ const LinkNav = ({ href, children }: Props) => {
 };
 
 type LinkNav = {
-   closeMenu: () => void;
+   closeMenu?: () => void;
 }
 
 export const LinkMenu = ({ closeMenu }:LinkNav) => {

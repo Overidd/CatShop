@@ -41,7 +41,7 @@ export const Footer = () => {
 
                <ul className="space-y-2">
                   <h4 className="text-2xl md:text-3xl font-medium">Menu</h4>
-                  <LinkMenu />
+                  <LinkMenu  />
                </ul>
 
                <ul className="space-x-2 w-fit m-auto self-center md:m-0 md:ml-auto">

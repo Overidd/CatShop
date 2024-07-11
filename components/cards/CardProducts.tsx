@@ -8,23 +8,12 @@ import { useEffect, useState } from "react";
 interface Props {
    className?: string,
    productProps: ProductProps,
-   isProductCart?: boolean,
 }
 
-export const CardProducts = ({ productProps, className, isProductCart }: Props) => {
+export const CardProducts = ({ productProps, className }: Props) => {
 
-   const { addTocart } = useStoreCart()
    const { name, price, img: { alt, src, width, height } } = productProps
 
-   // Renderiza algo diferente en el lado del servidor para evitar errores
-   const [hydrated, setHydrated] = useState(false);
-   useEffect(() => {
-      setHydrated(true);
-   }, []);
-
-   if (!hydrated) {
-      return null;
-   }
 
    return (
       <div className={`text-center bg-bgCard rounded-xl flex flex-col gap-2 justify-between p-3 md:p-4 xl:p-5 ${className}`}>
@@ -34,21 +23,44 @@ export const CardProducts = ({ productProps, className, isProductCart }: Props) 
                src={src}
                alt={alt}
             />
-            <Search className="absolute top-0 left-0 right-0 bottom-0 m-auto iconSearch" 
-            size={40} />
+            <Search className="absolute top-0 left-0 right-0 bottom-0 m-auto iconSearch"
+               size={40} />
          </figure>
 
          <h5 className="opacity-80 text-sm md:text-xl text-balance">{name}</h5>
          <small className="text-base md:text-xl">S/ {price}</small>
-         <button className="bg-bgLateralcolumn text-white py-2 sm:py-3 md:py-4 rounded-xl w-full flex justify-center md:text-xl"
-            onClick={() => addTocart(productProps)}>
-            {
-               isProductCart
-                  ? <BaggageClaim />
-                  : 'Comprar'
-            }
-         </button>
+         <ButtoIsCart product={productProps} />
       </div>
    )
 }
-{/* <img src={src} alt={alt} className="rounded-xl min-h-[40%] md:h-[60%] object-cover object-center" /> */ }
+
+type ButtoType = {
+   product: any
+}
+
+const ButtoIsCart = ({ product }: ButtoType) => {
+   const { addTocart, state } = useStoreCart()
+
+   const checkProductCart = (product: ProductProps) => {
+      return state.some(item => item.id === product.id)
+   }
+
+   // Renderiza algo diferente en el lado del servidor para evitar errores
+   const [hydrated, setHydrated] = useState(false);
+   useEffect(() => {
+      setHydrated(true);
+   }, []);
+
+
+   return (
+      <button className=" text-white rounded-xl w-full relative overflow-hidden"
+         onClick={() => addTocart(product)}>
+
+         <div className="bg-bgLateralcolumn py-3 md:py-4">Comprar</div>
+         <div className={`py-3 md:py-4 bg-bgLateralcolumn absolute transition translate-y-[100%] inset-0 ${hydrated && checkProductCart(product) ? 'translate-y-[0%]' : 'translate-y-[100%]'}`}>
+            <BaggageClaim className="mx-auto" />
+         </div>
+
+      </button>
+   )
+}

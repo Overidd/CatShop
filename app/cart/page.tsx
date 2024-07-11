@@ -21,11 +21,11 @@ const page = () => {
             <button className="align-middle">
                <ChevronLeft fontSize={50} strokeWidth={3} />
             </button>
-            <span className="align-middle font-medium text-xl">Volver</span>
+            <span className="align-middle font-medium text-lg md:text-xl">Volver</span>
          </Link>
 
          <main>
-            <CartPay />
+            {/* <CartPay /> */}
             <CartPayMethod/>
          </main>
 
