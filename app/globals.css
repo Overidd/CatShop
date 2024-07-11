@@ -44,8 +44,16 @@
    /* .grid-cols-custom-products {
       grid-template-columns: repeat(auto-fit, minmax(8rem, 14.7rem));
    } */
-   .grid-cols-custom-products {
-      grid-template-columns: repeat(auto-fit, minmax(5rem, 14.1rem));
+   /* .grid-cols-custom-products {
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 15.2rem));
+      grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
+   } */
+   .grid-cols-custom1720px {
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 14.2rem));
+      grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
+   }
+   .grid-cols-custom1920px {
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 16.7rem));
       grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
    }
 
@@ -63,7 +71,8 @@
       width: 55dvw;
       padding: 0.66rem;
    }
-   .checkboxStyle{
+
+   .checkboxStyle {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
@@ -73,8 +82,9 @@
       margin-top: 3px;
       border-radius: 6px;
    }
-   .checkboxStyle:checked{
-      
+
+   .checkboxStyle:checked {
+
       background-image: url('../public/check.svg');
       background-repeat: no-repeat;
       background-position: center;
@@ -97,12 +107,17 @@
    /* .scrollCartShop{
       scrollbar-width: thin;
    } */
-    .stickyStyle{
+   .stickyStyle {
       position: fixed;
       top: 0;
-    }
-    .gridColsCart{
-      grid-template-columns: 1fr 30% repeat(4, 1fr);
-    }
-    
+   }
+
+   .gridColsCart {
+      grid-template-columns: 20% 30% repeat(4, 1fr);
+      grid-template-rows: 8rem;
+   }
+   .gridColsCartHeader {
+      grid-template-columns: 20% 30% repeat(4, 1fr);
+   }
+
 }

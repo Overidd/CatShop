@@ -29,22 +29,23 @@ export const CardProducts = ({ productProps, className, isProductCart }: Props) 
    return (
       <div className={`text-center bg-bgCard rounded-xl flex flex-col gap-2 justify-between p-3 md:p-4 xl:p-5 ${className}`}>
 
-         <figure className="basis-[0%] min-h-[38%] md:min-h-[43%] 2xl:min-h-[45%] min-w-full relative cursor-pointer productImg">
+         <figure className="bg-[#074f86] basis-[0%] min-h-[38%] md:min-h-[43%] 2xl:min-h-[45%] min-w-full relative cursor-pointer productImg overflow-hidden rounded-xl">
             <img className="w-full h-full object-cover object-center rounded-xl"
                src={src}
                alt={alt}
             />
-            <Search className="absolute top-0 left-0 right-0 bottom-0 m-auto iconSearch" size={40} />
+            <Search className="absolute top-0 left-0 right-0 bottom-0 m-auto iconSearch" 
+            size={40} />
          </figure>
 
-         <h5 className="opacity-80 text-sm md:text-base ">{name}</h5>
+         <h5 className="opacity-80 text-sm md:text-xl text-balance">{name}</h5>
          <small className="text-base md:text-xl">S/ {price}</small>
-         <button className="bg-bgLateralcolumn text-white py-2 sm:py-3 md:py-4 rounded-xl w-full flex justify-center"
+         <button className="bg-bgLateralcolumn text-white py-2 sm:py-3 md:py-4 rounded-xl w-full flex justify-center md:text-xl"
             onClick={() => addTocart(productProps)}>
             {
                isProductCart
                   ? <BaggageClaim />
-                  : 'Buy'
+                  : 'Comprar'
             }
          </button>
       </div>

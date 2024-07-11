@@ -5,16 +5,17 @@ import { CarouselCustom, CarouselItem, CarouselSlick } from '@/components/slider
 
 import { CardOfferProps, CategoryProps, ProductProps } from "@/lib/types";
 import { Menu } from "@/components/navBar";
+import { dataProducts } from "./shop/data/dataProducts";
 const dataCategory: CategoryProps[] = [
    {
       id: 12,
       category: 'Alimentos',
       date: '2023-01-01',
       img: {
-         src: '/category/categoryAlimento.png',
+         src: '/imgcategory/categoryAlimento.png',
          alt: 'Alimentos',
-         width: 200,
-         height: 200,
+         width: 520,
+         height: 520,
       }
    },
 
@@ -23,10 +24,10 @@ const dataCategory: CategoryProps[] = [
       category: 'Juguetes',
       date: '2023-01-01',
       img: {
-         src: '/category/categoryJuguete.png',
+         src: '/imgcategory/categoryJuguete.png',
          alt: 'Juguetes',
-         width: 200,
-         height: 200,
+         width: 520,
+         height: 520,
       }
    },
    {
@@ -34,10 +35,10 @@ const dataCategory: CategoryProps[] = [
       category: 'Accesorios',
       date: '2023-01-01',
       img: {
-         src: '/category/categoryAccesorios.png',
+         src: '/imgcategory/categoryAccesorios.png',
          alt: 'Accesorios',
-         width: 200,
-         height: 200,
+         width: 520,
+         height: 520,
       }
    },
    {
@@ -45,10 +46,10 @@ const dataCategory: CategoryProps[] = [
       category: 'Ropa',
       date: '2023-01-01',
       img: {
-         src: '/category/categoryRopa.png',
+         src: '/imgcategory/categoryRopa.png',
          alt: 'Ropa',
-         width: 200,
-         height: 200,
+         width: 520,
+         height: 520,
       }
    },
    {
@@ -56,10 +57,10 @@ const dataCategory: CategoryProps[] = [
       category: 'Higiene',
       date: '2023-01-01',
       img: {
-         src: '/category/categoryHigiene.png',
+         src: '/imgcategory/categoryHigiene.png',
          alt: 'Higiene',
-         width: 200,
-         height: 200,
+         width: 520,
+         height: 520,
       }
    },
    {
@@ -67,79 +68,15 @@ const dataCategory: CategoryProps[] = [
       category: 'Salud',
       date: '2023-01-01',
       img: {
-         src: '/category/categorySalud.png',
+         src: '/imgcategory/categorySalud.png',
          alt: 'Salud',
-         width: 200,
-         height: 200,
+         width: 520,
+         height: 520,
       }
    },
+
 ]
-const dataProductsOffers: ProductProps[] = [
-   {
-      id: 2000,
-      price: 150,
-      name: 'Product',
-      description: `Diversión garantizada para tu gato con nuestra pelotita juguete`,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products1.webp',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2001,
-      price: 150,
-      name: 'Product',
-      description: ` Juguete Para Gato Dispensador De Croceta  Juego Resorte`,
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products2.png',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2002,
-      price: 150,
-      name: 'Product',
-      description: 'Product 3',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products3.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-   {
-      id: 2003,
-      price: 150,
-      name: 'Product',
-      description: 'Product 4',
-      brand: 'marca',
-      availability: true,
-      category: 'Juguetes',
-      date: '2023-01-01',
-      img: {
-         src: '/imgProducts/products4.jpg',
-         alt: 'Product',
-         width: 300,
-         height: 300,
-      }
-   },
-]
+
 const DataCarousel: CardOfferProps[] = [
    {
       id: 154,
@@ -170,7 +107,7 @@ const DataCarousel: CardOfferProps[] = [
 ]
 
 export default function Home() {
-
+   
    return (
       <div className="bg-bgPrimary space-y-8">
          <Menu />
@@ -190,11 +127,11 @@ export default function Home() {
                <CardCategory category={dataCategory} />
 
                <section className="space-y-10">
-                  <h2 className="text-center font-bold text-xl md:text-3xl">Mejores ofertas</h2>
+                  <h2 className="text-center font-bold text-xl md:text-3xl">MEJORES OFERTAS</h2>
 
                   <CarouselCustom>
                      {
-                        dataProductsOffers.map((item) => (
+                        dataProducts.map((item) => (
                            <CarouselItem className="basis-1/2 md:basis-1/3 lg:basis-1/4" key={item.id}>
                               <CardProducts className="h-[17rem] md:h-[27rem]" productProps={item} />
                            </CarouselItem>

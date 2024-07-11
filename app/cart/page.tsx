@@ -7,7 +7,7 @@ import { CartPayMethod } from "@/components/carts/CartPayMethod"
 
 const page = () => {
    return (
-      <div className="min-h-dvh w-[90%] m-auto max-w-7xl space-y-5" >
+      <div className="min-h-dvh w-[90%] m-auto space-y-5" >
 
          <header className="bg-bgMenu basis-[30%] rounded-lg mt-4 p-2">
             <Image className="cursor-pointer"
@@ -21,7 +21,7 @@ const page = () => {
             <button className="align-middle">
                <ChevronLeft fontSize={50} strokeWidth={3} />
             </button>
-            <span className="align-middle font-medium text-lg">Volver</span>
+            <span className="align-middle font-medium text-xl">Volver</span>
          </Link>
 
          <main>

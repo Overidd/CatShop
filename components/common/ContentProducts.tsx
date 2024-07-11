@@ -18,7 +18,7 @@ export const ContentProducts = ({ dataProducts }: Props) => {
    }
    console.log('DataFilter',)
    return (
-      <section className="flex-1 grid grid-cols-2 gap-4 md:grid-cols-custom-products">
+      <section className="flex-1 grid grid-cols-2 gap-4 md:grid-cols-custom1720px 2xl:grid-cols-custom1920px ">
          {
             datafilter.map(item => {
                const isProductCart = checkProductCart(item)
