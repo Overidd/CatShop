@@ -61,13 +61,15 @@ const ButtoIsCart = ({ product }: ButtoType) => {
    useEffect(() => {
       setHydrated(true);
    }, []);
-
+   if(!hydrated){
+      return <div className="bg-bgLateralcolumn py-3 md:py-4 rounded-xl">Comprar</div>
+   }
    return (
       <button className=" text-white rounded-xl w-full relative overflow-hidden"
          onClick={() => addTocart(product)}>
 
          <div className="bg-bgLateralcolumn py-3 md:py-4">Comprar</div>
-         <div className={`py-3 md:py-4 bg-bgLateralcolumn absolute transition translate-y-[100%] inset-0 ${hydrated && checkProductCart(product) ? 'translate-y-[1%]' : 'translate-y-[100%]'}`}>
+         <div className={`py-3 md:py-4 bg-bgLateralcolumn absolute transition translate-y-[100%] inset-0 ${checkProductCart(product) ? 'translate-y-[1px]' : 'translate-y-full'}`}>
             <BaggageClaim className="mx-auto" />
          </div>
       </button>
