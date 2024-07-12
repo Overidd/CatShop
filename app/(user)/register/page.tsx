@@ -8,7 +8,7 @@ const page = () => {
   return (
       <section className="min-h-[60dvh] grid grid-cols-1 md:auto-rows-[36rem] 2xl:auto-rows-[40rem] md:grid-cols-2 animate__animated animate__slideInRight">
         <figure className="rounded-xl max-h-full overflow-hidden hidden md:block">
-          <img className="w-full h-full object-cover object-" src="/imgLogin.jpeg" alt="img" />
+          <img className="w-full h-full object-cover object-" src="/imagenRegister.png" alt="img" />
         </figure>
         <div className="flex flex-col justify-center items-center gap-4">
           <h1 className="font-bold text-xl md:text-2xl">Registrate</h1>

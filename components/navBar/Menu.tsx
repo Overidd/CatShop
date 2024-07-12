@@ -31,15 +31,15 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
 
    return (
       !hiddenMenu && (
-         <nav className="bg-bgMenu flex p-4 gap-4 z-20 w-[90%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2 menuStyles">
+         <nav className="bg-bgMenu flex px-4 py-2 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2 menuStyles">
             <Link href={'/'}>
                <Image className="cursor-pointer"
                   src={LogoCatshop}
                   alt="Logo"
-                  width={80}
+                  width={100}
                />
             </Link>
-            <button className="ml-auto md:order-1 cursor-pointer relative" onClick={openToggleCard}>
+            <button className="ml-auto md:order-1 cursor-pointer relative" onClick={() => openToggleCard()}>
                <ShoppingCart
                   size={30}
                   strokeWidth={2}
@@ -48,13 +48,15 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
             </button>
             <MenuIcon className="cursor-pointer md:hidden"
                onClick={handleOpenMenu}
+               strokeWidth={2}
+               size={30}
             />
 
             <ul
                className={`bg-bgLateralcolumn text-center absolute text-xl py-8 md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
             >
                <LinkMenu closeMenu={() => setOpenMenu((close) => !close)} />
-               <SwitchModo className='mx-auto md:mx-0 md:ml-auto' />
+               <SwitchModo className='mx-auto md:mx-0 md:ml-auto'/>
             </ul>
          </nav>
       )
