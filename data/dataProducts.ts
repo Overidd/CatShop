@@ -136,6 +136,7 @@ export const dataProducts: ProductProps[] = [
       "id": 2008,
       "price": 45,
       "name": "Alimento húmedo para gatos",
+      'discount': 15,
       "description": "Delicioso alimento húmedo en gelatina para gatos exigentes.",
       "brand": "catsoup",
       "availability": true,

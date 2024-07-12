@@ -16,8 +16,8 @@ export function SkeletonCard() {
 
 export function SkeletonCart() {
    return (
-      <div className="flex flex-col gap-1 bg-bgCategory overflow-hidden space-y-4">
-         <Skeleton className="h-[140px] w-full rounded-xl bg-bgCategory" />
+      <div className="rounded-xl bg-bgCategory overflow-hidden">
+         <Skeleton className="h-[140px] w-full bg-bgCategory" />
       </div>
    )
 }

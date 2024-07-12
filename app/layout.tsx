@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
    return (
       <html lang="en">
-         <body className={cn(roboto.className, 'text-textPrimary bg-bgSecondary min-h-dvh flex flex-col gap-10 overflow-x-hidden')}>
+         <body className={cn(roboto.className, 'text-textPrimary bg-bgSecondary overflow-x-hidden')}>
             <ModeDark>
                <ProductsProvider>
 

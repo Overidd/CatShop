@@ -14,12 +14,10 @@ export type CategoryProps = {
 export type CardOfferProps = {
    id: number
    name: string;
-   price: number,
-   discount?: number,
-   description?: string;
    category: string;
+   discount: number;
+   description?: string;
    availability: boolean,
-   brand: string;
    date: string;
    img: ImgProps;
 }

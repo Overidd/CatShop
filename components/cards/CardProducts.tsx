@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import { ProductProps } from "@/lib/types"
-import { Search, BaggageClaim } from 'lucide-react';
+import { Search, BaggageClaim, ShoppingCart } from 'lucide-react';
 import { useStoreCart } from "../context/useStoreCart";
 import { useEffect, useState, Suspense } from "react";
 import { useRouter } from "next/navigation";
@@ -13,11 +13,11 @@ interface Props {
 }
 
 export const CardProducts = ({ productProps, className }: Props) => {
+   const { id, name, price, discount, img: { alt, src, width, height } } = productProps;
+   const navigation = useRouter();
 
-   const { id, name, price, discount, img: { alt, src, width, height } } = productProps
-   const navigation = useRouter()
-   const offSale = discount !== undefined;
-   const discountPrice = price - (price * ((discount || 100) / 100))
+   const offSale = discount !== undefined;;
+   const discountPrice = price - (price * ((discount || 100) / 100));
    const toDetails = () => {
       console.log('Hola Search')
       navigation.push(`/shop/${id}`)

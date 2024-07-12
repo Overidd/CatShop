@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function Layout({ children, }: Readonly<{ children: React.ReactNode; }>) {
    return (
-      <div className="min-h-dvh w-[90%] m-auto space-y-5" >
+      <div className="min-h-dvh w-[90%] m-auto space-y-10" >
 
          <header className="bg-bgMenu basis-[30%] rounded-lg mt-4 p-2">
             <Link href={'/'}>

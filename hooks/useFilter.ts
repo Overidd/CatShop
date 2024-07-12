@@ -12,6 +12,7 @@ export const useFilter = () => {
          min: searchParams.get('min'),
          max: searchParams.get('max'),
       },
+      discount: searchParams.get('discount'),
       category: searchParams.getAll('category'),
       brand: searchParams.getAll('brand'),
    })
@@ -23,6 +24,7 @@ export const useFilter = () => {
             min: searchParams.get('min'),
             max: searchParams.get('max'),
          },
+         discount: searchParams.get('discount'),
          category: searchParams.getAll('category'),
          brand: searchParams.getAll('brand'),
       })
@@ -39,7 +41,9 @@ export const useFilter = () => {
 
          const brand = filter.brand.length === 0 || filter.brand.includes(product.brand.toLowerCase())
 
-         return price && search && category && brand
+         const discount = filter.discount === null || String(product.discount) === filter.discount || filter.discount === 'todo' && product.discount;
+
+         return price && search && category && brand && discount
       });
    };
 

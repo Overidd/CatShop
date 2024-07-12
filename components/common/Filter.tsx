@@ -107,7 +107,6 @@ export const Filter = () => {
    const onParamPushCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value, checked } = event.target;
       const currentParams = new URLSearchParams(window.location.search);
-
       if (checked) {
          currentParams.append(name, value);
       } else {
@@ -117,6 +116,19 @@ export const Filter = () => {
       }
       updateUrlParams(currentParams);
    };
+
+   const onParamPushCheckDis = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, checked } = event.target;
+      const currentParams = new URLSearchParams(window.location.search);
+      if (checked) {
+         currentParams.append(name, 'todo');
+      } else {
+         
+         currentParams.delete(name);
+      }
+      updateUrlParams(currentParams);
+   }
+
    const onOpenInputSearch = () => {
       document.querySelector('.inputSearch')?.classList.toggle('active');
    }
@@ -142,10 +154,24 @@ export const Filter = () => {
          </div>
          <section className={`h-fit md:p-2 bg-bgLateralcolumn rounded-xl animationFilter md:animationFilterDeskt absolute z-10 md:static shadow-md ${openFilter ? 'min-w-[50dvw] md:min-w-[18%] min-h-[20%]' : 'min-w-[5%] md:min-w-[18%] min-h-[0%]'}`}>
 
-            <button className="p-2" onClick={() => setOpenFilter(!openFilter)}>
+            <button className="p-2 md:hidden" onClick={() => setOpenFilter(!openFilter)}>
                <ListFilter strokeWidth={'3'} size={'2rem'} />
             </button>
+
             <div className={`flex flex-col gap-2 p-4  ${openFilter ? 'flex' : 'hidden md:flex'}`}>
+               <label htmlFor={'discount'} className='cursor-pointer'>
+                  <input className='align-middle checkboxStyle cursor-pointer'
+                     type="checkbox"
+                     id={'discount'}
+                     name="discount"
+                     value={'discount'}
+                     onChange={onParamPushCheckDis}
+                     checked={Boolean(filter.discount)}
+                  />
+                  <span className="ml-2 align-middle opacity-80 md:text-lg">
+                     Ofertas
+                  </span>
+               </label>
                <fieldset className='md:space-y-5'>
                   <form onSubmit={onParamPushSearch}>
                      <input className='rounded-md p-[0.7rem] text-black outline-none w-full hidden md:block'
