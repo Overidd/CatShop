@@ -53,7 +53,7 @@ export const dataProducts: ProductProps[] = [
    {
       "id": 2003,
       "price": 112,
-      'discount': 30,
+      'discount': 14,
       "name": "Collar con cascabel",
       "description": "Elegante collar con cascabel para gatos, ajustable y seguro.",
       "brand": "gaty",
@@ -70,6 +70,7 @@ export const dataProducts: ProductProps[] = [
    {
       "id": 2004,
       "price": 123,
+      'discount': 14,
       "name": "Pelota interactiva para gatos",
       "description": "Diviértete viendo a tu gato jugar con esta pelota interactiva.",
       "brand": "catsoup",

@@ -26,5 +26,18 @@ export const dataPromotion: CardOfferProps[] = [
          src: '/imgOffers/catoffers2.png',
          alt: 'Productos para gatos',
       }
+   },
+   {
+      id: 451,
+      name: 'Product',
+      description: '',
+      category: 'higiene',
+      discount: 50,
+      availability: true,
+      date: '2023-01-01',
+      img: {
+         src: '/imgOffers/catoffers2.png',
+         alt: 'Productos para gatos',
+      }
    }
 ]
