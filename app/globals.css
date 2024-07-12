@@ -41,7 +41,7 @@
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
    }
    .grid-cols-custom1720px {
-      grid-template-columns: repeat(auto-fit, minmax(5rem, 14rem));
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 13.7rem));
       grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
    }
 
