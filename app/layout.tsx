@@ -27,7 +27,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             <ModeDark>
                <ProductsProvider>
 
-                  <Menu hideMenu={['/', '/cart']} />
+                  <Menu hideMenu={['/', '/cart', '/login',  '/register']} />
 
                   {children}
                   <CartShop />

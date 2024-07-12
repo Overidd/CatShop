@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from "react"
+import { usePathname } from 'next/navigation'
 import Link from "next/link"
 
 import { useStoreCart } from "../context/useStoreCart"
@@ -18,6 +19,11 @@ export const CartShop = () => {
    useEffect(() => {
       setHydrated(true);
    }, []);
+   const param = usePathname()
+   useEffect(() => {
+      openToggleCard(false)
+   }, [param])
+
    if (!hydrated) {
       return null;
    }
@@ -32,7 +38,7 @@ export const CartShop = () => {
             <X className="cursor-pointer"
                size={30}
                strokeWidth={3}
-               onClick={openToggleCard}
+               onClick={() => openToggleCard()}
             />
             {isProductCart && <div className="py-4 space-y-2 overflow-y-auto overflow-hidden scroll-auto">
                {
@@ -61,7 +67,7 @@ export const CartShop = () => {
                </div>}
          </section>
          {
-            openCard && <div className="fixed top-0 bottom-0 left-0 right-0 bg-[#0003] z-20" onClick={openToggleCard}></div>
+            openCard && <div className="fixed top-0 bottom-0 left-0 right-0 bg-[#0003] z-20" onClick={() => openToggleCard()}></div>
          }
       </>
    )
