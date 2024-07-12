@@ -3,9 +3,10 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 
 import { useStoreCart } from "../context/useStoreCart"
-import { X, CircleX,ShoppingCart   } from 'lucide-react'
+import { X, CircleX, ShoppingCart } from 'lucide-react'
 import { ProductProps } from "@/lib/types"
 import { Button } from "../button/Button"
+import { ImgDiscount } from "../common/CardoffSale"
 
 export const CartShop = () => {
    const { state, openToggleCard, openCard } = useStoreCart()
@@ -55,7 +56,7 @@ export const CartShop = () => {
 
             {!isProductCart &&
                <div className="self-center mt-[80%] space-y-4">
-                  <ShoppingCart className="mx-auto" size={50}/>
+                  <ShoppingCart className="mx-auto" size={50} />
                   <p>Tu carrito esta vacío</p>
                </div>}
          </section>
@@ -72,7 +73,8 @@ interface Props {
 }
 const CardCartShop = ({ productProps }: Props) => {
    const { removeCart } = useStoreCart()
-   const { img: { src, alt, height, width }, name, description, id, quantity } = productProps;
+   const { img: { src, alt, height, width }, name, description, id, quantity, discount } = productProps;
+   const offSale = discount !== undefined
 
    return (
 
@@ -84,6 +86,10 @@ const CardCartShop = ({ productProps }: Props) => {
                width={width}
                height={height}
             />
+            {
+               offSale &&
+               <ImgDiscount discount={discount} />
+            }
          </figure>
          <span className="text-sm md:text-base">{name}</span>
          <button className="" onClick={() => removeCart(id)}>

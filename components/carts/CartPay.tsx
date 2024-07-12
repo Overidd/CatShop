@@ -7,6 +7,7 @@ import { Button } from "../button/Button"
 import { useState, Suspense, useEffect } from "react"
 import { SkeletonCart, SkeletonCard } from "../common/SkeletonCard"
 import { useRouter } from "next/navigation"
+import { PriceDiscount,ImgDiscount } from "../common/CardoffSale"
 
 export const CartPay = () => {
    const { state } = useStoreCart()
@@ -70,8 +71,6 @@ const CartProducts = ({ productProps }: Props) => {
    const { img: { src, alt, height, width }, name, description, id, quantity, price, discount } = productProps;
    const { addTocart, subtractQuantity, removeCart } = useStoreCart()
    const offSale = discount !== undefined
-   const discountPrice = price - (price * ((discount || 100) / 100))
-
    const [loagind, setloagind] = useState(false)
    useEffect(() => {
       const carga = setInterval(() => {
@@ -86,25 +85,20 @@ const CartProducts = ({ productProps }: Props) => {
       return <SkeletonCart />
    }
 
-
    return (
       <div className="bg-bgPrimary relative grid grid-cols-2 gap-4 p-3 md:p-0 md:gap-0 justify-items-center md:gridColsCart rounded-xl">
          <figure className="md:w-[70%] w-full">
             <img src={src} alt={alt} className="w-full h-full object-cover object-center rounded-xl md:rounded-none" />
 
             {
-               offSale && <div className="absolute bg-bgInput left-0 top-0 p-[0.4rem] px-3 font-bold text-xl discount">
-                  <small>-{discount}%</small>
-               </div>
+               offSale && <ImgDiscount discount={discount}/>
             }
          </figure>
          <p className="self-center text-lg text-balance">{name}</p>
          {/* <small className="self-center font-medium text-lg md:col-auto">S/ {price}</small> */}
          {
             offSale
-               ? <p className="font-medium text-base md:text-lg self-center ">
-                  <small className="line-through text-lg opacity-80">{price}</small> S/ <small className=" md:text-xl">{discountPrice}</small>
-               </p>
+               ? <PriceDiscount  discount={discount} price={price}/>
                : <small className=" font-medium md:text-lg self-center ">S/ {price}</small>
          }
 

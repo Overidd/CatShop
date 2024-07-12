@@ -1,6 +1,5 @@
 import { ContentProducts } from "@/components/common/ContentProducts"
 import { Filter } from "@/components/common/Filter"
-import { ProductProps } from "@/lib/types"
 import { dataProducts } from "../../data/dataProducts"
 
 
