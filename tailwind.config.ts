@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -33,30 +33,32 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       colors: {
-        textPrimary: '#fff', // Color de Texto principal
+        textPrimary: "#fff", // Color de Texto principal
 
-        bgMenu: '#4487ba', // Color de Fondo del menú
+        bgMenu: "#4487ba", // Color de Fondo del menú
 
-        bgPrimary: '#e7770f', // Color de Fondo primario
-        bgSecondary: '#ffa742', // Color de Fondo secundario
+        bgPrimary: "#e7770f", // Color de Fondo primario
+        bgSecondary: "#ffa742", // Color de Fondo secundario
 
-        bgLateralcolumn: '#de5d00',    // Color de Fondo terciario
+        bgLateralcolumn: "#de5d00", // Color de Fondo terciario
 
-        borderPrimary: '#de5d00', // Color de Borde primario
+        borderPrimary: "#de5d00", // Color de Borde primario
 
-        bgCard: '#e7770f', // Color de Fondo de tarjetas
-        bgCategory: '#ed8120', // Color de Fondo de categorías
+        bgCard: "#e7770f", // Color de Fondo de tarjetas
+        bgCategory: "#ed8120", // Color de Fondo de categorías
 
-        bgBtnPrimary: '#7dd957', // Color de Fondo del botón primario
-        bgBtnSecondary: '#4487ba', // Color de Fondo del botón secundario
+        bgBtnPrimary: "#7dd957", // Color de Fondo del botón primario
+        bgBtnSecondary: "#4487ba", // Color de Fondo del botón secundario
 
-        bgInput: '#ef8221', // Color de Fondo de los imputs
+        bgInput: "#ef8221", // Color de Fondo de los imputs
 
-        bgQuestion: '#de5d00', // Color de Fondo de preguntas y respuestas
-      }
+        bgQuestion: "#de5d00", // Color de Fondo de preguntas y respuestas
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
+
+//Esta es la rama de Walter
