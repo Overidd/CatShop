@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LogoCatshop from '@/public/LogoCatshop.png'
 import 'animate.css';
-
+import { ReturnBack } from "@/components/button/ReturnBack";
 
 export const metadata = {
    title: "ShopCat",
@@ -23,14 +23,7 @@ export default function Layout({ children, }: Readonly<{ children: React.ReactNo
                />
             </Link>
          </header>
-
-         <Link className="w-fit block" href={'/shop'}>
-            <button className="align-middle">
-               <ChevronLeft fontSize={50} strokeWidth={3} />
-            </button>
-            <span className="align-middle font-medium text-lg md:text-xl">Volver</span>
-         </Link>
-
+         <ReturnBack/>
          <main className="overflow-hidden w-full">
             {children}
          </main>

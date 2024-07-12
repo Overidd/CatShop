@@ -17,7 +17,7 @@ export const CartPayMethod = () => {
 
    return (
       <section className="bg-bgPrimary p-5 rounded-xl space-y-8 w-fit m-auto text-base md:text-lg animate__animated animate__slideInRight">
-         <h1 className=" text-xl md:text-2xl font-medium text-center">Elige el método de pago</h1>
+         <h1 className="text-xl md:text-xl font-medium text-center">Elige el método de pago</h1>
 
          <form action="" className="space-y-4">
             <InputRadio
@@ -55,7 +55,7 @@ export const CartPayMethod = () => {
             text="Continuar con el pago"
             onChange={handelNextPage}
          />
-         <p className="text-center">✅Safe Payment Powered By SecureIMP™</p>
+         <p className="text-center text-base">✅Safe Payment Powered By SecureIMP™</p>
       </section>
    )
 }

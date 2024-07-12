@@ -35,7 +35,7 @@ interface InputRadioProps {
 export const InputRadio = ({ id, text, className, name }: InputRadioProps) => {
    return (
       <label htmlFor={id} className={`space-x-2 cursor-pointer ${className}`}>
-         <input type="radio" name={name} id={id} className="checkboxStyle align-middle" />
+         <input type="radio" name={name} id={id} className="checkboxStyle align-middle"/>
          <span className="align-middle">{text} </span>
       </label>
    )

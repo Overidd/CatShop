@@ -40,14 +40,6 @@
    .grid-cols-custom-category {
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
    }
-
-   /* .grid-cols-custom-products {
-      grid-template-columns: repeat(auto-fit, minmax(8rem, 14.7rem));
-   } */
-   /* .grid-cols-custom-products {
-      grid-template-columns: repeat(auto-fit, minmax(5rem, 15.2rem));
-      grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
-   } */
    .grid-cols-custom1720px {
       grid-template-columns: repeat(auto-fit, minmax(5rem, 14rem));
       grid-template-rows: repeat(auto-fit, minmax(5rem, 25rem));
@@ -160,4 +152,7 @@
          /* border-radius: 0 0 1rem 1rem; */
       }
    }
+   .animate__animated.animate__slideInRight {
+      --animate-duration: 0.3s;
+    }
 }
