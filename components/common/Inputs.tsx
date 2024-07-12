@@ -1,17 +1,19 @@
 import './input.css'
 
-type TypoInput = 'text' | 'email'
+type TypoInput = 'text' | 'email' | 'password'
 interface Props {
    placeHolder: string;
    type: TypoInput;
    className?: string;
+   requierd?: string;
+   bg?: string;
 }
 
-export const Input = ({ placeHolder, type, className }: Props) => {
+export const Input = ({ placeHolder, type, className,bg }: Props) => {
    return (
-      <label className="form_label border-2 border-[#ef8221] rounded-xl">
+      <label className={`form_label border-2 border-[#ef8221] rounded-xl ${bg}`}>
          <input type={type} placeholder=" " className={`form_input bg-transparent outline-none py-[0.7rem] px-[1rem] ${className}`} />
-         <span className="form_text opacity-85 bg-bgPrimary">{placeHolder}</span>
+         <span className={`form_text opacity-85 bg-bgPrimary ${bg}`}>{placeHolder}</span>
       </label>
    )
 }
