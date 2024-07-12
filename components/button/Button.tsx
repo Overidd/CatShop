@@ -7,14 +7,14 @@ interface Props {
   className?: string;
   bgColor?: BgColor;
   textColor?: TextColor;
-  changeSomething?: () => void;
+  onChange?: () => void;
 }
 
-export const Button = ({ text = 'Comprar', className = '', bgColor = 'bg-bgBtnSecondary', textColor = 'text-white', changeSomething }: Props) => {
+export const Button = ({ text = 'Comprar', className = '', bgColor = 'bg-bgBtnSecondary', textColor = 'text-white', onChange }: Props) => {
   return (
     <button
       className={`py-2 sm:py-3 md:py-3 rounded-xl w-full ${className} ${bgColor} ${textColor}`}
-      onClick={changeSomething}>
+      onClick={onChange}>
       {text}
     </button>
   );

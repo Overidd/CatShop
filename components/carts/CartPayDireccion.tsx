@@ -1,11 +1,10 @@
 import { Button } from "../button/Button"
 import { Input, InputRadio, Select  } from "../common/Inputs"
 
-
-
 export const CartPayDireccion = () => {
+   
    return (
-      <section className="bg-bgPrimary p-5 rounded-xl space-y-8 w-fit m-auto texttext-lg ">
+      <section className="bg-bgPrimary p-5 rounded-xl space-y-8 w-fit m-auto texttext-lg animate__animated animate__slideInRight">
          <form action="" className="space-y-4 md:space-x-10">
             <InputRadio
                className="inline-block"

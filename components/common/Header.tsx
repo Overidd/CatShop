@@ -27,7 +27,7 @@ export const Header = ({ children, className }: Props) => {
 
             <h1 className="text-xl font-semibold md:w-[50rem] m-auto md:text-3xl">
                {textHeader.title}
-               <span className="text-bgLateralcolumn font-extrabold uppercase"> para gatos</span>
+               <span className="text-bgLateralcolumn font-extrabold uppercase animate-pulse"> para gatos</span>
             </h1>
             <p className="opacity-70 text-sm md:w-[50rem] m-auto md:text-xl">
                {textHeader.text}

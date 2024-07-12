@@ -10,6 +10,7 @@ import { LinkMenu } from "./LinkMenu"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useStoreCart } from "../context/useStoreCart"
+// import 'animate.css';
 
 interface MenuProps {
    hideMenu?: string[];
@@ -17,14 +18,16 @@ interface MenuProps {
 
 export const Menu = ({ hideMenu = [] }: MenuProps) => {
    const pathname = usePathname();
+   const pathCurrent = pathname === '/' ? '/' : `/${pathname.split('/').filter(Boolean)[0]}`
    const { openToggleCard, state } = useStoreCart()
    const [openMenu, setOpenMenu] = useState(false);
 
    const handleOpenMenu = () => {
       setOpenMenu((open) => !open);
    };
+   console.log(pathCurrent)
 
-   const hiddenMenu = hideMenu.includes(pathname);
+   const hiddenMenu = hideMenu.includes(pathCurrent);
 
    return (
       !hiddenMenu && (

@@ -4,10 +4,20 @@ import { ProductProps } from "@/lib/types"
 import { useStoreCart } from "../context/useStoreCart"
 import { X, Plus, Minus } from "lucide-react"
 import { Button } from "../button/Button"
+import { useState, Suspense, useEffect } from "react"
+import { SkeletonCart, SkeletonCard } from "../common/SkeletonCard"
+import { useRouter } from "next/navigation"
 
 export const CartPay = () => {
    const { state } = useStoreCart()
+   const navigation = useRouter()
    let priceCounter = 0;
+   const handelNextPage = () => {
+      navigation.push('/cart/paymetohod')
+   }
+   const backShop = () => {
+      navigation.push('/shop')
+   }
 
    return (
       <div className="flex gap-4 flex-col md:flex-row text-[#fffd]">
@@ -44,8 +54,8 @@ export const CartPay = () => {
                <span className="float-right ">S/ {priceCounter}</span>
             </p>
             <div className="mt-auto space-y-4">
-               <Button text="Iniciar pago" />
-               <Button text="Volver a la tienda" bgColor="bg-bgLateralcolumn" />
+               <Button text="Iniciar pago" onChange={handelNextPage} />
+               <Button text="Volver a la tienda" bgColor="bg-bgLateralcolumn" onChange={backShop} />
             </div>
          </section>
       </div>
@@ -57,15 +67,46 @@ interface Props {
    productProps: ProductProps;
 }
 const CartProducts = ({ productProps }: Props) => {
-   const { img: { src, alt, height, width }, name, description, id, quantity, price } = productProps;
+   const { img: { src, alt, height, width }, name, description, id, quantity, price, discount } = productProps;
    const { addTocart, subtractQuantity, removeCart } = useStoreCart()
+   const offSale = discount !== undefined
+   const discountPrice = price - (price * ((discount || 100) / 100))
+
+   const [loagind, setloagind] = useState(false)
+   useEffect(() => {
+      const carga = setInterval(() => {
+
+         setloagind(true)
+      }, 800)
+      return () => {
+         clearInterval(carga)
+      }
+   }, [])
+   if (!loagind) {
+      return <SkeletonCart />
+   }
+
+
    return (
       <div className="bg-bgPrimary relative grid grid-cols-2 gap-4 p-3 md:p-0 md:gap-0 justify-items-center md:gridColsCart rounded-xl">
          <figure className="md:w-[70%] w-full">
             <img src={src} alt={alt} className="w-full h-full object-cover object-center rounded-xl md:rounded-none" />
+
+            {
+               offSale && <div className="absolute bg-bgInput left-0 top-0 p-[0.4rem] px-3 font-bold text-xl discount">
+                  <small>-{discount}%</small>
+               </div>
+            }
          </figure>
          <p className="self-center text-lg text-balance">{name}</p>
-         <small className="self-center font-medium text-lg md:col-auto">S/ {price}</small>
+         {/* <small className="self-center font-medium text-lg md:col-auto">S/ {price}</small> */}
+         {
+            offSale
+               ? <p className="font-medium text-base md:text-lg self-center ">
+                  <small className="line-through text-lg opacity-80">{price}</small> S/ <small className=" md:text-xl">{discountPrice}</small>
+               </p>
+               : <small className=" font-medium md:text-lg self-center ">S/ {price}</small>
+         }
 
          <div className="self-center space-x-2 md:col-auto row-span-1 ">
             <button className="bg-bgLateralcolumn rounded-[50%] py-[0.6rem] px-[0.6rem]"
@@ -81,11 +122,14 @@ const CartProducts = ({ productProps }: Props) => {
             </button>
          </div>
 
-         <small className="hidden md:block self-center font-medium text-lg">S/ {(quantity || 1) * price}</small>
+         <small className="hidden md:block self-center font-medium text-lg">
+            S/ {(quantity || 1) * price}
+         </small>
+
          <button className="cursor-pointer absolute top-2 right-2 md:static"
             onClick={() => removeCart(id)}
          >
-            <X className="self-center" size={35}></X>
+            <X className="self-center" size={27}></X>
          </button>
       </div>
    )

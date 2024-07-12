@@ -43,12 +43,12 @@ export type DetailsProductAccessories = {
 }
 // category: 'Juguetes',
 // material: 'Plástico no tóxico',
+// availability: 'Disponible',
+
+
 // weight: '50g',
 // dimensions: '5cm x 5cm x 5cm',
 // color: 'Multicolor',
-// ageRecommended: 'Todos',
 // benefits: 'Estimulación mental y ejercicio físico',
 // careInstructions: 'Lavar con agua y jabón neutro',
-// brand: 'PetToys Inc.',
 // warranty: '6 meses',
-// availability: 'Disponible',

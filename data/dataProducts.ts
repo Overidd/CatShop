@@ -4,6 +4,7 @@ export const dataProducts: ProductProps[] = [
    {
       "id": 2000,
       "price": 172,
+      'discount': 12,
       "name": "Suéter cálido para gato",
       "description": "Mantén a tu gato abrigado y cómodo con este suéter cálido de lana.",
       "brand": "catsoup",
@@ -52,6 +53,7 @@ export const dataProducts: ProductProps[] = [
    {
       "id": 2003,
       "price": 112,
+      'discount': 30,
       "name": "Collar con cascabel",
       "description": "Elegante collar con cascabel para gatos, ajustable y seguro.",
       "brand": "gaty",
@@ -100,6 +102,7 @@ export const dataProducts: ProductProps[] = [
    {
       "id": 2006,
       "price": 87,
+      'discount': 50,
       "name": "Cepillo desenredante para gatos",
       "description": "Mantén el pelaje de tu gato suave y libre de nudos con este cepillo.",
       "brand": "whiskers",
@@ -164,6 +167,7 @@ export const dataProducts: ProductProps[] = [
    {
       "id": 2010,
       "price": 67,
+      'discount': 7,
       "name": "Ratón de juguete para gatos",
       "description": "Ratón de juguete con sonido para estimular el instinto cazador de tu gato.",
       "brand": "whiskers",

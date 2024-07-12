@@ -97,13 +97,19 @@
    }
 
    .productImg:hover>img {
-      transition: opacity 0.5s;
+      background-color: #48b;
+      transition: opacity 0.3s;
       opacity: 0.8;
    }
 
    .productImg:hover>.iconSearch {
       opacity: 100;
    }
+
+   .productImg:hover>.discount {
+      opacity: 100;
+   }
+
 
    /* .scrollCartShop{
       scrollbar-width: thin;
@@ -114,12 +120,12 @@
    }
 
    .gridColsCart {
-      grid-template-columns: 20% 30% repeat(4, 1fr);
+      grid-template-columns: 20% 27% 15% repeat(2, 1fr) 11%;
       grid-template-rows: 8rem;
    }
 
    .gridColsCartHeader {
-      grid-template-columns: 20% 30% repeat(4, 1fr);
+      grid-template-columns: 20% 27% 15% repeat(2, 1fr) 11%;
    }
 
 

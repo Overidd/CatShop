@@ -31,10 +31,10 @@ export const LinkMenu = ({ closeMenu }:LinkNav) => {
             <LinkNav href={'/'} >Home</LinkNav>
          </li>
          <li className="list-none" onClick={closeMenu}>
-            <LinkNav href={'/blog'}>Blog</LinkNav>
+            <LinkNav href={'/shop'}>Shop</LinkNav>
          </li>
          <li className="list-none" onClick={closeMenu}>
-            <LinkNav href={'/shop'}>Shop</LinkNav>
+            <LinkNav href={'/qa'}>Q&A</LinkNav>
          </li>
          <li className="list-none" onClick={closeMenu}>
             <LinkNav href={'/login'}>Login</LinkNav>
