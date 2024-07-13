@@ -19,7 +19,7 @@ export const SwitchModo = ({ className }: Props) => {
       <div
          className={`contentSwitch bg-bgSecondary select-none ${className}`} onClick={toggleDarkMode}>
          {
-            darkMode ? (
+            !darkMode ? (
                <>
                   <Image src={iconModel.moonlight} alt="Moonlight Icon" width={24} height={24} />
                   <Image src={iconModel.sun} alt="Sun Icon" width={24} height={24} className="right-0" />
