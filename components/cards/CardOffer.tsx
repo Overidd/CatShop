@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-// 'use client'
 import { CardOfferProps } from "@/lib/types";
 import { ButtonOffer } from "../button/ButtonOffer";
 interface Props {

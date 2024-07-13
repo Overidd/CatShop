@@ -1,16 +1,15 @@
 
-import type { Metadata } from "next";
+import { ProductsProvider } from "@/components/context/ProductsProvider";
+import { Menu, ModeDark } from "@/components/navBar";
+import { CartShop } from "@/components/carts/CartShop";
+import { Footer } from "@/components/common";
 import { Roboto } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { Menu, ModeDark } from "@/components/navBar";
+import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "@/components/common";
-import { ProductsProvider } from "@/components/context/ProductsProvider";
-import { CartShop } from "@/components/carts/CartShop";
 import {
    ClerkProvider,
 } from '@clerk/nextjs'
-
 
 const roboto = Roboto({
    weight: ['100', '300', '400', '500', '700', '900'],
@@ -80,5 +79,3 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       </html >
    );
 }
-
-//Al momento de ejecutar una funcion, primero la funcion si es 'use cliente' o de lado del servidor. En el caso que sea del lado del cliente, el lugar donde se va a ejecutar debe ser de lado del cliente. De lo contrario sale un error pontente xd jejejje

@@ -1,13 +1,13 @@
 'use client'
-import { useEffect, useState } from "react"
-import { usePathname } from 'next/navigation'
-import Link from "next/link"
-
 import { useStoreCart } from "../context/useStoreCart"
 import { X, CircleX, ShoppingCart } from 'lucide-react'
+import { useEffect, useState } from "react"
+import { usePathname } from 'next/navigation'
 import { ProductProps } from "@/lib/types"
-import { Button } from "../button/Button"
-import { ImgDiscount } from "../common/CardoffSale"
+import Link from "next/link"
+import { Button } from "../button"
+import { ImgDiscount } from "../common"
+
 
 export const CartShop = () => {
    const { state, openToggleCard, openCard } = useStoreCart()
@@ -27,10 +27,6 @@ export const CartShop = () => {
    if (!hydrated) {
       return null;
    }
-
-   // const toPageCart = () => {
-   //    navigator.push('/cart')
-   // }
 
    return (
       <>
@@ -104,16 +100,3 @@ const CardCartShop = ({ productProps }: Props) => {
       </div>
    )
 }
-
-
-// const cartRef = useRef()
-//    useEffect(() => {
-//       if (cartRef.current) {
-//          cartRef.current.scrollIntoView({ behavior: 'smooth' });
-//       }
-//    }, [state]);
-
-//    useEffect(() => {
-//       setHydrated(true);
-//    }, []);
-{/* <div ref={cartRef} className="h-1"></div> */ }

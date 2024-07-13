@@ -1,7 +1,6 @@
 import { ContentProducts } from "@/components/common/ContentProducts"
+import { dataProducts } from "@/data"
 import { Filter } from "@/components/common/Filter"
-import { dataProducts } from "../../data/dataProducts"
-
 
 export default function Shop() {
 

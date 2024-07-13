@@ -11,12 +11,9 @@ import {
 import { CardOfferProps, ProductProps } from "@/lib/types";
 import React, { Children } from 'react';
 
-
 interface Props {
    className?: string,
    children: React.ReactNode,
-   // Element: React.ElementType,
-   // data: Array<ProductProps | CardOfferProps>;
 }
 
 function CarouselCustom({ children, className }: Props) {
@@ -25,14 +22,6 @@ function CarouselCustom({ children, className }: Props) {
          align: "start",
       }} className={cn("w-full")}>
          <CarouselContent className={className}>
-
-            {/* {
-               data.map(item => (
-                  <CarouselItem key={item.id} className={className}>
-                     <Element {...item} />
-                  </CarouselItem>
-               ))
-            } */}
             {children}
          </CarouselContent>
          <CarouselPrevious className='ml-8 md:ml-0' />

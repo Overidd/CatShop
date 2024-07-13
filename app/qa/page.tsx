@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 import {
   Accordion,
   AccordionContent,
@@ -60,8 +59,8 @@ const page = () => {
 
         {
           dataQA.map((item) => (
-            <AccordionItem key={item.id} value={`item-${item.id}`} className="bg-bgPrimary rounded-xl p-4 border-none">
-              <AccordionTrigger className="decoration-bgPrimary	">{item.question}</AccordionTrigger>
+            <AccordionItem key={item.id} value={`item-${item.id}`} className="bg-bgPrimary dark:bg-bgPrimaryDark rounded-xl p-4 border-none">
+              <AccordionTrigger className="decoration-bgPrimary dark:bg-bgPrimaryDark	">{item.question}</AccordionTrigger>
               <AccordionContent className="opacity-80">
                 {
                   (item.id === 5 || item.id === 4)

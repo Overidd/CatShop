@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { ProductProps } from "@/lib/types"
+import { PriceDiscount, ImgDiscount, NumbrerDiscount } from "../common/CardoffSale"
+import { SkeletonCart, SkeletonCard } from "../common/SkeletonCard"
+import { useState, Suspense, useEffect } from "react"
 import { useStoreCart } from "../context/useStoreCart"
 import { X, Plus, Minus } from "lucide-react"
+import { ProductProps } from "@/lib/types"
 import { Button } from "../button/Button"
-import { useState, Suspense, useEffect } from "react"
-import { SkeletonCart, SkeletonCard } from "../common/SkeletonCard"
 import { useRouter } from "next/navigation"
-import { PriceDiscount, ImgDiscount, NumbrerDiscount } from "../common/CardoffSale"
 
 let discountCounter = 0
 export const CartPay = () => {
@@ -34,7 +34,6 @@ export const CartPay = () => {
             </div>
             {
                state.map(product => {
-                  // discountCounter += product.price * (product.quantity || 1) * (product.discount || 0)
                   discountCounter += Math.round((product.price * (product.discount || 1) / 100))
                   priceCounter += product.price * (product.quantity || 1)
                   return <CartProducts key={product.id} productProps={product} />
@@ -98,7 +97,6 @@ const CartProducts = ({ productProps }: Props) => {
             }
          </figure>
          <p className="self-center text-lg text-balance">{name}</p>
-         {/* <small className="self-center font-medium text-lg md:col-auto">S/ {price}</small> */}
          {
             offSale
                ? <PriceDiscount discount={discount} price={price} />

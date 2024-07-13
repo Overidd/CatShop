@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { ProductProps } from "@/lib/types"
 import { Search, BaggageClaim, ShoppingCart } from 'lucide-react';
 import { useStoreCart } from "../context/useStoreCart";
+import { SkeletonCard } from "../common/SkeletonCard";
 import { useEffect, useState, Suspense } from "react";
 import { useRouter } from "next/navigation";
-import { SkeletonCard } from "../common/SkeletonCard";
+import { ProductProps } from "@/lib/types"
 
 interface Props {
    className?: string,
@@ -90,21 +90,3 @@ export const ButtoIsCart = ({ product,className,margin }: ButtoType) => {
       </button>
    )
 }
-
-type SearchProps = {
-   productId: number,
-}
-const SearchDetails = ({ productId }: SearchProps) => {
-   const navigation = useRouter()
-
-   const toDetails = () => {
-      console.log('Hola Search')
-      navigation.push(`/shop/${productId}`)
-   }
-
-   return (
-      <>
-
-      </>
-   )
-} 

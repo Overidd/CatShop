@@ -43,7 +43,3 @@ export default function Home() {
       </div>
    );
 }
-{/* <CarouselCustom data={DataCarousel} Element={CardOffer} className="md:h-[27rem]" /> */ }
-{/* 
-   <CarouselCustom data={dataProductsOffers} Element={CardProducts} className="basis-1/2 md:basis-1/3 lg:basis-1/4" /> */
-}

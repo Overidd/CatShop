@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-
 import { CategoryProps } from "@/lib/types";
 import { useRouter } from 'next/navigation'
 

@@ -1,7 +1,7 @@
-import { useState } from "react"
-import { Button } from "../button/Button"
 import { Input, InputRadio, Select } from "../common/Inputs"
 import { PurchaceTrue } from "../common/Purchace"
+import { Button } from "../button/Button"
+import { useState } from "react"
 
 export const CartPayDireccion = () => {
    const [purchace, setPurchace] = useState(false)
@@ -21,7 +21,6 @@ export const CartPayDireccion = () => {
             <Input type="text" placeHolder="Provincia" />
             <Input type="text" placeHolder="Distrito" />
             <Input type="text" placeHolder="Direccion" />
-            {/* <Input type="text" placeHolder="referencia" /> */}
             <Select />
             <Input type="text" placeHolder="Documento" />
          </form>

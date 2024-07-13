@@ -1,7 +1,5 @@
 'use client'
-
-import { CartPayDireccion } from "@/components/carts/CartPayDireccion";
-import { CartPayMethod } from "@/components/carts/CartPayMethod";
+import { CartPayDireccion, CartPayMethod} from "@/components/carts";
 import { useRouter } from "next/navigation";
 import { useAuth } from '@clerk/nextjs';
 

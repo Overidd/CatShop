@@ -1,5 +1,4 @@
 import React from "react";
-
 type BgColor = 'bg-bgBtnSecondary' | 'bg-bgLateralcolumn' | 'bg-white';
 
 type TextColor = 'text-white' | 'text-[#000a]';

@@ -1,9 +1,8 @@
 'use client'
 import { useRouter } from "next/navigation"
-import { Button } from "../button/Button"
-import { InputRadio } from "../common/Inputs"
-import { useStoreCart } from "../context/useStoreCart"
-
+import { Button } from "../button"
+import { InputRadio } from "../common"
+import { useStoreCart } from "../context"
 
 export const CartPayMethod = () => {
    const { state } = useStoreCart()
