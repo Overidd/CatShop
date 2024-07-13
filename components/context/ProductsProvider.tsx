@@ -11,7 +11,7 @@ type ProductContextType = {
    addTocart: (product: ProductProps) => void;
    removeCart: (productId: number) => void;
    clearCart: () => void;
-   openToggleCard: () => void;
+   openToggleCard: (boolean?: boolean) => void;
    openCard: boolean;
    subtractQuantity: (productId: number) => void;
 };
@@ -59,9 +59,14 @@ export const ProductsProvider: React.FC<Prop> = ({ children }) => {
          payload: productId,
       });
    }
-   const openToggleCard = () => {
-      setOpenCard((opencard) => !opencard)
-   }
+   const openToggleCard = (boolean?: boolean) => {
+      if (boolean !== undefined) {
+         setOpenCard(boolean);
+      } else {
+         setOpenCard((opencard) => !opencard);
+      }
+   };
+
 
    return (
       <ProductContext.Provider value={{

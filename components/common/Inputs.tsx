@@ -1,17 +1,20 @@
 import './input.css'
 
-type TypoInput = 'text' | 'email'
+type TypoInput = 'text' | 'email' | 'password'
 interface Props {
    placeHolder: string;
    type: TypoInput;
    className?: string;
+   requierd?: string;
+   bg?: string;
+   bgPlaceHolder?: string;
 }
 
-export const Input = ({ placeHolder, type, className }: Props) => {
+export const Input = ({ placeHolder, type, className, bg, bgPlaceHolder }: Props) => {
    return (
-      <label className="form_label border-2 border-[#ef8221] rounded-xl">
+      <label className={`form_label border-2 border-[#ef8221] rounded-xl ${bg}`}>
          <input type={type} placeholder=" " className={`form_input bg-transparent outline-none py-[0.7rem] px-[1rem] ${className}`} />
-         <span className="form_text opacity-85 bg-bgPrimary">{placeHolder}</span>
+         <span className={`form_text opacity-85 bg-bgPrimary ${bgPlaceHolder}`}>{placeHolder}</span>
       </label>
    )
 }
@@ -35,7 +38,7 @@ interface InputRadioProps {
 export const InputRadio = ({ id, text, className, name }: InputRadioProps) => {
    return (
       <label htmlFor={id} className={`space-x-2 cursor-pointer ${className}`}>
-         <input type="radio" name={name} id={id} className="checkboxStyle align-middle"/>
+         <input type="radio" name={name} id={id} className="checkboxStyle align-middle" />
          <span className="align-middle">{text} </span>
       </label>
    )

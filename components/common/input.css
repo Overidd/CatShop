@@ -26,5 +26,5 @@
 .form_input:focus+.form_text,
 .form_input:not(:placeholder-shown)+.form_text {
    transform: translateY(-50%) scale(0.8);
-   margin-top: 1px;
+   /* margin-top: 1px; */
 }

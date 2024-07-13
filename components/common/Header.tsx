@@ -1,6 +1,8 @@
+import Link from "next/link"
 import { ScrollButton } from "../button"
-import { Menu } from "../navBar"
+import LogoCatshop from '@/public/LogoCatshop.png'
 import React from "react"
+import Image from "next/image"
 
 const textHeader = {
    title: 'Tienda de Gatos en Lima accesorios',
@@ -34,6 +36,22 @@ export const Header = ({ children, className }: Props) => {
             </p>
             <ScrollButton targetId="scrol-main" />
          </div>
+      </header>
+   )
+}
+
+
+export const HeaderNotMenu = () => {
+
+   return (
+      <header className="bg-bgMenu basis-[30%] rounded-2xl mt-4 p-2">
+         <Link href={'/'}>
+            <Image className="cursor-pointer"
+               src={LogoCatshop}
+               alt="Logo"
+               width={100}
+            />
+         </Link>
       </header>
    )
 }
