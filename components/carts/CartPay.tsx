@@ -9,11 +9,11 @@ import { SkeletonCart, SkeletonCard } from "../common/SkeletonCard"
 import { useRouter } from "next/navigation"
 import { PriceDiscount, ImgDiscount, NumbrerDiscount } from "../common/CardoffSale"
 
+let discountCounter = 0
 export const CartPay = () => {
    const { state } = useStoreCart()
    const navigation = useRouter()
    let priceCounter = 0;
-   let discountCounter = 0
    const handelNextPage = () => {
       navigation.push('/cart/paymetohod')
    }
