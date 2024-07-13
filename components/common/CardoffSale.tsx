@@ -25,3 +25,17 @@ export const ImgDiscount = ({ discount }: ImgProps) => {
       </div>
    )
 }
+
+interface caouterProps {
+   discount: number,
+   price: number
+   className?: string
+}
+
+export const NumbrerDiscount = ({ discount, price, className }: caouterProps) => {
+   return (
+      <div className={`absolute bg-bgInput left-0 top-0 p-[0.4rem] px-3 font-bold text-2xl discount ${className}` }>
+         <small>Ahorra S/ {(price * (discount || 1) / 100)}</small>
+      </div>
+   )
+}

@@ -7,12 +7,13 @@ import { Button } from "../button/Button"
 import { useState, Suspense, useEffect } from "react"
 import { SkeletonCart, SkeletonCard } from "../common/SkeletonCard"
 import { useRouter } from "next/navigation"
-import { PriceDiscount,ImgDiscount } from "../common/CardoffSale"
+import { PriceDiscount, ImgDiscount, NumbrerDiscount } from "../common/CardoffSale"
 
 export const CartPay = () => {
    const { state } = useStoreCart()
    const navigation = useRouter()
    let priceCounter = 0;
+   let discountCounter = 0
    const handelNextPage = () => {
       navigation.push('/cart/paymetohod')
    }
@@ -33,6 +34,8 @@ export const CartPay = () => {
             </div>
             {
                state.map(product => {
+                  // discountCounter += product.price * (product.quantity || 1) * (product.discount || 0)
+                  discountCounter += (product.price * (product.discount || 1) / 100)
                   priceCounter += product.price * (product.quantity || 1)
                   return <CartProducts key={product.id} productProps={product} />
                })
@@ -48,11 +51,11 @@ export const CartPay = () => {
 
             <p>
                <span>Descuento</span>
-               <span className="float-right ">S/ 0.00</span>
+               <span className="float-right ">S/ {discountCounter}</span>
             </p>
             <p>
                <span>Total</span>
-               <span className="float-right ">S/ {priceCounter}</span>
+               <span className="float-right ">S/ {priceCounter - discountCounter}</span>
             </p>
             <div className="mt-auto space-y-4">
                <Button text="Iniciar pago" onChange={handelNextPage} />
@@ -91,14 +94,14 @@ const CartProducts = ({ productProps }: Props) => {
             <img src={src} alt={alt} className="w-full h-full object-cover object-center rounded-xl md:rounded-none" />
 
             {
-               offSale && <ImgDiscount discount={discount}/>
+               offSale && <NumbrerDiscount discount={discount} price={price} className="text-lg"/>
             }
          </figure>
          <p className="self-center text-lg text-balance">{name}</p>
          {/* <small className="self-center font-medium text-lg md:col-auto">S/ {price}</small> */}
          {
             offSale
-               ? <PriceDiscount  discount={discount} price={price}/>
+               ? <PriceDiscount discount={discount} price={price} />
                : <small className=" font-medium md:text-lg self-center ">S/ {price}</small>
          }
 

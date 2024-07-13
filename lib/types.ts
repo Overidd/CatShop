@@ -34,6 +34,14 @@ export type ProductProps = {
    date: string;
    img: ImgProps;
    quantity?: number
+   weight?: string,
+   dimensions?: string,
+   color?: string,
+   benefits?: string,
+   careInstructions?: string,
+   warranty?: string,
+   img2?: ImgProps
+   
 }
 
 export type DetailsProductAccessories = {

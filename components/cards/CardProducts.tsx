@@ -59,10 +59,12 @@ export const CardProducts = ({ productProps, className }: Props) => {
 }
 
 type ButtoType = {
-   product: any
+   product: any;
+   className?: string;
+   margin?: string ;
 }
 
-const ButtoIsCart = ({ product }: ButtoType) => {
+export const ButtoIsCart = ({ product,className,margin }: ButtoType) => {
    const { addTocart, state } = useStoreCart()
 
    const checkProductCart = (product: ProductProps) => {
@@ -75,14 +77,14 @@ const ButtoIsCart = ({ product }: ButtoType) => {
       setLoading(true);
    }, []);
    if (!loading) {
-      return <div className="bg-bgLateralcolumn py-3 md:py-4 rounded-xl">Comprar</div>
+      return <div className={`bg-bgLateralcolumn py-3 md:py-4 rounded-xl ${className} ${margin}`}>Comprar</div>
    }
    return (
-      <button className=" text-white rounded-xl w-full relative overflow-hidden"
+      <button className={` text-white rounded-xl w-full relative overflow-hidden ${margin}`}
          onClick={() => addTocart(product)}>
 
-         <div className="bg-bgLateralcolumn py-3 md:py-4">Comprar</div>
-         <div className={`py-3 md:py-4 bg-bgLateralcolumn absolute transition translate-y-[100%] inset-0 ${checkProductCart(product) ? 'translate-y-[1px]' : 'translate-y-full'}`}>
+         <div className={`bg-bgLateralcolumn py-3 md:py-4 ${className}`}>Comprar</div>
+         <div className={`py-3 md:py-4 bg-bgLateralcolumn absolute transition translate-y-[100%] inset-0 ${className} ${checkProductCart(product) ? 'translate-y-[1px]' : 'translate-y-full'}`}>
             <BaggageClaim className="mx-auto" />
          </div>
       </button>
