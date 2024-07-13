@@ -519,13 +519,13 @@ export const dataProducts = [
     category: "accesorio",
     date: "2023-01-01",
     img: {
-      src: "/imgProducts/public/imgProducts/rascador1.avif",
+      src: "/imgProducts/rascador1.avif",
       alt: "Product",
       width: 300,
       height: 300,
     },
     img2: {
-      src: "/imgProducts/public/imgProducts/rascador2.jpg",
+      src: "/imgProducts/rascador2.jpg",
       alt: "Product",
       width: 300,
       height: 300,
