@@ -4,7 +4,7 @@ import { SignUp } from '@clerk/nextjs';
 import React from 'react';
 const appearance = {
   elements: {
-    formButtonPrimary: "bg-bgPrimary py-3  transition hover:bg-[#48b] border-none",
+    formButtonPrimary: "bg-bgPrimary dark:bg-bgPrimaryDark py-3  transition hover:bg-[#48b] border-none",
     formFieldInput: "rounded-md py-4 px-3 ",
     formFieldLabel: "", 
     card: "shadow-lg  rounded-xl p-6",
