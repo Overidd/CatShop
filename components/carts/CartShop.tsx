@@ -30,7 +30,7 @@ export const CartShop = () => {
 
    return (
       <>
-         <section className={`bg-bgLateralcolumn fixed p-5 top-0 bottom-0 right-0 w-[80dvw] md:w-[20rem] z-30 transition-[transform] duration-300 flex flex-col gap-4 ${openCard ? 'translate-x-0' : 'translate-x-[120%]'}`}>
+         <section className={`bg-bgLateralcolumn dark:bg-bgPrimaryDark fixed p-5 top-0 bottom-0 right-0 w-[80dvw] md:w-[20rem] z-30 transition-[transform] duration-300 flex flex-col gap-4 ${openCard ? 'translate-x-0' : 'translate-x-[120%]'}`}>
             <X className="cursor-pointer"
                size={30}
                strokeWidth={3}
@@ -50,7 +50,7 @@ export const CartShop = () => {
             {isProductCart && <small className="mt-auto text-2xl text-center">S/ {priceCounter}</small>}
             {isProductCart && <Link href={'/cart'}>
                <Button className="mt-auto"
-                  bgColor="bg-bgBtnSecondary"
+                  bgColor="bg-bgBtnSecondary dark:bg-bgBtnSecondaryDark"
                   textColor="text-white"
                />
             </Link>

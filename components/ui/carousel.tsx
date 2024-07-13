@@ -196,7 +196,7 @@ CarouselItem.displayName = "CarouselItem"
 
 const IconBackground = ({ Icon }) => {
   return (
-    <div className={`p-2 bg-bgLateralcolumn rounded-full`}>
+    <div className={`p-2 bg-bgLateralcolumn dark:bg-bgLateralcolumnDark rounded-full`}>
       <Icon className="h-4 w-4" />
     </div>
   );

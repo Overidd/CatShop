@@ -12,7 +12,7 @@ export const CardOffer = ({ cardOfferProps: { category, discount, img: { src, al
       <div className={`relative w-full ${className}`}>
          <img src={src} alt={alt} className="w-full h-full object-cover object-left" width={100} height={100} />
          <ButtonOffer
-            className="absolute left-2 bottom-2 px-6 py-3 bg-bgBtnPrimary text-white rounded-2xl hover:animate-bounce"
+            className="absolute left-2 bottom-2 px-6 py-3 bg-bgBtnPrimary dark:bg-bgBtnPrimaryDark text-white rounded-2xl hover:animate-bounce"
             category={category}
             discount={String(discount)}
          />

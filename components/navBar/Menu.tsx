@@ -38,7 +38,7 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
 
    return (
       !hiddenMenu && (
-         <nav className="bg-bgMenu flex px-4 py-2 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2 menuStyles">
+         <nav className="bg-bgMenu dark:bg-bgMenuDark flex px-4 py-2 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2 menuStyles">
             <Link href={'/'}>
                <Image className="cursor-pointer"
                   src={LogoCatshop}
@@ -67,7 +67,7 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
                size={30}
             />
             <ul
-               className={`bg-bgLateralcolumn text-center absolute text-xl py-8 md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
+               className={`bg-bgLateralcolumn md:dark:bg-transparent dark:bg-bgCategoryDark text-center absolute text-xl py-8 md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
             >
                <LinkMenu closeMenu={() => setOpenMenu((close) => !close)} />
                <SwitchModo className='mx-auto md:mx-0 md:ml-auto' />
@@ -94,7 +94,7 @@ const CounterState = ({ counter }: CounterProps) => {
 
    return (
 
-      <small className="absolute font-semibold top-[50%] bg-bgLateralcolumn rounded-[50%] py-[0.12rem] px-[0.42rem] text-xs">
+      <small className="absolute font-semibold top-[50%] bg-bgLateralcolumn dark:bg-bgLateralcolumnDark  rounded-[50%] py-[0.12rem] px-[0.42rem] text-xs">
          {counter}
       </small>
    )

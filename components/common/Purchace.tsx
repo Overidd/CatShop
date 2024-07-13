@@ -6,7 +6,7 @@ import { Button } from "../button/Button"
 
 export const PurchaceTrue = () => {
    return (
-      <div className="fixed inset-0 w-[60%] h-[60%] m-auto space-y-4 p-4 rounded-xl bg-bgLateralcolumn flex">
+      <div className="fixed inset-0 w-[60%] h-[60%] m-auto space-y-4 p-4 rounded-xl bg-bgLateralcolumn dark:bg-bgLateralcolumnDark flex">
          <div className="m-auto space-y-4">
             <img src="/animal_feliz.png" alt="" className="mx-auto w-[10rem] animate-bounce" />
             <p className="text-2xl text-center">

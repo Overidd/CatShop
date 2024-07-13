@@ -19,7 +19,7 @@ interface ImgProps {
 }
 export const ImgDiscount = ({ discount }: ImgProps) => {
    return (
-      <div className="absolute bg-bgInput left-0 top-0 p-[0.4rem] px-3 font-bold text-xl discount">
+      <div className="absolute bg-bgInput dark:bg-bgInputDark left-0 top-0 p-[0.4rem] px-3 font-bold text-xl discount">
          <small>-{discount}%</small>
       </div>
    )
@@ -33,7 +33,7 @@ interface caouterProps {
 
 export const NumbrerDiscount = ({ discount, price, className }: caouterProps) => {
    return (
-      <div className={`absolute bg-bgInput left-0 top-0 p-[0.4rem] px-3 font-bold text-2xl discount ${className}` }>
+      <div className={`absolute bg-bgInput dark:bg-bgInputDark left-0 top-0 p-[0.4rem] px-3 font-bold text-2xl discount ${className}` }>
          <small>Ahorra S/ {(price * (discount || 1) / 100)}</small>
       </div>
    )

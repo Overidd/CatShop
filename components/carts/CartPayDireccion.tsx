@@ -6,11 +6,11 @@ import { useState } from "react"
 export const CartPayDireccion = () => {
    const [purchace, setPurchace] = useState(false)
    return (
-      <section className="bg-bgPrimary p-5 rounded-xl m-auto grid md:grid w-full max-w-3xl md:grid-cols-2 gap-10 texttext-lg animate__animated animate__slideInRight">
+      <section className="bg-bgPrimary dark:bg-bgPrimaryDark p-5 rounded-xl m-auto grid md:grid w-full max-w-3xl md:grid-cols-2 gap-10 texttext-lg animate__animated animate__slideInRight">
 
          <form action="" className="space-y-4">
             <InputRadio
-               className="inline-block bg-bgInput w-full py-2"
+               className="inline-block bg-bgInput dark:bg-bgInputDark w-full py-2"
                id="pick"
                name="option"
                text="Envio por delivery"
@@ -27,7 +27,7 @@ export const CartPayDireccion = () => {
 
          <form action="" className="space-y-4">
             <InputRadio
-               className="inline-block bg-bgInput w-full py-2"
+               className="inline-block bg-bgInput dark:bg-bgInputDark w-full py-2"
                id="sending"
                name="option"
                text="Recoger en una tienda"

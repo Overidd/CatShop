@@ -17,7 +17,7 @@ export const CardCategory = ({ category }: Props) => {
          {
             category.map(({ id, category, img: { width, height, src, alt } }) => (
 
-               <div className="py-3 relative text-center  border-borderPrimary bg-bgCategory rounded-[2rem] min-h-[10rem] md:min-h-[20rem] hover:bg-bgLateralcolumn transition duration-300"
+               <div className="py-3 relative text-center  border-borderPrimary dark:border-borderPrimaryDark bg-bgCategory dark:bg-bgCategoryDark rounded-[2rem] min-h-[10rem] md:min-h-[20rem] hover:bg-bgLateralcolumn dark:hover:bg-bgLateralcolumnDark transition duration-300"
                   key={id}
                   onClick={() => navigateToShop(category)}
                >

@@ -152,7 +152,7 @@ export const Filter = () => {
                </button>
             </form>
          </div>
-         <section className={`h-fit md:p-2 bg-bgLateralcolumn rounded-xl animationFilter md:animationFilterDeskt absolute z-10 md:static shadow-md ${openFilter ? 'min-w-[50dvw] md:min-w-[18%] min-h-[20%]' : 'min-w-[5%] md:min-w-[18%] min-h-[0%]'}`}>
+         <section className={`h-fit md:p-2 bg-bgLateralcolumn dark:bg-bgCategoryDark rounded-xl animationFilter md:animationFilterDeskt absolute z-10 md:static shadow-md ${openFilter ? 'min-w-[50dvw] md:min-w-[18%] min-h-[20%]' : 'min-w-[5%] md:min-w-[18%] min-h-[0%]'}`}>
 
             <button className="p-2 md:hidden" onClick={() => setOpenFilter(!openFilter)}>
                <ListFilter strokeWidth={'3'} size={'2rem'} />

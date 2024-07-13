@@ -73,7 +73,7 @@ const DetailsProduct = ({ product }: Props) => {
             <h1 className='text-lg md:text-2xl font-bold text-center'>{name}</h1>
             <div className='space-y-8'>
                <p className='space-x-10'>
-                  <small className='text-bgMenu dark:bg-bgMenuDark font-bold text-3xl'>S/
+                  <small className='text-bgMenu dark:text-bgMenuDark font-bold text-3xl'>S/
                      {
                         discount
                            ? price - (price * ((discount || 1) / 100))

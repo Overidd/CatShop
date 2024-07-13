@@ -1,5 +1,6 @@
 import React from "react";
-type BgColor = 'bg-bgBtnSecondary' | 'bg-bgLateralcolumn' | 'bg-white';
+type BgColor = 'bg-bgBtnSecondary dark:bg-bgBtnSecondaryDark' | 'bg-bgLateralcolumn dark:bg-bgLateralcolumnDark' | 'bg-white dark:bg-whiteDark';
+// const data = 'bg-bgBtnSecondaryDark bg-bgLateralcolumnDark  bg-whiteDark'
 
 type TextColor = 'text-white' | 'text-[#000a]';
 type TypeButton = 'submit' | 'reset' | 'button';
@@ -13,7 +14,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export const Button = ({ text = 'Comprar', className, bgColor = 'bg-bgBtnSecondary', textColor = 'text-white', onChange, type, children }: Props) => {
+export const Button = ({ text = 'Comprar', className, bgColor = 'bg-bgBtnSecondary dark:bg-bgBtnSecondaryDark', textColor = 'text-white', onChange, type, children }: Props) => {
   return (
     <button
       className={` rounded-xl w-full space-x-2 py-2 sm:py-3 md:py-3 ${className} ${bgColor} ${textColor}`}
@@ -28,7 +29,7 @@ export const Button = ({ text = 'Comprar', className, bgColor = 'bg-bgBtnSeconda
 export const ButtonGoogle = ({ bgColor, children, className, onChange, text, textColor, type }: Props) => {
   return (
     <button
-      className={` rounded-xl w-full space-x-2 py-2 sm:py-3 md:py-3 bg-white text-bgPrimary ${className} ${bgColor} ${textColor}`}
+      className={` rounded-xl w-full space-x-2 py-2 sm:py-3 md:py-3 bg-white text-bgPrimary dark:text-bgPrimaryDark ${className} ${bgColor} ${textColor}`}
       type={type}
       onClick={onChange}>
       <span className="align-middle">{text}</span>

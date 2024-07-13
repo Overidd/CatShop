@@ -24,7 +24,7 @@ export const CartPay = () => {
    return (
       <div className="flex gap-4 flex-col md:flex-row text-[#fffd]">
          <section className="basis-[75%] space-y-4" >
-            <div className="bg-bgLateralcolumn hidden md:grid gridColsCartHeader py-3 justify-items-center text-lg rounded-lg font-medium">
+            <div className="bg-bgLateralcolumn dark:bg-bgCategoryDark hidden md:grid gridColsCartHeader py-3 justify-items-center text-lg rounded-lg font-medium">
                <span></span>
                <span>Producto</span>
                <span>Precio</span>
@@ -41,7 +41,7 @@ export const CartPay = () => {
             }
          </section >
 
-         <section className="bg-bgPrimary rounded-xl flex-1 p-8 gap-8 flex flex-col h-fit font-medium md:text-lg">
+         <section className="bg-bgPrimary dark:bg-bgPrimaryDark rounded-xl flex-1 p-8 gap-8 flex flex-col h-fit font-medium md:text-lg">
             <h2 className="text-center text-xl md:text-2xl">Resumen de compra</h2>
             <p className="">
                <span>SubTotal</span>
@@ -58,7 +58,7 @@ export const CartPay = () => {
             </p>
             <div className="mt-auto space-y-4">
                <Button text="Iniciar pago" onChange={handelNextPage} />
-               <Button text="Volver a la tienda" bgColor="bg-bgLateralcolumn" onChange={backShop} />
+               <Button text="Volver a la tienda" bgColor="bg-bgLateralcolumn dark:bg-bgLateralcolumnDark" onChange={backShop} />
             </div>
          </section>
       </div>
@@ -88,7 +88,7 @@ const CartProducts = ({ productProps }: Props) => {
    }
 
    return (
-      <div className="bg-bgPrimary relative grid grid-cols-2 gap-4 p-3 md:p-0 md:gap-0 justify-items-center md:gridColsCart rounded-xl">
+      <div className="bg-bgPrimary dark:bg-bgPrimaryDark relative grid grid-cols-2 gap-4 p-3 md:p-0 md:gap-0 justify-items-center md:gridColsCart rounded-xl">
          <figure className="md:w-[70%] w-full">
             <img src={src} alt={alt} className="w-full h-full object-cover object-center rounded-xl md:rounded-none" />
 
@@ -104,13 +104,13 @@ const CartProducts = ({ productProps }: Props) => {
          }
 
          <div className="self-center space-x-2 md:col-auto row-span-1 ">
-            <button className="bg-bgLateralcolumn rounded-[50%] py-[0.6rem] px-[0.6rem]"
+            <button className="bg-bgLateralcolumn dark:bg-bgLateralcolumnDark rounded-[50%] py-[0.6rem] px-[0.6rem]"
                onClick={() => subtractQuantity(id)}
             >
                <Minus size={16} />
             </button>
             <small className="text-lg">{quantity}</small>
-            <button className="bg-bgLateralcolumn rounded-[50%] py-[0.6rem] px-[0.6rem]"
+            <button className="bg-bgLateralcolumn dark:bg-bgLateralcolumnDark rounded-[50%] py-[0.6rem] px-[0.6rem]"
                onClick={() => addTocart(productProps)}
             >
                <Plus size={16} />

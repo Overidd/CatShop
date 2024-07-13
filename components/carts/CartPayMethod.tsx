@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation"
 import { Button } from "../button"
 import { InputRadio } from "../common"
-import { useStoreCart } from "../context"
+import { useStoreCart } from "../context/useStoreCart"
 
 export const CartPayMethod = () => {
    const { state } = useStoreCart()
@@ -15,7 +15,7 @@ export const CartPayMethod = () => {
    }
 
    return (
-      <section className="bg-bgPrimary p-5 rounded-xl space-y-8 w-fit m-auto text-base md:text-lg animate__animated animate__slideInRight">
+      <section className="bg-bgPrimary dark:bg-bgPrimaryDark p-5 rounded-xl space-y-8 w-fit m-auto text-base md:text-lg animate__animated animate__slideInRight">
          <h1 className="text-xl md:text-xl font-medium text-center">Elige el método de pago</h1>
 
          <form action="" className="space-y-4">
@@ -50,7 +50,7 @@ export const CartPayMethod = () => {
             <p>Total: S/ {priceTotal}</p>
          </div>
          <Button
-            bgColor="bg-bgBtnSecondary"
+            bgColor="bg-bgBtnSecondary dark:bg-bgBtnSecondaryDark"
             text="Continuar con el pago"
             onChange={handelNextPage}
          />

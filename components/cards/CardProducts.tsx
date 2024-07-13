@@ -23,9 +23,9 @@ export const CardProducts = ({ productProps, className }: Props) => {
       navigation.push(`/shop/${id}`)
    }
    return (
-      <div className={`text-center bg-bgCard rounded-xl flex flex-col gap-2 justify-between p-3 md:p-4 xl:p-5 ${className}`}>
+      <div className={`text-center bg-bgCard dark:bg-bgCardDark rounded-xl flex flex-col gap-2 justify-between p-3 md:p-4 xl:p-5 ${className}`}>
 
-         <figure className="bg-[#074f86] basis-[0%] min-h-[38%] md:min-h-[43%] 2xl:min-h-[45%] min-w-full relative cursor-pointer productImg overflow-hidden rounded-xl select-none"
+         <figure className="bg-[#074f86] dark:bg-[#e38809] basis-[0%] min-h-[38%] md:min-h-[43%] 2xl:min-h-[45%] min-w-full relative cursor-pointer productImg overflow-hidden rounded-xl select-none"
             onClick={() => toDetails()}
          >
 
@@ -37,7 +37,7 @@ export const CardProducts = ({ productProps, className }: Props) => {
                size={40}
             />
             {
-               offSale && <div className="absolute bg-bgInput left-0 top-0 p-[0.4rem] px-3 font-bold text-xl discount">
+               offSale && <div className="absolute bg-bgInput dark:bg-bgInputDark left-0 top-0 p-[0.4rem] px-3 font-bold text-xl discount">
                   <small>-{discount}%</small>
                </div>
             }
@@ -77,14 +77,14 @@ export const ButtoIsCart = ({ product,className,margin }: ButtoType) => {
       setLoading(true);
    }, []);
    if (!loading) {
-      return <div className={`bg-bgLateralcolumn py-3 md:py-4 rounded-xl ${className} ${margin}`}>Comprar</div>
+      return <div className={`bg-bgLateralcolumn dark:bg-bgLateralcolumnDark py-3 md:py-4 rounded-xl ${className} ${margin}`}>Comprar</div>
    }
    return (
       <button className={` text-white rounded-xl w-full relative overflow-hidden ${margin}`}
          onClick={() => addTocart(product)}>
 
-         <div className={`bg-bgLateralcolumn py-3 md:py-4 ${className}`}>Comprar</div>
-         <div className={`py-3 md:py-4 bg-bgLateralcolumn absolute transition translate-y-[100%] inset-0 ${className} ${checkProductCart(product) ? 'translate-y-[1px]' : 'translate-y-full'}`}>
+         <div className={`bg-bgLateralcolumn dark:bg-bgLateralcolumnDark py-3 md:py-4 ${className}`}>Comprar</div>
+         <div className={`py-3 md:py-4 bg-bgLateralcolumn dark:bg-bgLateralcolumnDark absolute transition translate-y-[100%] inset-0 ${className} ${checkProductCart(product) ? 'translate-y-[1px]' : 'translate-y-full'}`}>
             <BaggageClaim className="mx-auto" />
          </div>
       </button>
