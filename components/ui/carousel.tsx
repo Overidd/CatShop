@@ -194,7 +194,7 @@ const CarouselItem = React.forwardRef<
 })
 CarouselItem.displayName = "CarouselItem"
 
-const IconBackground = ({ Icon }) => {
+const IconBackground = ({ Icon }: { Icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }) => {
   return (
     <div className={`p-2 bg-bgLateralcolumn dark:bg-bgLateralcolumnDark rounded-full`}>
       <Icon className="h-4 w-4" />
