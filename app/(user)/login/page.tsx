@@ -16,7 +16,7 @@ const appearance = {
 
 const LoginPage = () => {
   const searchParams = useSearchParams();
-  const redirectTo = searchParams.get('redirectTo') || '/cart/paymetohod'; 
+  const redirectTo = searchParams.get('pay') || '/'; 
   return (
     <section className="min-h-[60dvh] grid grid-cols-1 md:auto-rows-[28rem] 2xl:auto-rows-[40rem] md:grid-cols-2 animate__animated animate__slideInRight">
       <figure className="rounded-xl max-h-full overflow-hidden hidden md:block">
