@@ -72,7 +72,7 @@ const DetailsProduct = ({ product }: Props) => {
          </CarouselCustom>
 
          {/* <CustomPaging /> */}
-         <div className='text-left flex-col md:space-y-10 bg-bgPrimary rounded-xl p-5'>
+         <div className='text-left flex-col space-y-5 md:space-y-10 bg-bgPrimary rounded-xl p-5'>
             <h1 className='text-lg md:text-2xl font-bold text-center'>{name}</h1>
             <div className='space-y-8'>
                <p className='space-x-10'>

@@ -1,8 +1,10 @@
+import { useState } from "react"
 import { Button } from "../button/Button"
 import { Input, InputRadio, Select } from "../common/Inputs"
+import { PurchaceTrue } from "../common/Purchace"
 
 export const CartPayDireccion = () => {
-
+   const [purchace, setPurchace] = useState(false)
    return (
       <section className="bg-bgPrimary p-5 rounded-xl m-auto grid md:grid w-full max-w-3xl md:grid-cols-2 gap-10 texttext-lg animate__animated animate__slideInRight">
 
@@ -45,8 +47,13 @@ export const CartPayDireccion = () => {
                text="Olivos, av Carrion Los  2321"
             />
          </form>
-            <Button text="Continuar con el pago" className="mx-auto py-[0.9rem] md:col-span-2 md:w-[40%]"/>
+         <Button text="Continuar con el pago" className="mx-auto py-[0.9rem] md:col-span-2 md:w-[40%]" onChange={()=>setPurchace(!purchace)}/>
          <p className="text-center md:col-span-2">✅Safe Payment Powered By SecureIMP™</p>
+         {
+            purchace && (
+               <PurchaceTrue />
+            )
+         }
       </section>
    )
 }
