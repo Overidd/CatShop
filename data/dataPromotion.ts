@@ -18,13 +18,13 @@ export const dataPromotion: CardOfferProps[] = [
       id: 451,
       name: 'Product',
       description: '',
-      category: 'salud',
-      discount: 17,
+      category: 'juguete',
+      discount: 14,
       availability: true,
       date: '2023-01-01',
       img: {
          src: '/imgOffers/catoffers2.png',
          alt: 'Productos para gatos',
       }
-   },
+   }
 ]
