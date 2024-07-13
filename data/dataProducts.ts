@@ -320,7 +320,7 @@ export const dataProducts: ProductProps[] = [
     },
     weight: '10',
     dimensions: "13.5cm x 14.5cm x 4cm",
-    color: 'null',
+    color: 'Transparente',
     benefits: "Material: cerámica. Apto para lavavajillas",
     careInstructions: 'null',
   },

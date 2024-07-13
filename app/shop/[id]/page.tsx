@@ -40,7 +40,7 @@ const DetailsProduct = ({ product }: Props) => {
 
 
    return (
-      <section className='flex flex-col md:flex-row gap-16'>
+      <section className='grid grid-cols-1 md:grid-cols-2  gap-16 md:items-start'>
 
          <CarouselCustom className=''>
             <CarouselItem className='basis-full h-full'>
@@ -72,7 +72,7 @@ const DetailsProduct = ({ product }: Props) => {
          </CarouselCustom>
 
          {/* <CustomPaging /> */}
-         <div className='text-left min-w-[47%] flex-col md:space-y-10 bg-bgPrimary rounded-xl p-5'>
+         <div className='text-left flex-col md:space-y-10 bg-bgPrimary rounded-xl p-5'>
             <h1 className='text-lg md:text-2xl font-bold text-center'>{name}</h1>
             <div className='space-y-8'>
                <p className='space-x-10'>
@@ -99,14 +99,22 @@ const DetailsProduct = ({ product }: Props) => {
 
                <p className='font-medium'> Color </p>
                <p className='opacity-90'>{color}</p>
+
                <p className='font-medium'> Beneficios </p>
                <p className='opacity-90'>{benefits}</p>
+
                <p className='font-medium'> Dimencion </p>
                <p className='opacity-90' >{dimensions}</p>
+
                <p className='font-medium'>Peso</p>
                <p className='opacity-90'>{weight}</p>
-               <p className='font-medium'>Características</p>
-               <p className='opacity-90'>{careInstructions}</p>
+               {
+                  careInstructions !== 'null' && <p className='font-medium'>Características</p>
+               }
+               {
+                  careInstructions !== 'null' && <p className='opacity-90'>{careInstructions}</p>
+               }
+
             </div>
             <div className=''>
                <ButtoIsCart product={product} className='bg-bgMenu text-xl' />

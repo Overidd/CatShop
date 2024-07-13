@@ -46,21 +46,26 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
                   width={100}
                />
             </Link>
-            <button className="ml-auto md:order-1 cursor-pointer relative" onClick={() => openToggleCard()}>
+
+            <div className="align-middle ml-auto flex items-center justify-center">
+               <SignedIn >
+                  <UserButton />
+               </SignedIn>
+            </div>
+
+            <button className=" md:order-1 cursor-pointer relative" onClick={() => openToggleCard()}>
                <ShoppingCart
                   size={30}
                   strokeWidth={2}
                />
                <CounterState counter={state.length} />
             </button>
+
             <MenuIcon className="cursor-pointer md:hidden"
                onClick={handleOpenMenu}
                strokeWidth={2}
                size={30}
             />
-            <SignedIn>
-               <UserButton />
-            </SignedIn>
             <ul
                className={`bg-bgLateralcolumn text-center absolute text-xl py-8 md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
             >
