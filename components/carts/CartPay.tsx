@@ -35,7 +35,7 @@ export const CartPay = () => {
             {
                state.map(product => {
                   // discountCounter += product.price * (product.quantity || 1) * (product.discount || 0)
-                  discountCounter += (product.price * (product.discount || 1) / 100)
+                  discountCounter += Math.round((product.price * (product.discount || 1) / 100))
                   priceCounter += product.price * (product.quantity || 1)
                   return <CartProducts key={product.id} productProps={product} />
                })
@@ -94,7 +94,7 @@ const CartProducts = ({ productProps }: Props) => {
             <img src={src} alt={alt} className="w-full h-full object-cover object-center rounded-xl md:rounded-none" />
 
             {
-               offSale && <NumbrerDiscount discount={discount} price={price} className="text-lg"/>
+               offSale && <NumbrerDiscount discount={discount} price={price} className="text-lg" />
             }
          </figure>
          <p className="self-center text-lg text-balance">{name}</p>
