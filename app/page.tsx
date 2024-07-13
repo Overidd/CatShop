@@ -8,7 +8,7 @@ import { Menu } from "@/components/navBar";
 
 export default function Home() {
    return (
-      <div className="bg-bgPrimary space-y-10 border border-transparent">
+      <div className="bg-bgPrimary space-y-10 border-t border-transparent">
          <Menu />
 
          <div className="bg-bgSecondary space-y-10">

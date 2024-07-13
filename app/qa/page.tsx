@@ -53,7 +53,7 @@ const dataQA = [
 const page = () => {
   return (
     <div className="w-[90%] max-w-7xl m-auto text-white space-y-4">
-      <figure className='w-[40%] mx-auto rounded-xl overflow-hidden'><img src='/preguntasyrespuestas.jpg' alt='Gato con signo de interrogacion' className='w-full h-full object-cover object-center' /></figure>
+      <figure className='md:w-[40%] mx-auto rounded-xl overflow-hidden'><img src='/preguntasyrespuestas.jpg' alt='Gato con signo de interrogacion' className='w-full h-full object-cover object-center' /></figure>
       <h1 className="text-2xl md:text-2xl text-center font-medium py-6">Preguntas Frecuentes</h1>
       <Accordion type="single" collapsible className="w-full space-y-4">
 
