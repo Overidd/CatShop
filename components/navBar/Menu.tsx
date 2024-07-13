@@ -15,6 +15,13 @@ import { useStoreCart } from "../context/useStoreCart"
 interface MenuProps {
    hideMenu?: string[];
 }
+import {
+   ClerkProvider,
+   SignInButton,
+   SignedIn,
+   SignedOut,
+   UserButton
+} from '@clerk/nextjs'
 
 export const Menu = ({ hideMenu = [] }: MenuProps) => {
    const pathname = usePathname();
@@ -51,12 +58,14 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
                strokeWidth={2}
                size={30}
             />
-
+            <SignedIn>
+               <UserButton />
+            </SignedIn>
             <ul
                className={`bg-bgLateralcolumn text-center absolute text-xl py-8 md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
             >
                <LinkMenu closeMenu={() => setOpenMenu((close) => !close)} />
-               <SwitchModo className='mx-auto md:mx-0 md:ml-auto'/>
+               <SwitchModo className='mx-auto md:mx-0 md:ml-auto' />
             </ul>
          </nav>
       )
