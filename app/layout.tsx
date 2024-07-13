@@ -60,7 +60,7 @@ const localization = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
    return (
       <html lang="en">
-         <body className={cn(roboto.className, 'text-textPrimary bg-bgSecondary ')}>
+         <body className={cn(roboto.className, 'text-textPrimary bg-bgSecondary dark:bg-bgSecondaryDark ')}>
             <ClerkProvider localization={localization}>
 
                <ModeDark>

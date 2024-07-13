@@ -8,10 +8,10 @@ import { Menu } from "@/components/navBar";
 
 export default function Home() {
    return (
-      <div className="bg-bgPrimary space-y-10 border-t border-transparent">
+      <div className="bg-bgPrimary dark:bg-bgPrimaryDark space-y-10 border-t border-transparent">
          <Menu />
 
-         <div className="bg-bgSecondary space-y-10">
+         <div className="bg-bgSecondary dark:bg-bgSecondaryDark space-y-10">
             <Header className="space-y-10 pb-3">
                <CarouselSlick speed={300} className="-mb-2">
                   {
