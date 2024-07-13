@@ -21,13 +21,16 @@ export const SwitchModo = ({ className }: Props) => {
          {
             !darkMode ? (
                <>
-                  <Image src={iconModel.moonlight} alt="Moonlight Icon" width={24} height={24} />
-                  <Image src={iconModel.sun} alt="Sun Icon" width={24} height={24} className="right-0" />
+                  
+                  <Image src={iconModel.moonFill} alt="Moon Fill Icon" width={24} height={24} />
+                  <Image src={iconModel.sunLight} alt="Moonlight Icon" width={24} height={24} className="right-0" />
                </>
             ) : (
                <>
-                  <Image src={iconModel.moonFill} alt="Moon Fill Icon" width={24} height={24} />
-                  <Image src={iconModel.sunLight} alt="Moonlight Icon" width={24} height={24} className="right-0" />
+                  <Image src={iconModel.moonlight} alt="Moonlight Icon" width={24} height={24} />
+
+                  <Image src={iconModel.sun} alt="Sun Icon" width={24} height={24} className="right-0" />
+
                </>
             )
          }
