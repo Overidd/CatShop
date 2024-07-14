@@ -31,8 +31,7 @@ export const CardProducts = ({ productProps, className }: Props) => {
                   <small>-{discount}%</small>
                </div>
             }
-            <IconFavorite id={id}
-            />
+            <IconFavorite id={id} className="absolute top-1 right-1 text-bgPrimary"/>
          </figure>
 
          <h5 className="opacity-80 text-sm md:text-xl text-balance">{name}</h5>

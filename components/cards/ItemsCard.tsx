@@ -40,8 +40,10 @@ export const ButtoIsCart = ({ product, className, margin }: ButtoType) => {
 type FavoriteType = {
    id: number;
    className?: string;
+   size?: number;
+   color?: string;
 }
-export const IconFavorite = ({ id, className }: FavoriteType) => {
+export const IconFavorite = ({ id, className, size = 30, color = '#ef8221' }: FavoriteType) => {
    const { addRemoveFavorite, isFavorite } = useFavoriteProducts();
 
    // Renderiza algo diferente en el lado del servidor para evitar errores
@@ -51,11 +53,11 @@ export const IconFavorite = ({ id, className }: FavoriteType) => {
    }, []);
    return (
       <Heart
-         className={`text-bgInput active:animate-ping absolute top-1 right-1 ${className}`}
+         className={`active:animate-ping ${className} ${color}`}
          onClick={() => addRemoveFavorite(id)}
-         size={30}
+         size={size}
          strokeWidth={2}
-         fill={loading && isFavorite(id) ? '#ef8221' : 'none'}
+         fill={loading && isFavorite(id) ? color : 'none'}
       />
    )
 }

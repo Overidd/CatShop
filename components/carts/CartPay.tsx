@@ -15,7 +15,7 @@ export const CartPay = () => {
    const navigation = useRouter()
    let priceCounter = 0;
    const handelNextPage = () => {
-      navigation.push('/cart/paymetohod')
+      navigation.push('/cart/paydireccion')
    }
    const backShop = () => {
       navigation.push('/shop')

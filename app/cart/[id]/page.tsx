@@ -8,8 +8,8 @@ const Page = ({ params }: { params: { id: string } }) => {
   const { id } = params;
   const { isSignedIn } = useAuth();
   const navigation = useRouter();
-  const paymetohod = 'paymetohod' === id;
   const paydireccion = 'paydireccion' === id;
+  const paymetohod = 'paymetohod' === id;
 
   if (!isSignedIn) {
     navigation.push(`/login?pay=/cart/${id}`);
@@ -22,8 +22,8 @@ const Page = ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      {paymetohod && <CartPayMethod />}
       {paydireccion && <CartPayDireccion />}
+      {paymetohod && <CartPayMethod />}
     </>
   );
 };
