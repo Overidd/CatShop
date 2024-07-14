@@ -1,13 +1,5 @@
 # CatShop
 
----
-
-## Introducción
-
-¡Bienvenidos a nuestra tienda de gatos en línea! Nuestra plataforma está diseñada para brindar una experiencia de compra fluida y agradable para los amantes de los gatos. Hemos utilizado las últimas tecnologías para asegurar que nuestra tienda no solo sea hermosa, sino también rápida y funcional.
-
----
-
 ## Tecnologías Utilizadas
 
 1. **Next.js**:
