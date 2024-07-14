@@ -19,7 +19,7 @@ const Register = () => {
         <img className="w-full h-full object-cover object-center" src="/imagenRegister.png" alt="img" />
       </figure>
       <div className="flex flex-col justify-center items-center gap-4">
-        <SignUp path="/register" routing="path" signInUrl="/login" appearance={appearance} />
+        <SignUp  routing="hash" signInUrl="/login" appearance={appearance} />
       </div>
     </section>
   );

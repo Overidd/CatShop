@@ -23,11 +23,11 @@ const LoginPage = () => {
       </figure>
       <div className="flex flex-col justify-center items-center gap-4">
         <SignIn
-          path="/login"
-          routing="path"
+          routing="hash"
           signUpUrl="/register"
           appearance={appearance}
           afterSignInUrl={redirectTo} 
+          
         />
       </div>
     </section>
