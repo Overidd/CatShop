@@ -19,3 +19,5 @@
    
 6. **shadcn**:
    - Sistema de diseño que nos ayuda a mantener una consistencia visual en todos los componentes de nuestra aplicación.
+7. **Clerk**:
+   - Plataforma de autenticación y gestión de usuarios que nos permite manejar de manera segura el inicio de sesión, registro y administración de cuentas de usuario.
