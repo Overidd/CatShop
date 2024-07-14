@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { ImgDiscount, NumbrerDiscount } from '@/components/common/CardoffSale'
-import { useStoreCart } from '@/components/context/useStoreCart'
+import { NumbrerDiscount } from '@/components/common/CardoffSale'
 import { CarouselCustom, CarouselItem } from '@/components/slider'
-import { Button } from '@/components/button/Button'
 import { ButtoIsCart, IconFavorite } from '@/components/cards'
 import { dataProducts } from '@/data/dataProducts'
 import { ProductProps } from '@/lib/types'
@@ -33,7 +31,6 @@ type Props = {
 }
 const DetailsProduct = ({ product }: Props) => {
    const { id, img2, name, description, price, dimensions, color, benefits, careInstructions, discount, weight, img: { alt, src, width, height } } = product
-   const { removeCart } = useStoreCart()
    const offSale = discount !== undefined
 
 
@@ -114,9 +111,9 @@ const DetailsProduct = ({ product }: Props) => {
 
             </div>
             <div className='flex gap-5'>
-                  <ButtoIsCart product={product} className='bg-bgMenu dark:bg-bgMenuDark text-xl' />
+               <ButtoIsCart product={product} className='bg-bgMenu dark:bg-bgMenuDark text-xl' />
                <button>
-                  <IconFavorite id={id} size={52} color='#fff'/>
+                  <IconFavorite id={id} size={52} color='#fff' />
                </button>
             </div>
          </div>

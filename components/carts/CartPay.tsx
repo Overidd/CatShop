@@ -9,11 +9,11 @@ import { ProductProps } from "@/lib/types"
 import { Button } from "../button/Button"
 import { useRouter } from "next/navigation"
 
-let discountCounter = 0
 export const CartPay = () => {
    const { state } = useStoreCart()
    const navigation = useRouter()
    let priceCounter = 0;
+   let discountCounter = 0;
    const handelNextPage = () => {
       navigation.push('/cart/paydireccion')
    }
@@ -34,7 +34,9 @@ export const CartPay = () => {
             </div>
             {
                state.map(product => {
-                  discountCounter += Math.round((product.price * (product.discount || 1) / 100))
+                  if (product.discount) {
+                     discountCounter += ((product.price * (product.discount || 100) / 100) * (product.quantity || 1))
+                  }
                   priceCounter += product.price * (product.quantity || 1)
                   return <CartProducts key={product.id} productProps={product} />
                })

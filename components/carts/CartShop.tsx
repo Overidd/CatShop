@@ -47,7 +47,7 @@ export const CartShop = () => {
                }
             </div>
             }
-            {isProductCart && <small className="mt-auto text-2xl text-center">S/ {priceCounter}</small>}
+            {isProductCart && <small className="mt-auto text-2xl text-center">Total: S/ {priceCounter}</small>}
             {isProductCart && <Link href={'/cart'}>
                <Button className="mt-auto"
                   bgColor="bg-bgBtnSecondary dark:bg-bgBtnSecondaryDark"
