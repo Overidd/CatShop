@@ -10,9 +10,8 @@ import { HeartOff } from 'lucide-react';
 const page = () => {
    return (
       <div className="w-[90%] max-w-7xl mx-auto space-y-4">
-         <h1 className="font-medium text-2xl">Productos favoritos</h1>
-         <hr />
-         <main className="min-h-[50dvh] grid relative gap-5 md:grid-cols-custom1720px 2xl:grid-cols-custom1920px">
+         <h1 className="font-medium text-center md:text-left text-2xl">Productos favoritos</h1>
+         <main className="min-h-[50dvh] auto-rows-[20rem] md:auto-rows-auto grid relative grid-cols-2 gap-4 md:grid-cols-custom1720px 2xl:grid-cols-custom1920px">
             <Favorite />
          </main>
       </div>
