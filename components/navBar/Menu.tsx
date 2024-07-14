@@ -1,38 +1,32 @@
-
 'use client'
-import { MenuIcon, ShoppingCart } from "lucide-react"
-import Image from "next/image"
-import { useEffect, useState } from "react"
-import { SwitchModo } from "./SwitchModo"
+import { MenuIcon, ShoppingCart, Heart } from "lucide-react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { LinkMenu } from "./LinkMenu";
+import Image from "next/image";
 
-import LogoCatshop from '@/public/LogoCatshop.png'
-import { LinkMenu } from "./LinkMenu"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useStoreCart } from "../context/useStoreCart"
+import { SignedIn, UserButton } from '@clerk/nextjs';
+import { useFavoriteProducts, useStoreCart } from "@/components/context";
+import { SwitchModo } from "./SwitchModo";
+
+import LogoCatshop from '@/public/LogoCatshop.png';
+import Link from "next/link";
 // import 'animate.css';
 
 interface MenuProps {
    hideMenu?: string[];
 }
-import {
-   ClerkProvider,
-   SignInButton,
-   SignedIn,
-   SignedOut,
-   UserButton
-} from '@clerk/nextjs'
 
 export const Menu = ({ hideMenu = [] }: MenuProps) => {
    const pathname = usePathname();
-   const pathCurrent = pathname === '/' ? '/' : `/${pathname.split('/').filter(Boolean)[0]}`
-   const { openToggleCard, state } = useStoreCart()
+   const { IconFavorite, IconCart } = ItemsMenu()
+   const pathCurrent = pathname === '/' ? '/' : `/${pathname.split('/').filter(Boolean)[0]}`;
+   const { openToggleCard, state } = useStoreCart();
    const [openMenu, setOpenMenu] = useState(false);
 
    const handleOpenMenu = () => {
       setOpenMenu((open) => !open);
    };
-   console.log(pathCurrent)
 
    const hiddenMenu = hideMenu.includes(pathCurrent);
 
@@ -44,6 +38,7 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
                   src={LogoCatshop}
                   alt="Logo"
                   width={100}
+                  height={100}
                />
             </Link>
 
@@ -53,12 +48,13 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
                </SignedIn>
             </div>
 
-            <button className=" md:order-1 cursor-pointer relative" onClick={() => openToggleCard()}>
-               <ShoppingCart
-                  size={30}
-                  strokeWidth={2}
-               />
-               <CounterState counter={state.length} />
+            <IconFavorite />
+
+            <button className=" md:order-1 cursor-pointer relative" onClick={() => openToggleCard()} title="carrito">
+               <IconCart />
+               {
+                  state.length > 0 && <CounterState counter={state.length} />
+               }
             </button>
 
             <MenuIcon className="cursor-pointer md:hidden"
@@ -66,6 +62,7 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
                strokeWidth={2}
                size={30}
             />
+
             <ul
                className={`bg-bgLateralcolumn md:dark:bg-transparent dark:bg-bgCategoryDark text-center absolute text-xl py-8 md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
             >
@@ -81,8 +78,48 @@ type CounterProps = {
    counter: number;
 }
 
-const CounterState = ({ counter }: CounterProps) => {
+const ItemsMenu = () => {
+   // Renderiza algo diferente en el lado del servidor para evitar errores
+   const [loading, setLoading] = useState(false);
+   useEffect(() => {
+      setLoading(true);
+   }, []);
 
+   const IconFavorite = () => {
+      const { favoriteItems } = useFavoriteProducts();
+      const existsFavorite = favoriteItems.length > 0;
+
+      return (
+
+         <Link href={'/favorite'} title="favoritos" className="md:order-1">
+            <Heart
+               size={30}
+               strokeWidth={2}
+               fill={loading && existsFavorite ? '#fff' : 'none'}
+            />
+         </Link>
+      )
+   }
+
+   const IconCart = () => {
+      const { state } = useStoreCart();
+
+      return (
+         <ShoppingCart
+            size={30}
+            strokeWidth={2}
+            fill={loading && (state.length > 0) ? '#fff' : 'none'}
+         />
+      )
+   }
+
+   return {
+      IconFavorite,
+      IconCart
+   }
+}
+
+const CounterState = ({ counter }: CounterProps) => {
    // Renderiza algo diferente en el lado del servidor para evitar errores
    const [hydrated, setHydrated] = useState(false);
    useEffect(() => {
@@ -91,11 +128,10 @@ const CounterState = ({ counter }: CounterProps) => {
    if (!hydrated) {
       return null;
    }
-
    return (
-
       <small className="absolute font-semibold top-[50%] bg-bgLateralcolumn dark:bg-bgLateralcolumnDark  rounded-[50%] py-[0.12rem] px-[0.42rem] text-xs">
          {counter}
       </small>
    )
 }
+

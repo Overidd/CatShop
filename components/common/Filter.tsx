@@ -211,7 +211,7 @@ export const Filter = () => {
                   }
                </fieldset>
                <fieldset className='space-y-1'>
-                  <legend className='md:text-sxl font-semibold'>Marcas</legend>
+                  <legend className='md:text-xl font-semibold'>Marcas</legend>
                   {marca.map(({ id, value, label }) => (
                      <label key={id} htmlFor={id} className='block cursor-pointer'>
                         <input className='align-middle checkboxStyle cursor-pointer'

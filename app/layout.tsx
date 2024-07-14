@@ -1,5 +1,5 @@
 
-import { ProductsProvider } from "@/components/context/ProductsProvider";
+import { ProductsProvider, LoadingProvider, FavoriteProvider } from "@/components/context";
 import { Menu, ModeDark } from "@/components/navBar";
 import { CartShop } from "@/components/carts/CartShop";
 import { Footer } from "@/components/common";
@@ -10,7 +10,6 @@ import "./globals.css";
 import {
    ClerkProvider,
 } from '@clerk/nextjs'
-import { ProvideLoading } from "@/components/context/ProvideLoading";
 
 const roboto = Roboto({
    weight: ['100', '300', '400', '500', '700', '900'],
@@ -62,19 +61,20 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <html lang="en">
          <body className={cn(roboto.className, 'text-textPrimary bg-bgSecondary dark:bg-bgSecondaryDark ')}>
             <ClerkProvider localization={localization}>
-               <ProvideLoading>
+               <LoadingProvider>
                   <ModeDark>
                      <ProductsProvider>
+                        <FavoriteProvider>
 
-                        <Menu hideMenu={['/', '/cart', '/login', '/register']} />
+                           <Menu hideMenu={['/', '/cart', '/login', '/register']} />
 
-                        {children}
-                        <CartShop />
-
+                           {children}
+                           <CartShop />
+                        </FavoriteProvider>
                      </ProductsProvider>
                      <Footer />
                   </ModeDark>
-               </ProvideLoading>
+               </LoadingProvider>
             </ClerkProvider >
          </body>
       </html >

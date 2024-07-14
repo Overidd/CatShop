@@ -18,7 +18,7 @@ export const dataPromotion: CardOfferProps[] = [
       id: 451,
       name: 'Product',
       description: '',
-      category: 'juguete',
+      category: 'salud',
       discount: 14,
       availability: true,
       date: '2023-01-01',

@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { PriceDiscount, ImgDiscount, NumbrerDiscount } from "../common/CardoffSale"
-import { SkeletonCart, SkeletonCard } from "../common/SkeletonCard"
-import { useState, Suspense, useEffect } from "react"
+import { PriceDiscount, NumbrerDiscount } from "../common/CardoffSale"
+import { SkeletonCart } from "../common/SkeletonCard"
+import { useState, useEffect } from "react"
 import { useStoreCart } from "../context/useStoreCart"
 import { X, Plus, Minus } from "lucide-react"
 import { ProductProps } from "@/lib/types"

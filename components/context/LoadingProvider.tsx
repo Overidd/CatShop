@@ -2,7 +2,7 @@
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import React from 'react';
 
-export const ProvideLoading = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
+export const LoadingProvider = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
    return (
       <>
          {children}

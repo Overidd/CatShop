@@ -154,6 +154,7 @@ export const dataProducts: ProductProps[] = [
   {
     id: 2007,
     price: 155,
+    discount: 14,
     name: "Vitaminas para gatos",
     description: "Suplemento multivitamínico para la salud y vitalidad de tu gato.",
     brand: "gaty",

@@ -12,7 +12,7 @@ export const ACTION_TYPE = {
 
 export type Action =
    | { type: typeof ACTION_TYPE.ADD_CART; payload: ProductProps }
-   | { type: typeof ACTION_TYPE.REMOVE_CART; payload: number }  // Usamos el id para eliminar
+   | { type: typeof ACTION_TYPE.REMOVE_CART; payload: number } 
    | { type: typeof ACTION_TYPE.CLEAR_CART }
    | { type: typeof ACTION_TYPE.DECREMENT_QUANTITY; payload: number };
 
