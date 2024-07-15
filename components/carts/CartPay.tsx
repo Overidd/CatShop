@@ -35,7 +35,9 @@ export const CartPay = () => {
             {
                state.map(product => {
                   if (product.discount) {
-                     discountCounter += ((product.price * (product.discount || 100) / 100) * (product.quantity || 1))
+                     discountCounter +=  ((product.price * (product.discount || 100) / 100) * (product.quantity || 1))
+                     discountCounter = Number(discountCounter.toFixed(2))
+                     console.log(discountCounter)
                   }
                   priceCounter += product.price * (product.quantity || 1)
                   return <CartProducts key={product.id} productProps={product} />
@@ -43,7 +45,7 @@ export const CartPay = () => {
             }
          </section >
 
-         <section className="bg-bgPrimary dark:bg-bgPrimaryDark rounded-xl flex-1 p-8 gap-8 flex flex-col h-fit font-medium md:text-lg">
+         <section className="bg-bgPrimary dark:bg-bgPrimaryDark rounded-xl flex-1 p-8 gap-8 flex flex-col h-fit font-medium text-lg">
             <h2 className="text-center text-xl md:text-2xl">Resumen de compra</h2>
             <p className="">
                <span>SubTotal</span>
