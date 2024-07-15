@@ -14,8 +14,6 @@ export const CartPay = () => {
    const navigation = useRouter()
    let priceCounter = 0;
    let discountCounter = 0;
-   let resulDiscount = priceCounter - discountCounter;
-   resulDiscount = Number(resulDiscount.toFixed(2))
 
    const handelNextPage = () => {
       navigation.push('/cart/paydireccion')
@@ -61,7 +59,7 @@ export const CartPay = () => {
             </p>
             <p>
                <span>Total</span>
-               <span className="float-right ">S/ {resulDiscount}</span>
+               <span className="float-right ">S/ {Number((priceCounter - discountCounter).toFixed(2))}</span>
             </p>
             <div className="mt-auto space-y-4">
                <Button text="Iniciar pago" onChange={handelNextPage} />
@@ -107,7 +105,7 @@ const CartProducts = ({ productProps }: Props) => {
          {
             offSale
                ? <PriceDiscount discount={discount} price={price} />
-               : <small className=" font-medium md:text-lg self-center ">S/ {price}</small>
+               : <small className=" font-medium md:text-lg self-center text-lg">S/ {price}</small>
          }
 
          <div className="self-center space-x-2 md:col-auto row-span-1 ">

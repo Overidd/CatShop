@@ -39,9 +39,9 @@ export const CardProducts = ({ productProps, className }: Props) => {
          {
             offSale
                ? <p className="text-base md:text-xl">
-                  <small className="line-through text-lg opacity-80">{price}</small> S/ <small className=" md:text-xl">{discountPrice}</small>
+                  <small className="line-through text-lg opacity-80">{price}</small> S/ <small className="text-lg">{discountPrice}</small>
                </p>
-               : <small className="text-base md:text-xl">S/ {price}</small>
+               : <small className="text-lg">S/ {price}</small>
          }
          <ButtoIsCart product={productProps} />
       </div>

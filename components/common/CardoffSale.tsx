@@ -8,7 +8,7 @@ export const PriceDiscount = ({ discount, price }: PriceProps) => {
    return (
       <>
          <p className="font-medium text-base md:text-lg self-center ">
-            <small className="line-through text-lg opacity-80">{price}</small> S/ <small className=" md:text-xl">{discountPrice}</small>
+            <small className="line-through text-lg opacity-80">{price}</small> S/ <small className="text-lg">{discountPrice}</small>
          </p>
       </>
    )
