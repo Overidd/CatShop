@@ -44,12 +44,13 @@ export const Header = ({ children, className }: Props) => {
 export const HeaderNotMenu = () => {
 
    return (
-      <header className="bg-bgMenu dark:bg-bgMenuDark basis-[30%] rounded-2xl mt-4 p-2">
+      <header className="bg-bgMenu dark:bg-bgMenuDark rounded-2xl my-4 h-[4rem] px-4 w-[91%] m-auto flex items-center">
          <Link href={'/'}>
             <Image className="cursor-pointer"
                src={LogoCatshop}
                alt="Logo"
                width={100}
+               height={100}
             />
          </Link>
       </header>

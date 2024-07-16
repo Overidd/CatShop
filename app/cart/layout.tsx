@@ -9,12 +9,14 @@ export const metadata = {
 
 export default function Layout({ children, }: Readonly<{ children: React.ReactNode; }>) {
    return (
-      <div className="min-h-dvh w-[90%] m-auto space-y-10" >
-         <HeaderNotMenu/>
-         <ReturnBack/>
-         <main className="overflow-hidden w-full">
-            {children}
-         </main>
-      </div>
+      <>
+         <HeaderNotMenu />
+         <div className="min-h-dvh w-[90%] m-auto space-y-10" >
+            <ReturnBack />
+            <main className="overflow-hidden w-full">
+               {children}
+            </main>
+         </div>
+      </>
    );
 }
