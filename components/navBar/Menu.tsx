@@ -1,17 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import { MenuIcon, ShoppingCart, Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LinkMenu } from "./LinkMenu";
-import Image from "next/image";
 
 import { SignedIn, UserButton } from '@clerk/nextjs';
 import { useFavoriteProducts, useStoreCart } from "@/components/context";
 import { SwitchModo } from "./SwitchModo";
 
-import LogoCatshop from '@/public/LogoCatshop.png';
 import Link from "next/link";
-// import 'animate.css';
 
 interface MenuProps {
    hideMenu?: string[];
@@ -32,16 +30,15 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
 
    return (
       !hiddenMenu && (
-         <nav className="bg-bgMenu dark:bg-bgMenuDark flex px-4 py-2 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2">
+         <nav className="bg-bgMenu dark:bg-bgMenuDark flex px-4 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2 h-[5rem]">
             <Link href={'/'}>
                <img className="cursor-pointer"
-                  src='/LogoCatshop.png'
+                  src={'LogoCatshop.png'}
                   alt="Logo"
                   width={100}
                   height={100}
                />
             </Link>
-
             <div className="align-middle ml-auto flex items-center justify-center">
                <SignedIn >
                   <UserButton />
