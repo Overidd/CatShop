@@ -32,10 +32,10 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
 
    return (
       !hiddenMenu && (
-         <nav className="bg-bgMenu dark:bg-bgMenuDark flex px-4 py-2 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2 menuStyles">
-            <Link href={'/'}>
-               <Image className="cursor-pointer"
-                  src={LogoCatshop}
+         <nav className="bg-bgMenu dark:bg-bgMenuDark flex px-4 py-2 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2">
+            <Link href={'/'} className="w-[6rem]">
+               <img className="cursor-pointer"
+                  src='/LogoCatshop.png'
                   alt="Logo"
                   width={100}
                   height={100}
@@ -64,7 +64,7 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
             />
 
             <ul
-               className={`absolute bg-bgLateralcolumn md:dark:bg-transparent dark:bg-bgCategoryDark text-center text-xl md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
+               className={`absolute bg-bgLateralcolumn md:dark:bg-transparent dark:bg-bgCategoryDark text-center text-xl py-8 md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
             >
                <LinkMenu closeMenu={() => setOpenMenu((close) => !close)} />
                <SwitchModo className='mx-auto md:mx-0 md:ml-auto' />
