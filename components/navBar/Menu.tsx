@@ -64,7 +64,7 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
             />
 
             <ul
-               className={`bg-bgLateralcolumn md:dark:bg-transparent dark:bg-bgCategoryDark text-center absolute text-xl py-8 md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
+               className={`absolute bg-bgLateralcolumn md:dark:bg-transparent dark:bg-bgCategoryDark text-center text-xl md:p-0 flex items-center flex-col top-[110%] right-0 left-0 gap-4 rounded-2xl transition-[transform] duration-300 md:static md:flex-row md:bg-transparent md:w-full ${openMenu ? 'flex' : 'hidden md:flex'}`}
             >
                <LinkMenu closeMenu={() => setOpenMenu((close) => !close)} />
                <SwitchModo className='mx-auto md:mx-0 md:ml-auto' />
