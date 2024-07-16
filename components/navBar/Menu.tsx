@@ -30,7 +30,7 @@ export const Menu = ({ hideMenu = [] }: MenuProps) => {
 
    return (
       !hiddenMenu && (
-         <nav className="bg-bgMenu dark:bg-bgMenuDark flex px-4 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky h-[4rem]">
+         <nav className="bg-bgMenu dark:bg-bgMenuDark flex px-4 gap-4 z-20 w-[91%] m-auto mt-4 mb-10 items-center rounded-2xl select-none sticky top-2 h-[4rem]">
             <Link href={'/'}>
                <img className="cursor-pointer md:w-[7.6rem]"
                   src={'LogoCatshop.png'}
